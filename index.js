@@ -1,5 +1,5 @@
 function checkRadio() {
-    var selectedRadio = document.querySelector('input[name="gender"]:checked');
+    let selectedRadio = document.querySelector('input[name="gender"]:checked');
 
     if (selectedRadio) {
 	alert("Selected Color: " + selectedRadio.value);
@@ -8,5 +8,7 @@ function checkRadio() {
     }
 }
 
-var selectedRadio = document.querySelector('input[name="gender"]');
+let gender = document.querySelector('input[name="gender"]');
+
+console.log(gender)
 
