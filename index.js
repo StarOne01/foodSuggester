@@ -1,14 +1,16 @@
 function checkRadio() {
-    let selectedRadio = document.querySelector('input[name="gender"]:checked');
+    let selectedRadio = document.querySelector('input[name="gender"]:checked').value;
+    let femaleQuestion = document.getElementById("female_questions");
 
-    if (selectedRadio) {
-	alert("Selected Color: " + selectedRadio.value);
+    console.log(selectedRadio)
+    if (selectedRadio == "male") {
+        femaleQuestion.style.display = "none";
     } else {
-	alert("No color selected!");
+        femaleQuestion.style.display = "block";
     }
 }
 
-let gender = document.querySelector('input[name="gender"]');
-
-console.log(gender)
-
+let gender = document.querySelectorAll('input[name="gender"]');
+gender.forEach(i => {
+    i.addEventListener("click",checkRadio)
+});
