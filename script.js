@@ -3,16 +3,13 @@ const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementById("selectedItems");
 
-console.log(userInput)
-
-
 const items = [
   "Apple",
   "Avocado Pear",
   "Banana",
   "Chickoo",
   "Cherries",
-   "Kappa (Tapioca)",
+  "Kappa (Tapioca)",
   "Kappa Puzhukku (Steamed Tapioca)",
   "Thengai Puli (Coconut Tamarind Curry)",
   "Manga Curry (Mango Curry)",
@@ -164,15 +161,15 @@ const items = [
   "Coconut water (100 ml)",
   "Coffee",
   "Tea",
-  "Apple (2.75\" diameter)",
+  'Apple (2.75" diameter)',
   "Apple juice (1 cup)",
   "Applesauce (1 cup unsweetened)",
   "Apricot (3 medium)",
   "Blueberries (1 cup)",
-  "Cantaloupe (half of 5\" diameter)",
+  'Cantaloupe (half of 5" diameter)',
   "Grapefruit (half)",
   "Grapes, green (1 cup)",
-  "Honeydew (6.5\" wedge)",
+  'Honeydew (6.5" wedge)',
   "Kiwi (1)",
   "Mango (4 ounces)",
   "Nectarine (1)",
@@ -267,9 +264,6 @@ const items = [
   "Hide & Seek Choco Fills",
   "Hide & Seek Milk",
   "Moments (Chocolate)",
-
-// Note: This list is not exhaustive and may not include all biscuit brands or varieties available in India.
-
   "Idli",
   "Sambar",
   "Dosa",
@@ -298,11 +292,8 @@ const items = [
   "Murukku",
   "Lemon Rice",
   "Paruppu Payasam (Lentil Pudding)",
-  "Prawns Kuzhambu (Prawn Curry)"
+  "Prawns Kuzhambu (Prawn Curry)",
 ];
-
-
-
 
 const filterOptions = (userInputValue) => {
   const filteredOptions = items.filter((item) =>
@@ -311,8 +302,8 @@ const filterOptions = (userInputValue) => {
   return filteredOptions;
 };
 
-const showSuggestions = () => {
-  const userInputValue = userInput.value;
+const showSuggestions = (i) => {
+  const userInputValue = i.value;
   const filteredOptions = filterOptions(userInputValue);
   dataList.innerHTML = ""; // Clear existing options
 
@@ -324,21 +315,17 @@ const showSuggestions = () => {
       dataList.appendChild(optionElement);
     });
   }
-
-  // Enable add button only when there's an option selected
- // addButton.disabled = userInputValue === "";
 };
 
 const addItem = (selectedItem) => {
   const listItem = document.createElement("li");
   listItem.textContent = selectedItem;
   selectedItemsList.appendChild(listItem);
-  userInput.value = ""; // Clear input field after adding
-  //addButton.disabled = true; // Disable button again
+  userInput.value = "";
 };
 
-userInput.forEach(i => {
-  i.addEventListener("keyup", showSuggestions)
+userInput.forEach((i) => {
+  i.addEventListener("keyup", (i) => showSuggestions(i.target));
 });
 
 dataList.addEventListener("click", (event) => {
@@ -349,31 +336,30 @@ dataList.addEventListener("click", (event) => {
 });
 
 function checkRadio() {
-  let selectedRadio = document.querySelector('input[name="gender"]:checked').value;
+  let selectedRadio = document.querySelector(
+    'input[name="gender"]:checked'
+  ).value;
   let femaleQuestion = document.getElementById("female_questions");
 
-  console.log(selectedRadio)
+  console.log(selectedRadio);
   if (selectedRadio == "male") {
-      femaleQuestion.style.display = "none";
+    femaleQuestion.style.display = "none";
   } else {
-      femaleQuestion.style.display = "block";
+    femaleQuestion.style.display = "block";
   }
 }
 
 let gender = document.querySelectorAll('input[name="gender"]');
-gender.forEach(i => {
-  i.addEventListener("click",checkRadio)
+gender.forEach((i) => {
+  i.addEventListener("click", checkRadio);
 });
 
 // Optional: Hide datalist on outside clicks (add event listener to document and check for clicks outside the search container)
-
-
-
 
 // BMR Calculator
 let weight = 50;
 let height = 171;
 let age = 20;
-let BMR = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
 
-console.log(`Your BMR: ${BMR}`)
+console.log(`Your BMR: ${BMR}`);
