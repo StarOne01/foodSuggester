@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client Information Form</title>
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
   <h1>Client Information Form</h1>
@@ -182,29 +183,54 @@
 
     <h2>Diet (Food Intake)</h2>
     <p>Please list the typical foods you consume throughout the day. You can mention portion sizes or quantities if known.</p>
-
     <label for="wake_up_food">Wake-up:</label><br>
-    <input type="search" id="wake_up_food" name="wake_up_food" rows="4" cols="50"></textarea><br><br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+    <br>
+    <ul id="selectedItems"></ul>
 
     <label for="breakfast_food">Breakfast:</label><br>
-    <textarea id="breakfast_food" name="breakfast_food" rows="4" cols="50"></textarea><br><br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+    <br>
+    <ul id="selectedItems"></ul>
 
     <label for="morning_snacks_food">Morning Snacks:</label><br>
-    <textarea id="morning_snacks_food" name="morning_snacks_food" rows="4" cols="50"></textarea><br><br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+    <br>
+    <ul id="selectedItems"></ul>
 
     <label for="lunch_food">Lunch:</label><br>
-    <textarea id="lunch_food" name="lunch_food" rows="4" cols="50"></textarea><br><br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+    <br>
+    <ul id="selectedItems"></ul>
 
     <label for="evening_snacks_food">Evening Snacks:</label><br>
-    <textarea id="evening_snacks_food" name="evening_snacks_food" rows="4" cols="50"></textarea><br><br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+  
+    <ul id="selectedItems"></ul>
 
     <label for="dinner_food">Dinner:</label><br>
-    <textarea id="dinner_food" name="dinner_food" rows="4" cols="50"></textarea><br>
-    <br>
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+  
+    <ul id="selectedItems"></ul>
 
     <label for="before_sleep_food">Before Sleep:</label><br>
-    <textarea id="before_sleep_food" name="before_sleep_food" rows="4" cols="50"></textarea><br><br>
-
+    <input type="search" list="itemList" id="userInput" placeholder="Search items...">
+    <datalist id="itemList"></datalist>
+    <button id="addButton">Add Selected Item</button>
+    <br>
+    <ul id="selectedItems"></ul>
     <h2>Macronutrients</h2>
     <label for="non_veg">Non-Veg Intake:</label><br>
     <select id="non_veg" name="non_veg" required>
@@ -233,6 +259,6 @@
     <button type="submit">Submit Form</button>
   </form>
 
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

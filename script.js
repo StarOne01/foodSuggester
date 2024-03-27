@@ -1,7 +1,10 @@
-const userInput = document.getElementById("userInput");
+const userInput = document.querySelectorAll("#userInput");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementById("selectedItems");
+
+console.log(userInput)
+
 
 const items = [
   "Apple",
@@ -334,7 +337,9 @@ const addItem = (selectedItem) => {
   //addButton.disabled = true; // Disable button again
 };
 
-userInput.addEventListener("keyup", showSuggestions);
+userInput.forEach(i => {
+  i.addEventListener("keyup", showSuggestions)
+});
 
 dataList.addEventListener("click", (event) => {
   const clickedOption = event.target;
@@ -343,4 +348,32 @@ dataList.addEventListener("click", (event) => {
   }
 });
 
+function checkRadio() {
+  let selectedRadio = document.querySelector('input[name="gender"]:checked').value;
+  let femaleQuestion = document.getElementById("female_questions");
+
+  console.log(selectedRadio)
+  if (selectedRadio == "male") {
+      femaleQuestion.style.display = "none";
+  } else {
+      femaleQuestion.style.display = "block";
+  }
+}
+
+let gender = document.querySelectorAll('input[name="gender"]');
+gender.forEach(i => {
+  i.addEventListener("click",checkRadio)
+});
+
 // Optional: Hide datalist on outside clicks (add event listener to document and check for clicks outside the search container)
+
+
+
+
+// BMR Calculator
+let weight = 50;
+let height = 171;
+let age = 20;
+let BMR = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+
+console.log(`Your BMR: ${BMR}`)
