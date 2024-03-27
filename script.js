@@ -1,7 +1,9 @@
 const userInput = document.querySelectorAll("#userInput");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
-const selectedItemsList = document.getElementById("selectedItems");
+let selectedItemsList = document.getElementById("selectedItems");
+
+console.log(addButton)
 
 const items = [
   "Apple",
@@ -316,23 +318,26 @@ const showSuggestions = (i) => {
     });
   }
 };
+/*
 
-const addItem = (selectedItem) => {
+const addItem = (selectedItem, i) => {
   const listItem = document.createElement("li");
   listItem.textContent = selectedItem;
-  selectedItemsList.appendChild(listItem);
+  console.log(selectedItem)
+  selectedItemsList[0].appendChild(listItem);
   userInput.value = "";
 };
+*/
 
 userInput.forEach((i) => {
   i.addEventListener("keyup", (i) => showSuggestions(i.target));
 });
 
 dataList.addEventListener("click", (event) => {
-  const clickedOption = event.target;
-  if (clickedOption.tagName == "option") {
-    addItem(clickedOption.value);
-  }
+  const clickedOption = event.target;/*
+  if (clickedOption.tagName === "OPTION") {
+    addItem(event.target.value,event.target)
+  }*/
 });
 
 function checkRadio() {
@@ -344,10 +349,28 @@ function checkRadio() {
   console.log(selectedRadio);
   if (selectedRadio == "male") {
     femaleQuestion.style.display = "none";
+
+
   } else {
     femaleQuestion.style.display = "block";
   }
 }
+
+
+function addSelected(e) {
+  e.preventDefault()
+  const selectedOption = userInput.value;
+  if (selectedOption) {
+      const newListItem = document.createElement("li");
+      newListItem.textContent = selectedOption;
+      selectedItemsList.appendChild(newListItem);
+      userInput[0].value = ""; // Clear input field after adding
+  }
+}
+
+addButton.addEventListener("click",(e)=>addSelected(e))
+
+
 
 let gender = document.querySelectorAll('input[name="gender"]');
 gender.forEach((i) => {
