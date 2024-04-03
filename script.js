@@ -2,13 +2,15 @@ const userInput = document.querySelectorAll("#userInput");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementById("selectedItems");
-const body = document.getElementById("body");
+const body = document.body;
 const submitButton = document.getElementById("submitButton");
-const weight = document.getElementById("current_weight");
+const weight = document.getElementById("current_weight").value;
+const height = document.getElementById("current_height").value;
+const age = 25;
 
+console.log(weight)
 console.log(userInput)
 
-let height = 0;
 const items = [
   "Apple",
   "Avocado Pear",
@@ -302,8 +304,10 @@ const items = [
 ];
 
 
-submitButton.addEventListener("click", ()=> {
-    var newText = document.createTextNode(height.value);
+submitButton.addEventListener("click", (e)=> {
+  e.preventDefault();
+  console.log(weight)
+    var newText = document.createTextNode(`Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`);
     body.appendChild(newText);
     
 })
@@ -389,10 +393,4 @@ gender.forEach((i) => {
 
 // Optional: Hide datalist on outside clicks (add event listener to document and check for clicks outside the search container)
 
-// BMR Calculator
-let weight = 50;
-let height = 171;
-let age = 20;
-let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
-
-console.log(`Your BMR: ${BMR}`);
+// let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
