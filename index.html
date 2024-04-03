@@ -33,7 +33,7 @@
       /><br /><br />
 
       <h2>Client Measurements</h2>
-      <label for="current_weight">Current Weight:</label><br />
+      <label for="current_weight">Current Weight (in kg):</label><br />
       <input
         type="number"
         id="current_weight"
@@ -41,7 +41,7 @@
         required
       /><br /><br />
 
-      <label for="current_height">Current Height:</label><br />
+      <label for="current_height">Current Height (in CM):</label><br />
       <input
         type="number"
         id="current_height"
@@ -429,10 +429,10 @@
         <option value="twice_weekly">Weekly Twice</option>
         <option value="sunday">Sundays Only</option></select
       ><br /><br />
-    <button type="submit" id="submitButton">Print pdf</button>
+    <button type="submit" id="submitButton">Get pdf</button>
     </form>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js" defer></script>
     <script src="script.js" defer></script>
     <script src="food.js" defer></script>
   </body>

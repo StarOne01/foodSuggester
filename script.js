@@ -17,7 +17,6 @@ submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   let weight = document.getElementById("current_weight").value;
   let height = document.getElementById("current_height").value;
-  height /= 100;
   const age = document.getElementById("current_age").value;
   /*
   let p = document.createElement("p");
@@ -27,7 +26,7 @@ submitButton.addEventListener("click", (e) => {
   body.appendChild(p);*/
     var docDefinition = {
         content: [
-            `Your BMI is ${weight / (height * height)}`, `Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`
+            `Your BMI is ${weight / (height/100 * height/100)}`, `Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`
         ],
         defaultStyle: {
         }
