@@ -1,12 +1,12 @@
-const userInput = document.querySelectorAll("#userInput");
+const userInput = document.querySelectorAll('input[type="search"]');
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementById("selectedItems");
 const body = document.body;
 const submitButton = document.getElementById("submitButton");
-const weight = document.getElementById("current_weight").value;
-const height = document.getElementById("current_height").value;
-const age = 25;
+let weight = document.getElementById("current_weight").value;
+let height = document.getElementById("current_height").value;
+const age = document.getElementById("current_age").value;
 
 console.log(weight)
 console.log(userInput)
@@ -306,9 +306,11 @@ const items = [
 
 submitButton.addEventListener("click", (e)=> {
   e.preventDefault();
-  console.log(weight)
-    var newText = document.createTextNode(`Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`);
-    body.appendChild(newText);
+  console.log(weight);
+  height /= 100;
+  let p= document.createElement("p");
+  p.innerHTML = `Your BMI is ${(weight /(height * height))}<br>Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`;
+  body.appendChild(p);
     
 })
 const filterOptions = (userInputValue) => {
@@ -320,6 +322,7 @@ const filterOptions = (userInputValue) => {
 
 const showSuggestions = (i) => {
   const userInputValue = i.value;
+  console.log(userInput)
   const filteredOptions = filterOptions(userInputValue);
   dataList.innerHTML = ""; // Clear existing options
 
@@ -373,7 +376,8 @@ function checkRadio() {
 
 function addSelected(e) {
   e.preventDefault()
-  const selectedOption = userInput.value;
+  const selectedOption = userInput[0].value;
+  console.log(selectedOption)
   if (selectedOption) {
       const newListItem = document.createElement("li");
       newListItem.textContent = selectedOption;
