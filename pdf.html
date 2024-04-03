@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function downloadPdf() {
+                var docDefinition = {
+                    content: [
+                        {text:"Hello world"}
+                    ],
+                    defaultStyle: {
+                    }
+                };
+                pdfMake.createPdf(docDefinition).print();
+            }
+        </script>
+        <button onclick="downloadPdf()">Print pdf</button>
+    </body>
+</html>

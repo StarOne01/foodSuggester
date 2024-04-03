@@ -2,10 +2,14 @@ const userInput = document.querySelectorAll("#userInput");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementById("selectedItems");
+const body = document.getElementById("body");
+const submitButton = document.getElementById("submitButton");
+const weight = document.getElementById("current_weight");
 
 console.log(userInput)
 
-
+let height = 0;
+let weight = ;
 const items = [
   "Apple",
   "Avocado Pear",
@@ -302,7 +306,11 @@ const items = [
 ];
 
 
-
+submitButton.addEventListener("click", ()=> {
+    var newText = document.createTextNode(height.value);
+    body.appendChild(newText);
+    
+})
 
 const filterOptions = (userInputValue) => {
   const filteredOptions = items.filter((item) =>
@@ -338,7 +346,7 @@ const addItem = (selectedItem) => {
 };
 
 userInput.forEach(i => {
-  i.addEventListener("keyup", showSuggestions)
+    i.addEventListener("keyup", showSuggestions)
 });
 
 dataList.addEventListener("click", (event) => {
@@ -377,3 +385,5 @@ let age = 20;
 let BMR = (10 * weight) + (6.25 * height) - (5 * age) + 5;
 
 console.log(`Your BMR: ${BMR}`)
+
+
