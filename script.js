@@ -30,7 +30,7 @@ showResultsBtn.addEventListener("click", (e) => {
 
     const BMI = weight / (height/100 * height/100);
     console.log(BMI)
-    BMIShow.textContent = `Your BMI: ${weight / (height * height)}`
+    BMIShow.textContent = `Your BMI: ${BMI}`;
   /*
   let p = document.createElement("p");
   p.innerHTML = `Your BMI is ${weight / (height * height)}<br>Your BMR is ${
@@ -39,6 +39,7 @@ showResultsBtn.addEventListener("click", (e) => {
   body.appendChild(p);*/
 
 
+  resultsDiv.style.display = "block";
   var opts = {
     angle: -0.2, // The span of the gauge arc
     lineWidth: 0.2, // The line thickness
@@ -78,7 +79,6 @@ showResultsBtn.addEventListener("click", (e) => {
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
   gauge.set(BMI);
   
-  resultsDiv.style.display = "block";
   getPDFBtn.style.display = "block";
 });
 
