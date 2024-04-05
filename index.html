@@ -439,7 +439,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="breakfast_food">Breakfast:</label><br />
+      <label for="breakfast_food">Meal 1:</label><br />
       <input
         type="search"
         list="itemList"
@@ -450,7 +450,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="morning_snacks_food">Morning Snacks:</label><br />
+      <label for="morning_snacks_food">Snack 1:</label><br />
       <input
         type="search"
         list="itemList"
@@ -461,7 +461,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="lunch_food">Lunch:</label><br />
+      <label for="lunch_food">Meal 2:</label><br />
       <input
         type="search"
         list="itemList"
@@ -472,7 +472,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="evening_snacks_food">Evening Snacks:</label><br />
+      <label for="evening_snacks_food">Snacks 2:</label><br />
       <input
         type="search"
         list="itemList"
@@ -483,7 +483,7 @@
 
       <ul class="selectedItems"></ul>
 
-      <label for="dinner_food">Dinner:</label><br />
+      <label for="dinner_food">Meal 3:</label><br />
       <input
         type="search"
         list="itemList"
@@ -525,9 +525,15 @@
         <option value="daily">Daily</option>
         <option value="twice_weekly">Weekly Twice</option>
         <option value="sunday">Sundays Only</option></select
-      ><br /><br />
-    <button type="submit" id="submitButton">Get pdf</button>
+      ><br /><br />      
+    <button type="submit" id="submitButton">Get result</button>
     </form>
+    <div id="results">
+    <h3 id="resultBMI"></h3>
+    <canvas id="foo"></canvas>
+  </div>
+  <button type="submit" id="getPDFBtn">Get PDF</button>
+    <script type="text/javascript" src="https://bernii.github.io/gauge.js/dist/gauge.min.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js" defer></script>
     <script src="script.js" defer></script>

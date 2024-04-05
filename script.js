@@ -11,9 +11,16 @@ const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
 const body = document.body;
-const submitButton = document.getElementById("submitButton");
+const showResultsBtn = document.getElementById("submitButton");
+const BMIShow = document.getElementById("resultBMI")
 
-submitButton.addEventListener("click", (e) => {
+const getPDFBtn = document.getElementById("getPDFBtn");
+
+
+const resultsDiv = document.getElementById("results")
+
+
+showResultsBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let weight = document.getElementById("current_weight").value;
   let height = document.getElementById("current_height").value;
@@ -21,12 +28,71 @@ submitButton.addEventListener("click", (e) => {
     const name = document.getElementById("client_name").value;
     const clientID = document.getElementById("membership_id").value;
 
+    const BMI = weight / (height/100 * height/100);
+    console.log(BMI)
+    BMIShow.textContent = `Your BMI: ${weight / (height * height)}`
   /*
   let p = document.createElement("p");
   p.innerHTML = `Your BMI is ${weight / (height * height)}<br>Your BMR is ${
     10 * weight + 6.25 * height - 5 * age + 5
   }`;
   body.appendChild(p);*/
+
+
+  var opts = {
+    angle: -0.2, // The span of the gauge arc
+    lineWidth: 0.2, // The line thickness
+    radiusScale: 1, // Relative radius
+    pointer: {
+      length: 0.6, // // Relative to gauge radius
+      strokeWidth: 0.035, // The thickness
+      color: '#000000' // Fill color
+    },
+    staticZones: [
+      {strokeStyle: "#F03E3E", min: 0, max: 16}, // Red from 100 to 130
+      {strokeStyle: "#FFDD00", min: 16, max: 17}, // Yellow
+      {strokeStyle: "#30B32D", min: 18.5, max: 25}, // Green
+      {strokeStyle: "#FFDD00", min: 25, max: 30}, // Yellow
+      {strokeStyle: "#F03E3E", min: 35, max: 45}  // Red
+   ],
+    limitMax: false,     // If false, max value increases automatically if value > maxValue
+    staticLabels: {
+      font: "10px sans-serif",  // Specifies font
+      labels: [16, 17, 18.5, 25, 30, 35,40],  // Print labels at these values
+      color: "#000000",  // Optional: Label text color
+      fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    },
+    limitMin: false,     // If true, the min value of the gauge will be fixed
+    colorStart: '#6FADCF',   // Colors
+    colorStop: '#8FC0DA',    // just experiment with them
+    strokeColor: '#E0E0E0',  // to see which ones work best for you
+    generateGradient: true,
+    highDpiSupport: true,     // High resolution support
+    
+  }
+  
+  var target = document.getElementById('foo'); // your canvas element
+  var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+  gauge.maxValue = 45; // set max gauge value
+  gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+  gauge.animationSpeed = 32; // set animation speed (32 is default value)
+  gauge.set(BMI);
+  
+  resultsDiv.style.display = "block";
+  getPDFBtn.style.display = "block";
+});
+
+
+
+getPDFBtn.addEventListener("click", ()=> {
+  e.preventDefault();
+  let weight = document.getElementById("current_weight").value;
+  let height = document.getElementById("current_height").value;
+    const age = document.getElementById("current_age").value;
+    const name = document.getElementById("client_name").value;
+    const clientID = document.getElementById("membership_id").value;
+
+    const BMI = weight / (height/100 * height/100);
     var docDefinition = {
 	pageSize: 'A4',
   header: [ {
@@ -41,7 +107,7 @@ submitButton.addEventListener("click", (e) => {
         content: [
  " ",
 	    `Client Name: ${name}`, `Client ID: ${clientID}`, `Client Height: ${height}`,`Client Weight: ${weight}`, `Current Age: ${age}`, `Gender: Male`, `Goal: Weight Loss`,
-            `Your BMI is ${weight / (height/100 * height/100)}`, `Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`
+            `Your BMI is ${weight / (height * height)}`, `Your BMR is ${10 * weight + 6.25 * height - 5 * age + 5}`
         ],
         defaultStyle: {
 	    lineHeight: 2,
@@ -133,6 +199,7 @@ gender.forEach((i) => {
   i.addEventListener("click", checkRadio);
 });
 
+ // set actual value
 // Optional: Hide datalist on outside clicks (add event listener to document and check for clicks outside the search container)
 
 // let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
