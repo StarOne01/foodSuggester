@@ -59,14 +59,22 @@
 
       <label for="cactivity">Activity</label><br />
       <select id="cactivity" name="cactivity">
-        <option value="1" >Basal Metabolic Rate (BMR)</option>
-        <option value="1.2" >Sedentary: little or no exercise</option>
-        <option value="1.375" >Light: exercise 1-3 times/week</option>
-        <option value="1.465" selected>Moderate: exercise 4-5 times/week</option>
-        <option value="1.55" >Active: daily exercise or intense exercise 3-4 times/week</option>
-        <option value="1.725" >Very Active: intense exercise 6-7 times/week</option>
-        <option value="1.9" >Extra Active: very intense exercise daily, or physical job</option>
-      </select><br /><br />
+        <option value="1">Basal Metabolic Rate (BMR)</option>
+        <option value="1.2">Sedentary: little or no exercise</option>
+        <option value="1.375">Light: exercise 1-3 times/week</option>
+        <option value="1.465" selected>
+          Moderate: exercise 4-5 times/week
+        </option>
+        <option value="1.55">
+          Active: daily exercise or intense exercise 3-4 times/week
+        </option>
+        <option value="1.725">
+          Very Active: intense exercise 6-7 times/week
+        </option>
+        <option value="1.9">
+          Extra Active: very intense exercise daily, or physical job
+        </option></select
+      ><br /><br />
 
       <h2>Gender</h2>
       <label for="male">Male</label>
@@ -79,7 +87,6 @@
         value="female"
         required
       /><br /><br />
-
 
       <h2>Goals</h2>
       <label for="goal">What are you looking for?</label><br />
@@ -112,20 +119,20 @@
       <label for="weight_gain_reason"
         >What do you think is reason for your weight gain?</label
       ><br />
-      <select id="weight_gain_reason" name="weight_gain_reason" required>
-        <option value="">Select...</option>
-        <option value="injury">Injury</option>
-        <option value="pregnancy">Pregnancy</option>
-        <option value="overeating">Overeating</option>
-        <option value="poor_eating_habits">Poor Eating Habits</option>
-        <option value="heredity">Heredity</option>
-        <option value="lack_of_exercise">Lack of Exercise</option>
-        <option value="marriage">Marriage</option>
-        <option value="smoking_cessation">Smoking Cessation</option>
-        <option value="stress">Stress</option>
-        <option value="divorce">Divorce</option>
-        <option value="other">Other</option></select
-      ><br /><br />
+      <label for="weight_gain_reason" name="weight_gain_reason" ></label>
+        <input type="checkbox" value="">Select...</input>
+        <input type="checkbox" value="injury">Injury</input>
+        <input type="checkbox" value="pregnancy">Pregnancy</input>
+        <input type="checkbox" value="overeating">Overeating</input>
+        <input type="checkbox"value="poor_eating_habits">Poor Eating Habits</input>
+        <input type="checkbox" value="heredity">Heredity</input>
+        <input type="checkbox" value="lack_of_exercise">Lack of Exercise</input>
+        <input type="checkbox" value="marriage">Marriage</input>
+        <input type="checkbox" value="smoking_cessation">Smoking Cessation</input>
+        <input type="checkbox" value="stress">Stress</input>
+        <input type="checkbox" value="divorck seeds soaked ovee">Divorce</input>
+        <input type="checkbox" value="other">Other</input>
+      <br /><br />
 
       <h2>Diet</h2>
       <label for="meals_per_day">How many meals per day do you eat?</label
@@ -285,91 +292,89 @@
       />
       <label for="parentsD">Parents</label>
       <input
+        type="checkbox"
+        name="Grandparents"
+        id="GrandparentsD"
+        value="Grandparents"
+        required
+      />
+      <label for="GrandparentsD">Grand Parents</label>
+      <input
+        type="checkbox"
+        id="BrothersD"
+        name="brothersD"
+        value="parents"
+        required
+      />
+      <label for="BrothersD">Brothers</label>
+      <input type="checkbox" id="SisterD" name="SisterD" value="no" required />
+      <label for="SisterD">Sisters</label>
+      <input type="checkbox" id="otherD" name="otherD" value="no" required />
+      <label for="otherD">Other</label><br /><br />
+      <label for="cardiovascular">Cardiovascular:</label><br />
+      <input
+        type="checkbox"
+        name="parents"
+        id="parentsC"
+        value="parents"
+        required
+      />
+      <label for="parentsC">Parents</label>
+      <input
+        type="checkbox"
+        name="GrandparentsC"
+        id="GrandparentsC"
+        value="Grandparents"
+        required
+      />
+      <label for="GrandparentsC">Grand Parents</label>
+      <input
+        type="checkbox"
+        id="BrothersC"
+        name="brothersC"
+        value="parents"
+        required
+      />
+      <label for="BrothersC">Brothers</label>
+
+      <input type="checkbox" id="SisterC" name="SisterC" value="Sister" required />
+
+      <label for="SisterC">Sisters</label>
+      <input type="checkbox" id="otherC" name="otherC" value="otherC" required />
+
+      <label for="otherC">Other</label><br /><br />
+      <label for="respiratory">Respiratory:</label><br />
+      <input
       type="checkbox"
-      name="Grandparents"
-      id="Grandparents"
+      name="parents"
+      id="parentsR"
+      value="parents"
+      required
+    />
+    <label for="parentsR">Parents</label>
+    <input
+      type="checkbox"
+      name="GrandparentsR"
+      id="GrandparentsR"
       value="Grandparents"
       required
     />
-    <label for="GparentsD">Grand Parents</label>
+    <label for="GrandparentsR">Grand Parents</label>
     <input
-    type="checkbox"
-    id="BrothersD"
-    name="brothersD"
-    value="parents"
-    required
-  />
-  <label for="BrothersD">Brothers</label>
+      type="checkbox"
+      id="BrothersR"
+      name="brothersR"
+      value="parents"
+      required
+    />
+    <label for="BrothersR">Brothers</label>
 
-  <label for="SisterD">Sisters</label>
-      <input
-        type="checkbox"
-        id="SisterD"
-        name="diabetes"
-        value="no"
-        required
-      />
-      <label for="otherD">Other</label><br /><br />
-      <input
-        type="checkbox"
-        id="otherD"
-        name="diabetes"
-        value="no"
-        required
-      />
-      <label for="cardiovascular">Cardiovascular:</label><br />
-      <input
-        type="radio"
-        id="cardiovascular_yes"
-        name="cardiovascular"
-        value="yes"
-        required
-      />
-      <label for="cardiovascular_yes">Yes</label>
-      <input
-        type="radio"
-        id="cardiovascular_no"
-        name="cardiovascular"
-        value="no"
-        required
-      />
-      <label for="cardiovascular_no">No</label><br /><br />
+    <input type="checkbox" id="SisterR" name="SisterR" value="Sister" required />
 
-      <label for="thyroid_problems">Thyroid Problems:</label><br />
-      <input
-        type="radio"
-        id="thyroid_problems_yes"
-        name="thyroid_problems"
-        value="yes"
-        required
-      />
-      <label for="thyroid_problems_yes">Yes</label>
-      <input
-        type="radio"
-        id="thyroid_problems_no"
-        name="thyroid_problems"
-        value="no"
-        required
-      />
-      <label for="thyroid_problems_no">No</label><br /><br />
+    <label for="SisterC">Sisters</label>
+    <input type="checkbox" id="otherR" name="otherR" value="otherC" required />
 
-      <label for="respiratory">Respiratory:</label><br />
-      <input
-        type="radio"
-        id="respiratory_yes"
-        name="respiratory"
-        value="yes"
-        required
-      />
-      <label for="respiratory_yes">Yes</label>
-      <input
-        type="radio"
-        id="respiratory_no"
-        name="respiratory"
-        value="no"
-        required
-      />
-      <label for="respiratory_no">No</label><br /><br />
+    <label for="otherC">Other</label><br /><br />
 
       <fieldset id="female_questions">
         <h2>Female Specific Questions</h2>
@@ -427,7 +432,14 @@
         Please list the typical foods you consume throughout the day. You can
         mention portion sizes or quantities if known.
       </p>
-      <label for="wake_up_food">Wake-up:</label><br />
+      <input type="checkbox" value="">Sunday</input>
+      <input type="checkbox" value="injury">Monday</input>
+      <input type="checkbox" value="pregnancy">Tuesday</input>
+      <input type="checkbox" value="overeating">Wednesday</input>
+      <input type="checkbox"value="poor_eating_habits">Thursday</input>
+      <input type="checkbox" value="heredity">Friday</input>
+      <input type="checkbox" value="lack_of_exercise">Saturday</input><br><br /><br />
+      <label for="wake_up_food">Wake-up:</label><br>
       <input
         type="search"
         list="itemList"
@@ -500,9 +512,87 @@
         id="beforeSleep"
         placeholder="Search items..."
       />
+      
       <button id="beforeSleepI">Add Selected Item</button>
       <br />
       <ul class="selectedItems"></ul>
+      <p id="calrie"></p>
+
+
+  <table>
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+    <tr>
+      <td><ul>
+        <li>Wake-up</li>
+        <li>Breakfast</li>
+        <li>Morning Snacks</li>
+        <li>Lunch</li>
+        <li>Evening Snacks</li>
+        <li>Dinner</li>
+        <li>Before Sleep</li>
+      </ul></td>
+      <td>WakeUp</td>
+      <td>WakeUp</td>
+      <td>WakeUp</td>
+      <td>WakeUp</td>
+      <td>WakeUp</td>
+      <td>WakeUp</td>
+    </tr>
+    <tr>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+      <td>Breakfast</td>
+    </tr>
+    <tr>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+      <td>Lunch</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Snack</td>
+      <td>Snack</td>
+      <td>Snack</td>
+      <td>Snack</td>
+      <td>Snack</td>
+      <td>Snack</td>
+    </tr>
+    <tr>
+      <td>sleep</td>
+      <td>sleep</td>
+      <td>sleep</td>
+      <td>sleep</td>
+      <td>sleep</td>
+      <td>sleep</td>
+      <td>sleep</td>
+    </tr>
+    <tr>
+    </table>
       <h2>Macronutrients</h2>
       <label for="non_veg">Non-Veg Intake:</label><br />
       <select id="non_veg" name="non_veg" required>
@@ -525,17 +615,29 @@
         <option value="daily">Daily</option>
         <option value="twice_weekly">Weekly Twice</option>
         <option value="sunday">Sundays Only</option></select
-      ><br /><br />      
-    <button type="submit" id="submitButton">Get result</button>
+      ><br /><br />
+      <button type="submit" id="submitButton">Get result</button>
     </form>
     <div id="results">
-    <h3 id="resultBMI"></h3>
-    <canvas id="foo"></canvas>
-  </div>
-  <button type="submit" id="getPDFBtn">Get PDF</button>
-    <script type="text/javascript" src="https://bernii.github.io/gauge.js/dist/gauge.min.js" defer></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js" defer></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js" defer></script>
+      <h3 id="resultBMI"></h3>
+      <canvas id="foo"></canvas>
+    </div>
+    <button type="submit" id="getPDFBtn">Get PDF</button>
+    <script
+      type="text/javascript"
+      src="https://bernii.github.io/gauge.js/dist/gauge.min.js"
+      defer
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"
+      defer
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"
+      defer
+    ></script>
     <script src="script.js" defer></script>
     <script src="food.js" defer></script>
   </body>
