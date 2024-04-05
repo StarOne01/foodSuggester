@@ -274,6 +274,103 @@
       />
       <label for="respiratory_no">No</label><br /><br />
 
+      <h2>Family Health History</h2>
+      <label for="diabetes_fam">Diabetes:</label><br />
+      <input
+        type="checkbox"
+        name="parents"
+        id="parentsD"
+        value="parents"
+        required
+      />
+      <label for="parentsD">Parents</label>
+      <input
+      type="checkbox"
+      name="Grandparents"
+      id="Grandparents"
+      value="Grandparents"
+      required
+    />
+    <label for="GparentsD">Grand Parents</label>
+    <input
+    type="checkbox"
+    id="BrothersD"
+    name="brothersD"
+    value="parents"
+    required
+  />
+  <label for="BrothersD">Brothers</label>
+
+  <label for="SisterD">Sisters</label>
+      <input
+        type="checkbox"
+        id="SisterD"
+        name="diabetes"
+        value="no"
+        required
+      />
+      <label for="otherD">Other</label><br /><br />
+      <input
+        type="checkbox"
+        id="otherD"
+        name="diabetes"
+        value="no"
+        required
+      />
+      <label for="cardiovascular">Cardiovascular:</label><br />
+      <input
+        type="radio"
+        id="cardiovascular_yes"
+        name="cardiovascular"
+        value="yes"
+        required
+      />
+      <label for="cardiovascular_yes">Yes</label>
+      <input
+        type="radio"
+        id="cardiovascular_no"
+        name="cardiovascular"
+        value="no"
+        required
+      />
+      <label for="cardiovascular_no">No</label><br /><br />
+
+      <label for="thyroid_problems">Thyroid Problems:</label><br />
+      <input
+        type="radio"
+        id="thyroid_problems_yes"
+        name="thyroid_problems"
+        value="yes"
+        required
+      />
+      <label for="thyroid_problems_yes">Yes</label>
+      <input
+        type="radio"
+        id="thyroid_problems_no"
+        name="thyroid_problems"
+        value="no"
+        required
+      />
+      <label for="thyroid_problems_no">No</label><br /><br />
+
+      <label for="respiratory">Respiratory:</label><br />
+      <input
+        type="radio"
+        id="respiratory_yes"
+        name="respiratory"
+        value="yes"
+        required
+      />
+      <label for="respiratory_yes">Yes</label>
+      <input
+        type="radio"
+        id="respiratory_no"
+        name="respiratory"
+        value="no"
+        required
+      />
+      <label for="respiratory_no">No</label><br /><br />
+
       <fieldset id="female_questions">
         <h2>Female Specific Questions</h2>
         <label for="problems_conceiving">Problems Conceiving:</label><br />
@@ -342,7 +439,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="breakfast_food">Breakfast:</label><br />
+      <label for="breakfast_food">Meal 1:</label><br />
       <input
         type="search"
         list="itemList"
@@ -353,7 +450,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="morning_snacks_food">Morning Snacks:</label><br />
+      <label for="morning_snacks_food">Snack 1:</label><br />
       <input
         type="search"
         list="itemList"
@@ -364,7 +461,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="lunch_food">Lunch:</label><br />
+      <label for="lunch_food">Meal 2:</label><br />
       <input
         type="search"
         list="itemList"
@@ -375,7 +472,7 @@
       <br />
       <ul class="selectedItems"></ul>
 
-      <label for="evening_snacks_food">Evening Snacks:</label><br />
+      <label for="evening_snacks_food">Snacks 2:</label><br />
       <input
         type="search"
         list="itemList"
@@ -386,7 +483,7 @@
 
       <ul class="selectedItems"></ul>
 
-      <label for="dinner_food">Dinner:</label><br />
+      <label for="dinner_food">Meal 3:</label><br />
       <input
         type="search"
         list="itemList"
@@ -428,9 +525,15 @@
         <option value="daily">Daily</option>
         <option value="twice_weekly">Weekly Twice</option>
         <option value="sunday">Sundays Only</option></select
-      ><br /><br />
-    <button type="submit" id="submitButton">Get pdf</button>
+      ><br /><br />      
+    <button type="submit" id="submitButton">Get result</button>
     </form>
+    <div id="results">
+    <h3 id="resultBMI"></h3>
+    <canvas id="foo"></canvas>
+  </div>
+  <button type="submit" id="getPDFBtn">Get PDF</button>
+    <script type="text/javascript" src="https://bernii.github.io/gauge.js/dist/gauge.min.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js" defer></script>
     <script src="script.js" defer></script>

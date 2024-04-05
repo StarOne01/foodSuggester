@@ -2,6 +2,14 @@
     display: none;
 }
 
+#results {
+    display: none;
+}
+
+#getPDFBtn {
+    display: none;
+}
+
 li {
     list-style: none;
 }
