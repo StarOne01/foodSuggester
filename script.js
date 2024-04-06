@@ -6,11 +6,82 @@ const eveningSnack = document.getElementById("eveningSnackI");
 const dinner = document.getElementById("dinnerI");
 const beforeSleep = document.getElementById("beforeSleepI");
 
+const days = document.querySelectorAll("input[name='day']");
+
 const userInput = document.querySelectorAll("input[type='search']");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
+
 const body = document.body;
+
+const trItems = document.querySelectorAll("table tr");
+
+const tdtrObj = {
+  "wakeTr":document.querySelectorAll("#wakeTr td"),
+  "breakTr": document.querySelectorAll("#breakTr td"),
+  "snackOne": document.querySelectorAll("#snackOne td"),
+  "lunchTr": document.querySelectorAll("#lunchTr td"),
+  "snackTwo": document.querySelectorAll("#snackTwo td"),
+  "dinnerT": document.querySelectorAll("#dinnerT td"),
+  "sleepTr": document.querySelectorAll("#sleepTr td")
+};
+
+const selectAll = document.getElementById("Allday");
+
+const daysNum = {
+  "Sunday": 0,
+  "Monday": 1,
+  "Tuesday": 2,
+  "Wednesday": 3,
+  "Thursday": 4,
+  "Friday": 5,
+  "Saturday":6
+};
+
+
+let daysForThis = [];
+
+let allChecked = 0;
+
+const CheckAll = (i) => {
+  if(!allChecked && i) {
+    days.forEach((j) => {
+    j.checked = true;
+    daysForThis.push(j.value);
+    allChecked = 1;
+    selectAll.checked = true;
+  });
+  }
+  
+  else {
+   daysForThis = []
+   days.forEach((j) => {
+    j.checked = false;
+   })
+    allChecked = 0;
+    selectAll.checked = false;
+  }
+}
+
+selectAll.addEventListener("click", ()=> {
+  CheckAll(1);
+});
+
+days.forEach((i)=> {
+  i.addEventListener("click", (e)=> {
+      if(!e.target.checked) {
+        let index = daysForThis.indexOf(e.target.value);
+        if(index > -1) {
+          daysForThis.splice(index, 1);
+        }
+	  }
+      else {
+      daysForThis.push(e.target.value);
+      }
+}
+  )});
+
 const showResultsBtn = document.getElementById("submitButton");
 const BMIShow = document.getElementById("resultBMI")
 
@@ -292,15 +363,29 @@ function checkRadio() {
   }
 }
 
+
 function addSelected(e, i) {
   e.preventDefault();
+  if(daysForThis.length === 0){
+    alert("Select a day")
+      return;
+    }
   const selectedOption = userInput[i].value;
-  console.log(selectedOption);
   if (selectedOption) {
     const newListItem = document.createElement("li");
     newListItem.textContent = selectedOption;
     selectedItemsList[i].appendChild(newListItem);
     userInput[i].value = ""; // Clear input field after adding
+    
+    daysForThis.forEach((j) => {
+     
+    let newp = document.createElement("p");
+    newp.textContent = selectedOption;
+   /* console.log((tdtrObj[(trItems[i+1].id)])[daysNum[j]]);*/
+    (tdtrObj[trItems[i+1].id])[daysNum[j]].appendChild(newp);
+    }
+    );
+    CheckAll(0);
   }
 }
 

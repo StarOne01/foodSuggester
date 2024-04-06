@@ -427,19 +427,32 @@
         <input type="radio" id="urine_loss_no" name="urine_loss" value="no" />
         <label for="urine_loss_no">No</label><br /><br />
       </fieldset>
-      <h2>Diet (Food Intake)</h2>
+     <h2>Diet (Food Intake)</h2>
       <p>
         Please list the typical foods you consume throughout the day. You can
         mention portion sizes or quantities if known.
       </p>
-      <input type="checkbox" value="">Sunday</input>
-      <input type="checkbox" value="injury">Monday</input>
-      <input type="checkbox" value="pregnancy">Tuesday</input>
-      <input type="checkbox" value="overeating">Wednesday</input>
-      <input type="checkbox"value="poor_eating_habits">Thursday</input>
-      <input type="checkbox" value="heredity">Friday</input>
-      <input type="checkbox" value="lack_of_exercise">Saturday</input><br><br /><br />
-      <label for="wake_up_food">Wake-up:</label><br>
+      <input type="checkbox" name="day" id="Sunday" value="Sunday"/>
+      <label for="Sunday">Sunday</label>
+      <input type="checkbox" name="day" value="Monday"/>
+       <label for="Monday">Monday
+       </label>
+      <input type="checkbox" name="day" value="Tuesday"/>
+      <label for="Tuesday">Tuesday</label>
+      <input type="checkbox" name="day" value="Wednesday"/>
+      <label for="Wednesday">Wednesday</label>
+      <input type="checkbox" name="day" value="Thursday"/>
+      <label for="Thursday">Thursday</label>
+      <input type="checkbox" name="day" value="Friday"/>
+      <label for="Friday">Friday</label>
+      <input type="checkbox" name="day" value="Saturday">
+       <label for="Saturday">Saturday</label>
+       
+       <input type="checkbox" id="Allday" value="selectAll">
+       <label for="Allday">Select All</label>
+       
+       <br><br /><br />
+<label for="wake_up_food">Wake-up:</label><br>
       <input
         type="search"
         list="itemList"
@@ -512,7 +525,7 @@
         id="beforeSleep"
         placeholder="Search items..."
       />
-      
+
       <button id="beforeSleepI">Add Selected Item</button>
       <br />
       <ul class="selectedItems"></ul>
@@ -520,7 +533,7 @@
 
 
   <table>
-    <tr>
+    <tr id="HeadingTh">
       <th>Sunday</th>
       <th>Monday</th>
       <th>Tuesday</th>
@@ -529,42 +542,7 @@
       <th>Friday</th>
       <th>Saturday</th>
     </tr>
-    <tr>
-      <td><ul>
-        <li>Wake-up</li>
-        <li>Breakfast</li>
-        <li>Morning Snacks</li>
-        <li>Lunch</li>
-        <li>Evening Snacks</li>
-        <li>Dinner</li>
-        <li>Before Sleep</li>
-      </ul></td>
-      <td>WakeUp</td>
-      <td>WakeUp</td>
-      <td>WakeUp</td>
-      <td>WakeUp</td>
-      <td>WakeUp</td>
-      <td>WakeUp</td>
-    </tr>
-    <tr>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-      <td>Breakfast</td>
-    </tr>
-    <tr>
-      <td>Lunch</td>
-      <td>Lunch</td>
-      <td>Lunch</td>
-      <td>Lunch</td>
-      <td>Lunch</td>
-      <td>Lunch</td>
-      <td>Lunch</td>
-    </tr>
-    <tr>
+    <tr id="wakeTr">
       <td></td>
       <td></td>
       <td></td>
@@ -573,23 +551,59 @@
       <td></td>
       <td></td>
     </tr>
-    <tr>
+    <tr id="breakTr">
       <td></td>
-      <td>Snack</td>
-      <td>Snack</td>
-      <td>Snack</td>
-      <td>Snack</td>
-      <td>Snack</td>
-      <td>Snack</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
-    <tr>
-      <td>sleep</td>
-      <td>sleep</td>
-      <td>sleep</td>
-      <td>sleep</td>
-      <td>sleep</td>
-      <td>sleep</td>
-      <td>sleep</td>
+        <tr id="snackOne">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr id="lunchTr">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr id="snackTwo">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr id="dinnerT">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr id="sleepTr">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
     </table>
