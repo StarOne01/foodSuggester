@@ -24,3 +24,11 @@ table {
 li {
     list-style: none;
 }
+
+table {
+  font-size: small;
+}
+
+table p::before {
+  content: "• ";
+}

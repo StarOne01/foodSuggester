@@ -1,658 +1,680 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Client Information Form</title>
-    <link href="style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Client Information Form</h1>
-    <form>
-      <label for="client_name">Client Name:</label><br />
-      <input
-        type="text"
-        id="client_name"
-        name="client_name"
-        required
-      /><br /><br />
-      <label for="phone_number">Client Phone Number:</label><br />
-      <input
-        type="tel"
-        id="phone_number"
-        name="phone_number"
-        required
-      /><br /><br />
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Client Information Form</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Client Information Form</h1>
+<form>
+<label for="client_name">Client Name:</label><br />
+<input
+type="text"
+id="client_name"
+name="client_name"
+required
+/><br /><br />
+<label for="phone_number">Client Phone Number:</label><br />
+<input
+type="tel"
+id="phone_number"
+name="phone_number"
+required
+/><br /><br />
 
-      <label for="membership_id">Client Membership ID:</label><br />
-      <input
-        type="text"
-        id="membership_id"
-        name="membership_id"
-        required
-      /><br /><br />
+<label for="membership_id">Client Membership ID:</label><br />
+<input
+type="text"
+id="membership_id"
+name="membership_id"
+required
+/><br /><br />
 
-      <h2>Client Measurements</h2>
-      <label for="current_weight">Current Weight (in kg):</label><br />
-      <input
-        type="number"
-        id="current_weight"
-        name="current_weight"
-        required
-      /><br /><br />
+<h2>Client Measurements</h2>
+<label for="current_weight">Current Weight (in kg):</label><br />
+<input
+type="number"
+id="current_weight"
+name="current_weight"
+required
+/><br /><br />
 
-      <label for="current_height">Current Height (in CM):</label><br />
-      <input
-        type="number"
-        id="current_height"
-        name="current_height"
-        required
-      /><br /><br />
+<label for="current_height">Current Height (in CM):</label><br />
+<input
+type="number"
+id="current_height"
+name="current_height"
+required
+/><br /><br />
 
-      <label for="current_age">Current Age:</label><br />
-      <input
-        type="number"
-        id="current_age"
-        name="current_age"
-        required
-      /><br /><br />
+<label for="current_age">Current Age:</label><br />
+<input
+type="number"
+id="current_age"
+name="current_age"
+required
+/><br /><br />
 
-      <label for="cactivity">Activity</label><br />
-      <select id="cactivity" name="cactivity">
-        <option value="1">Basal Metabolic Rate (BMR)</option>
-        <option value="1.2">Sedentary: little or no exercise</option>
-        <option value="1.375">Light: exercise 1-3 times/week</option>
-        <option value="1.465" selected>
-          Moderate: exercise 4-5 times/week
-        </option>
-        <option value="1.55">
-          Active: daily exercise or intense exercise 3-4 times/week
-        </option>
-        <option value="1.725">
-          Very Active: intense exercise 6-7 times/week
-        </option>
-        <option value="1.9">
-          Extra Active: very intense exercise daily, or physical job
-        </option></select
-      ><br /><br />
+<label for="cactivity">Activity</label><br />
+<select id="cactivity" name="cactivity">
+<option value="1">Basal Metabolic Rate (BMR)</option>
+<option value="1.2">Sedentary: little or no exercise</option>
+<option value="1.375">Light: exercise 1-3 times/week</option>
+<option value="1.465" selected>
+Moderate: exercise 4-5 times/week
+</option>
+<option value="1.55">
+Active: daily exercise or intense exercise 3-4 times/week
+</option>
+<option value="1.725">
+Very Active: intense exercise 6-7 times/week
+</option>
+<option value="1.9">
+Extra Active: very intense exercise daily, or physical job
+</option></select
+><br /><br />
 
-      <h2>Gender</h2>
-      <label for="male">Male</label>
-      <input type="radio" id="male" name="gender" value="male" required />
-      <label for="female">Female</label>
-      <input
-        type="radio"
-        id="female"
-        name="gender"
-        value="female"
-        required
-      /><br /><br />
+<h2>Gender</h2>
+<label for="male">Male</label>
+<input type="radio" id="male" name="gender" value="male" required />
+<label for="female">Female</label>
+<input
+type="radio"
+id="female"
+name="gender"
+value="female"
+required
+/><br /><br />
 
-      <h2>Goals</h2>
-      <label for="goal">What are you looking for?</label><br />
-      <select id="goal" name="goal" required>
-        <option value="">Select...</option>
-        <option value="weight_loss">Weight Loss</option>
-        <option value="weight_gain">Weight Gain</option>
-        <option value="fat_loss">Fat Loss</option>
-        <option value="clean_bulking">Clean Bulking</option>
-        <option value="bikini">Bikini</option>
-        <option value="maintain">Maintain</option></select
-      ><br /><br />
+<h2>Goals</h2>
+<label for="goal">What are you looking for?</label><br />
+<select id="goal" name="goal" required>
+<option value="">Select...</option>
+<option value="weight_loss">Weight Loss</option>
+<option value="weight_gain">Weight Gain</option>
+<option value="fat_loss">Fat Loss</option>
+<option value="clean_bulking">Clean Bulking</option>
+<option value="bikini">Bikini</option>
+<option value="maintain">Maintain</option></select
+><br /><br />
 
-      <h2>Weight History</h2>
-      <label for="weight_problem_start"
-        >When did your weight problem begin?</label
-      ><br />
-      <select id="weight_problem_start" name="weight_problem_start" required>
-        <option value="">Select...</option>
-        <option value="childhood">Childhood</option>
-        <option value="adolescent">Adolescent</option>
-        <option value="teenager">Teenager</option>
-        <option value="10_years_ago">10 Years Ago</option>
-        <option value="20_years_ago">20 Years Ago</option>
-        <option value="30_years_ago">30 Years Ago</option>
-        <option value="throughout_life">Throughout Life</option>
-        <option value="other">Other</option></select
-      ><br /><br />
+<h2>Weight History</h2>
+<label for="weight_problem_start"
+>When did your weight problem begin?</label
+><br />
+<select id="weight_problem_start" name="weight_problem_start" required>
+<option value="">Select...</option>
+<option value="childhood">Childhood</option>
+<option value="adolescent">Adolescent</option>
+<option value="teenager">Teenager</option>
+<option value="10_years_ago">10 Years Ago</option>
+<option value="20_years_ago">20 Years Ago</option>
+<option value="30_years_ago">30 Years Ago</option>
+<option value="throughout_life">Throughout Life</option>
+<option value="other">Other</option></select
+><br /><br />
 
-      <label for="weight_gain_reason"
-        >What do you think is reason for your weight gain?</label
-      ><br />
-      <label for="weight_gain_reason" name="weight_gain_reason" ></label>
-        <input type="checkbox" value="">Select...</input>
-        <input type="checkbox" value="injury">Injury</input>
-        <input type="checkbox" value="pregnancy">Pregnancy</input>
-        <input type="checkbox" value="overeating">Overeating</input>
-        <input type="checkbox"value="poor_eating_habits">Poor Eating Habits</input>
-        <input type="checkbox" value="heredity">Heredity</input>
-        <input type="checkbox" value="lack_of_exercise">Lack of Exercise</input>
-        <input type="checkbox" value="marriage">Marriage</input>
-        <input type="checkbox" value="smoking_cessation">Smoking Cessation</input>
-        <input type="checkbox" value="stress">Stress</input>
-        <input type="checkbox" value="divorck seeds soaked ovee">Divorce</input>
-        <input type="checkbox" value="other">Other</input>
-      <br /><br />
+<label for="weight_gain_reason"
+>What do you think is reason for your weight gain?</label
+><br />
+<label for="weight_gain_reason" name="weight_gain_reason"></label>
+<label for="injury" name="weight_gain_reason"></label>
+<input type="checkbox" value="injury">Injury</input>
+<input type="checkbox" value="pregnancy">Pregnancy</input>
+<input type="checkbox" value="overeating">Overeating</input>
+<input type="checkbox"value="poor_eating_habits">Poor Eating Habits</input>
+<input type="checkbox" value="heredity">Heredity</input>
+<input type="checkbox" value="lack_of_exercise">Lack of Exercise</input>
+<input type="checkbox" value="marriage">Marriage</input>
+<input type="checkbox" value="smoking_cessation">Smoking Cessation</input>
+<input type="checkbox" value="stress">Stress</input>
+<input type="checkbox" value="divorck seeds soaked ovee">Divorce</input>
+<input type="checkbox" value="other">Other</input>
+<br /><br />
 
-      <h2>Diet</h2>
-      <label for="meals_per_day">How many meals per day do you eat?</label
-      ><br />
-      <select id="meals_per_day" name="meals_per_day" required>
-        <option value="">Select...</option>
-        <option value="one_meal">One Meal</option>
-        <option value="two_meals">Two Meals</option>
-        <option value="three_meals">Three Meals</option>
-        <option value="one_to_two_meals">One to Two Meals</option>
-        <option value="two_to_three_meals">Two to Three Meals</option>
-        <option value="three_or_more_meals">Three or More Meals</option></select
-      ><br /><br />
+<h2>Diet</h2>
+<label for="meals_per_day">How many meals per day do you eat?</label
+><br />
+<select id="meals_per_day" name="meals_per_day" required>
+<option value="">Select...</option>
+<option value="one_meal">One Meal</option>
+<option value="two_meals">Two Meals</option>
+<option value="three_meals">Three Meals</option>
+<option value="one_to_two_meals">One to Two Meals</option>
+<option value="two_to_three_meals">Two to Three Meals</option>
+<option value="three_or_more_meals">Three or More Meals</option></select
+><br /><br />
 
-      <label for="skipped_meal"
-        >If you skip meals what meal(s) do you usually skip?</label
-      ><br />
-      <select id="skipped_meal" name="skipped_meal" required>
-        <option value="">Select...</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option></select
-      ><br /><br />
+<label for="skipped_meal"
+>If you skip meals what meal(s) do you usually skip?</label
+><br />
+<select id="skipped_meal" name="skipped_meal" required>
+<option value="">Select...</option>
+<option value="breakfast">Breakfast</option>
+<option value="lunch">Lunch</option>
+<option value="dinner">Dinner</option></select
+><br /><br />
 
-      <label for="skipped_meal_days"
-        >How many days a week do you skip this meal?</label
-      ><br />
-      <select id="skipped_meal_days" name="skipped_meal_days" required>
-        <option value="">Select...</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option></select
-      ><br /><br />
+<label for="skipped_meal_days"
+>How many days a week do you skip this meal?</label
+><br />
+<select id="skipped_meal_days" name="skipped_meal_days" required>
+<option value="">Select...</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option></select
+><br /><br />
 
-      <label for="snacking_frequency">How often do you snack?</label><br />
-      <select id="snacking_frequency" name="snacking_frequency" required>
-        <option value="">Select...</option>
-        <option value="am_snack">A.M. Snack</option>
-        <option value="pm_snack">P.M. Snack</option>
-        <option value="evening_snack">Evening Snack</option>
-        <option value="between_meals">Snack Between All Meals</option>
-        <option value="grazing">
-          Grazing on Food Throughout the Day
-        </option></select
-      ><br /><br />
+<label for="snacking_frequency">How often do you snack?</label><br />
+<select id="snacking_frequency" name="snacking_frequency" required>
+<option value="">Select...</option>
+<option value="am_snack">A.M. Snack</option>
+<option value="pm_snack">P.M. Snack</option>
+<option value="evening_snack">Evening Snack</option>
+<option value="between_meals">Snack Between All Meals</option>
+<option value="grazing">
+Grazing on Food Throughout the Day
+</option></select
+><br /><br />
 
-      <label for="alcohol">Do you drink alcohol?</label><br />
-      <input
-        type="radio"
-        id="alcohol_yes"
-        name="alcohol"
-        value="yes"
-        required
-      />
-      <label for="alcohol_yes">Yes</label>
-      <input type="radio" id="alcohol_no" name="alcohol" value="no" required />
-      <label for="alcohol_no">No</label><br /><br />
+<label for="alcohol">Do you drink alcohol?</label><br />
+<input
+type="radio"
+id="alcohol_yes"
+name="alcohol"
+value="yes"
+required
+/>
+<label for="alcohol_yes">Yes</label>
+<input type="radio" id="alcohol_no" name="alcohol" value="no" required />
+<label for="alcohol_no">No</label><br /><br />
 
-      <label for="smoking">Do you smoke?</label><br />
-      <input
-        type="radio"
-        id="smoking_yes"
-        name="smoking"
-        value="yes"
-        required
-      />
-      <label for="smoking_yes">Yes</label>
-      <input type="radio" id="smoking_no" name="smoking" value="no" required />
-      <label for="smoking_no">No</label><br />
+<label for="smoking">Do you smoke?</label><br />
+<input
+type="radio"
+id="smoking_yes"
+name="smoking"
+value="yes"
+required
+/>
+<label for="smoking_yes">Yes</label>
+<input type="radio" id="smoking_no" name="smoking" value="no" required />
+<label for="smoking_no">No</label><br />
 
-      <h2>Health Conditions</h2>
-      <label for="diabetes">Diabetes:</label><br />
-      <input
-        type="radio"
-        id="diabetes_yes"
-        name="diabetes"
-        value="yes"
-        required
-      />
-      <label for="diabetes_yes">Yes</label>
-      <input
-        type="radio"
-        id="diabetes_no"
-        name="diabetes"
-        value="no"
-        required
-      />
-      <label for="diabetes_no">No</label><br /><br />
+<h2>Health Conditions</h2>
+<label for="diabetes">Diabetes:</label><br />
+<input
+type="radio"
+id="diabetes_yes"
+name="diabetes"
+value="yes"
+required
+/>
+<label for="diabetes_yes">Yes</label>
+<input
+type="radio"
+id="diabetes_no"
+name="diabetes"
+value="no"
+required
+/>
+<label for="diabetes_no">No</label><br /><br />
 
-      <label for="cardiovascular">Cardiovascular:</label><br />
-      <input
-        type="radio"
-        id="cardiovascular_yes"
-        name="cardiovascular"
-        value="yes"
-        required
-      />
-      <label for="cardiovascular_yes">Yes</label>
-      <input
-        type="radio"
-        id="cardiovascular_no"
-        name="cardiovascular"
-        value="no"
-        required
-      />
-      <label for="cardiovascular_no">No</label><br /><br />
+<label for="cardiovascular">Cardiovascular:</label><br />
+<input
+type="radio"
+id="cardiovascular_yes"
+name="cardiovascular"
+value="yes"
+required
+/>
+<label for="cardiovascular_yes">Yes</label>
+<input
+type="radio"
+id="cardiovascular_no"
+name="cardiovascular"
+value="no"
+required
+/>
+<label for="cardiovascular_no">No</label><br /><br />
 
-      <label for="thyroid_problems">Thyroid Problems:</label><br />
-      <input
-        type="radio"
-        id="thyroid_problems_yes"
-        name="thyroid_problems"
-        value="yes"
-        required
-      />
-      <label for="thyroid_problems_yes">Yes</label>
-      <input
-        type="radio"
-        id="thyroid_problems_no"
-        name="thyroid_problems"
-        value="no"
-        required
-      />
-      <label for="thyroid_problems_no">No</label><br /><br />
+<label for="thyroid_problems">Thyroid Problems:</label><br />
+<input
+type="radio"
+id="thyroid_problems_yes"
+name="thyroid_problems"
+value="yes"
+required
+/>
+<label for="thyroid_problems_yes">Yes</label>
+<input
+type="radio"
+id="thyroid_problems_no"
+name="thyroid_problems"
+value="no"
+required
+/>
+<label for="thyroid_problems_no">No</label><br /><br />
 
-      <label for="respiratory">Respiratory:</label><br />
-      <input
-        type="radio"
-        id="respiratory_yes"
-        name="respiratory"
-        value="yes"
-        required
-      />
-      <label for="respiratory_yes">Yes</label>
-      <input
-        type="radio"
-        id="respiratory_no"
-        name="respiratory"
-        value="no"
-        required
-      />
-      <label for="respiratory_no">No</label><br /><br />
+<label for="respiratory">Respiratory:</label><br />
+<input
+type="radio"
+id="respiratory_yes"
+name="respiratory"
+value="yes"
+required
+/>
+<label for="respiratory_yes">Yes</label>
+<input
+type="radio"
+id="respiratory_no"
+name="respiratory"
+value="no"
+required
+/>
+<label for="respiratory_no">No</label><br /><br />
 
-      <h2>Family Health History</h2>
-      <label for="diabetes_fam">Diabetes:</label><br />
-      <input
-        type="checkbox"
-        name="parents"
-        id="parentsD"
-        value="parents"
-        required
-      />
-      <label for="parentsD">Parents</label>
-      <input
-        type="checkbox"
-        name="Grandparents"
-        id="GrandparentsD"
-        value="Grandparents"
-        required
-      />
-      <label for="GrandparentsD">Grand Parents</label>
-      <input
-        type="checkbox"
-        id="BrothersD"
-        name="brothersD"
-        value="parents"
-        required
-      />
-      <label for="BrothersD">Brothers</label>
-      <input type="checkbox" id="SisterD" name="SisterD" value="no" required />
-      <label for="SisterD">Sisters</label>
-      <input type="checkbox" id="otherD" name="otherD" value="no" required />
-      <label for="otherD">Other</label><br /><br />
-      <label for="cardiovascular">Cardiovascular:</label><br />
-      <input
-        type="checkbox"
-        name="parents"
-        id="parentsC"
-        value="parents"
-        required
-      />
-      <label for="parentsC">Parents</label>
-      <input
-        type="checkbox"
-        name="GrandparentsC"
-        id="GrandparentsC"
-        value="Grandparents"
-        required
-      />
-      <label for="GrandparentsC">Grand Parents</label>
-      <input
-        type="checkbox"
-        id="BrothersC"
-        name="brothersC"
-        value="parents"
-        required
-      />
-      <label for="BrothersC">Brothers</label>
+<h2>Family Health History</h2>
+<label for="diabetes_fam">Diabetes:</label><br />
+<input
+type="checkbox"
+name="parents"
+id="parentsD"
+value="parents"
+required
+/>
+<label for="parentsD">Parents</label>
+<input
+type="checkbox"
+name="Grandparents"
+id="GrandparentsD"
+value="Grandparents"
+required
+/>
+<label for="GrandparentsD">Grand Parents</label>
+<input
+type="checkbox"
+id="BrothersD"
+name="brothersD"
+value="parents"
+required
+/>
+<label for="BrothersD">Brothers</label>
+<input type="checkbox" id="SisterD" name="SisterD" value="no" required />
+<label for="SisterD">Sisters</label>
+<input type="checkbox" id="otherD" name="otherD" value="no" required />
+<label for="otherD">Other</label><br /><br />
+<label for="cardiovascular">Cardiovascular:</label><br />
+<input
+type="checkbox"
+name="parents"
+id="parentsC"
+value="parents"
+required
+/>
+<label for="parentsC">Parents</label>
+<input
+type="checkbox"
+name="GrandparentsC"
+id="GrandparentsC"
+value="Grandparents"
+required
+/>
+<label for="GrandparentsC">Grand Parents</label>
+<input
+type="checkbox"
+id="BrothersC"
+name="brothersC"
+value="parents"
+required
+/>
+<label for="BrothersC">Brothers</label>
 
-      <input type="checkbox" id="SisterC" name="SisterC" value="Sister" required />
+<input type="checkbox" id="SisterC" name="SisterC" value="Sister" required />
 
-      <label for="SisterC">Sisters</label>
-      <input type="checkbox" id="otherC" name="otherC" value="otherC" required />
+<label for="SisterC">Sisters</label>
+<input type="checkbox" id="otherC" name="otherC" value="otherC" required />
 
-      <label for="otherC">Other</label><br /><br />
-      <label for="respiratory">Respiratory:</label><br />
-      <input
-      type="checkbox"
-      name="parents"
-      id="parentsR"
-      value="parents"
-      required
-    />
-    <label for="parentsR">Parents</label>
-    <input
-      type="checkbox"
-      name="GrandparentsR"
-      id="GrandparentsR"
-      value="Grandparents"
-      required
-    />
-    <label for="GrandparentsR">Grand Parents</label>
-    <input
-      type="checkbox"
-      id="BrothersR"
-      name="brothersR"
-      value="parents"
-      required
-    />
-    <label for="BrothersR">Brothers</label>
+<label for="otherC">Other</label><br /><br />
+<label for="respiratory">Respiratory:</label><br />
+<input
+type="checkbox"
+name="parents"
+id="parentsR"
+value="parents"
+required
+/>
+<label for="parentsR">Parents</label>
+<input
+type="checkbox"
+name="GrandparentsR"
+id="GrandparentsR"
+value="Grandparents"
+required
+/>
+<label for="GrandparentsR">Grand Parents</label>
+<input
+type="checkbox"
+id="BrothersR"
+name="brothersR"
+value="parents"
+required
+/>
+<label for="BrothersR">Brothers</label>
 
-    <input type="checkbox" id="SisterR" name="SisterR" value="Sister" required />
+<input type="checkbox" id="SisterR" name="SisterR" value="Sister" required />
 
-    <label for="SisterC">Sisters</label>
-    <input type="checkbox" id="otherR" name="otherR" value="otherC" required />
+<label for="SisterC">Sisters</label>
+<input type="checkbox" id="otherR" name="otherR" value="otherC" required />
 
-    <label for="otherC">Other</label><br /><br />
+<label for="otherC">Other</label><br /><br />
 
-      <fieldset id="female_questions">
-        <h2>Female Specific Questions</h2>
-        <label for="problems_conceiving">Problems Conceiving:</label><br />
-        <input
-          type="radio"
-          id="problems_conceiving_yes"
-          name="problems_conceiving"
-          value="yes"
-        />
-        <label for="problems_conceiving_yes">Yes</label>
-        <input
-          type="radio"
-          id="problems_conceiving_no"
-          name="problems_conceiving"
-          value="no"
-        />
-        <label for="problems_conceiving_no">No</label><br /><br />
+<fieldset id="female_questions">
+<h2>Female Specific Questions</h2>
+<label for="problems_conceiving">Problems Conceiving:</label><br />
+<input
+type="radio"
+id="problems_conceiving_yes"
+name="problems_conceiving"
+value="yes"
+/>
+<label for="problems_conceiving_yes">Yes</label>
+<input
+type="radio"
+id="problems_conceiving_no"
+name="problems_conceiving"
+value="no"
+/>
+<label for="problems_conceiving_no">No</label><br /><br />
 
-        <label for="regular_periods">Are you regular?</label><br />
-        <input
-          type="radio"
-          id="regular_periods_yes"
-          name="regular_periods"
-          value="yes"
-        />
-        <label for="regular_periods_yes">Yes</label>
-        <input
-          type="radio"
-          id="regular_periods_no"
-          name="regular_periods"
-          value="no"
-        />
-        <label for="regular_periods_no">No</label><br /><br />
+<label for="regular_periods">Are you regular?</label><br />
+<input
+type="radio"
+id="regular_periods_yes"
+name="regular_periods"
+value="yes"
+/>
+<label for="regular_periods_yes">Yes</label>
+<input
+type="radio"
+id="regular_periods_no"
+name="regular_periods"
+value="no"
+/>
+<label for="regular_periods_no">No</label><br /><br />
 
-        <label for="period_pain">Any pain with period?</label><br />
-        <input
-          type="radio"
-          id="period_pain_yes"
-          name="period_pain"
-          value="yes"
-        />
-        <label for="period_pain_yes">Yes</label>
-        <input type="radio" id="period_pain_no" name="period_pain" value="no" />
-        <label for="period_pain_no">No</label><br /><br />
+<label for="period_pain">Any pain with period?</label><br />
+<input
+type="radio"
+id="period_pain_yes"
+name="period_pain"
+value="yes"
+/>
+<label for="period_pain_yes">Yes</label>
+<input type="radio" id="period_pain_no" name="period_pain" value="no" />
+<label for="period_pain_no">No</label><br /><br />
 
-        <label for="urine_loss">Loss of urine:</label><br />
-        <input type="radio" id="urine_loss_yes" name="urine_loss" value="yes" />
-        <label for="urine_loss_yes">Yes</label>
-        <input type="radio" id="urine_loss_no" name="urine_loss" value="no" />
-        <label for="urine_loss_no">No</label><br /><br />
-      </fieldset>
-     <h2>Diet (Food Intake)</h2>
-      <p>
-        Please list the typical foods you consume throughout the day. You can
-        mention portion sizes or quantities if known.
-      </p>
-      <input type="checkbox" name="day" id="Sunday" value="Sunday"/>
-      <label for="Sunday">Sunday</label>
-      <input type="checkbox" name="day" value="Monday"/>
-       <label for="Monday">Monday
-       </label>
-      <input type="checkbox" name="day" value="Tuesday"/>
-      <label for="Tuesday">Tuesday</label>
-      <input type="checkbox" name="day" value="Wednesday"/>
-      <label for="Wednesday">Wednesday</label>
-      <input type="checkbox" name="day" value="Thursday"/>
-      <label for="Thursday">Thursday</label>
-      <input type="checkbox" name="day" value="Friday"/>
-      <label for="Friday">Friday</label>
-      <input type="checkbox" name="day" value="Saturday">
-       <label for="Saturday">Saturday</label>
-       
-       <input type="checkbox" id="Allday" value="selectAll">
-       <label for="Allday">Select All</label>
-       
-       <br><br /><br />
+<label for="urine_loss">Loss of urine:</label><br />
+<input type="radio" id="urine_loss_yes" name="urine_loss" value="yes" />
+<label for="urine_loss_yes">Yes</label>
+<input type="radio" id="urine_loss_no" name="urine_loss" value="no" />
+<label for="urine_loss_no">No</label><br /><br />
+</fieldset>
+<h2>Diet (Food Intake)</h2>
+<p>
+Please list the typical foods you consume throughout the day. You can
+mention portion sizes or quantities if known.
+</p>
+<input type="checkbox" name="day" id="Sunday" value="Sunday" />
+<label for="Sunday">Sunday</label>
+<input type="checkbox" name="day" value="Monday" />
+<label for="Monday">Monday
+</label>
+<input type="checkbox" name="day" value="Tuesday" />
+<label for="Tuesday">Tuesday</label>
+<input type="checkbox" name="day" value="Wednesday" />
+<label for="Wednesday">Wednesday</label>
+<input type="checkbox" name="day" value="Thursday" />
+<label for="Thursday">Thursday</label>
+<input type="checkbox" name="day" value="Friday" />
+<label for="Friday">Friday</label>
+<input type="checkbox" name="day" value="Saturday">
+<label for="Saturday">Saturday</label>
+
+<input type="checkbox" id="Allday" value="selectAll">
+<label for="Allday">Select All</label>
+<br><br>
+<p>WakeUp Time: <input type="time"></p>
+<p>Meal 1 Time: <input type="time"></p>
+<p>Snack 1 Time: <input type="time"></p>
+<p>Meal 2 Time:<input type="time"></p>
+<p>Snack 2 Time: <input type="time"></p>
+<p>Dinner Time: <input type="time"></p>
+<p>Sleep Time: <input type="time"></p>
+<button id="timeBtn">Set Time</button>
+<br /><br />
 <label for="wake_up_food">Wake-up:</label><br>
-      <input
-        type="search"
-        list="itemList"
-        id="wakeUp"
-        placeholder="Search items..."
-      />
-      <datalist id="itemList"></datalist>
-      <button id="wakeUpI">Add Selected Item</button>
-      <br />
-      <ul class="selectedItems"></ul>
+<input
+type="search"
+list="itemList"
+id="wakeUp"
+placeholder="Search items..."
+/>
+<datalist id="itemList"></datalist>
 
-      <label for="breakfast_food">Meal 1:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="breakfast"
-        placeholder="Search items..."
-      />
-      <button id="breakfastI">Add Selected Item</button>
-      <br />
-      <ul class="selectedItems"></ul>
+<button id="wakeUpI">Add Selected Item</button>
+<br />
+<ul class="selectedItems"></ul>
 
-      <label for="morning_snacks_food">Snack 1:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="morningSnack"
-        placeholder="Search items..."
-      />
-      <button id="morningSnackI">Add Selected Item</button>
-      <br />
-      <ul class="selectedItems"></ul>
+<label for="breakfast_food">Meal 1:</label><br />
+<input
+type="search"
+list="itemList"
+id="breakfast"
+placeholder="Search items..."
+/>
 
-      <label for="lunch_food">Meal 2:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="lunch"
-        placeholder="Search items..."
-      />
-      <button id="lunchI">Add Selected Item</button>
-      <br />
-      <ul class="selectedItems"></ul>
+<button id="breakfastI">Add Selected Item</button>
+<br />
+<ul class="selectedItems"></ul>
 
-      <label for="evening_snacks_food">Snacks 2:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="eveningSnack"
-        placeholder="Search items..."
-      />
-      <button id="eveningSnackI">Add Selected Item</button>
+<label for="morning_snacks_food">Snack 1:</label><br />
+<input
+type="search"
+list="itemList"
+id="morningSnack"
+placeholder="Search items..."
+/>
 
-      <ul class="selectedItems"></ul>
+<button id="morningSnackI">Add Selected Item</button>
+<br />
+<ul class="selectedItems"></ul>
 
-      <label for="dinner_food">Meal 3:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="dinner"
-        placeholder="Search items..."
-      />
-      <button id="dinnerI">Add Selected Item</button>
+<label for="lunch_food">Meal 2:</label><br />
+<input
+type="search"
+list="itemList"
+id="lunch"
+placeholder="Search items..."
+/>
 
-      <ul class="selectedItems"></ul>
-      <label for="before_sleep_food">Before Sleep:</label><br />
-      <input
-        type="search"
-        list="itemList"
-        id="beforeSleep"
-        placeholder="Search items..."
-      />
+<button id="lunchI">Add Selected Item</button>
+<br />
+<ul class="selectedItems"></ul>
 
-      <button id="beforeSleepI">Add Selected Item</button>
-      <br />
-      <ul class="selectedItems"></ul>
-      <p id="calrie"></p>
+<label for="evening_snacks_food">Snacks 2:</label><br />
+<input
+type="search"
+list="itemList"
+id="eveningSnack"
+placeholder="Search items..."
+/>
+
+<button id="eveningSnackI">Add Selected Item</button>
+
+<ul class="selectedItems"></ul>
+
+<label for="dinner_food">Meal 3:</label><br />
+<input
+type="search"
+list="itemList"
+id="dinner"
+placeholder="Search items..."
+/>
+
+<button id="dinnerI">Add Selected Item</button>
+
+<ul class="selectedItems"></ul>
+<label for="before_sleep_food">Before Sleep:</label><br />
+<input
+type="search"
+list="itemList"
+id="beforeSleep"
+placeholder="Search items..."
+/>
+
+<button id="beforeSleepI">Add Selected Item</button>
+<br />
+<ul class="selectedItems"></ul>
+<p id="calrie"></p>
 
 
-  <table>
-    <tr id="HeadingTh">
-      <th>Sunday</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-      <th>Saturday</th>
-    </tr>
-    <tr id="wakeTr">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="breakTr">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-        <tr id="snackOne">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="lunchTr">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="snackTwo">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="dinnerT">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="sleepTr">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-    </table>
-      <h2>Macronutrients</h2>
-      <label for="non_veg">Non-Veg Intake:</label><br />
-      <select id="non_veg" name="non_veg" required>
-        <option value="">Select...</option>
-        <option value="daily">Daily</option>
-        <option value="twice_weekly">Weekly Twice</option>
-        <option value="sunday">Sundays Only</option></select
-      ><br /><br />
+<table>
+<tr id="HeadingTh">
+<th></th>
+<th>Sunday</th>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+<th>Saturday</th>
+</tr>
+<tr id="wakeTr">
+<th id="Wakeup">WakeUp</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="breakTr">
+<th id="Meal 1">Meal 1</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="snackOne">
+<th id="Snack 1">Snack 1</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="lunchTr">
+<th id="Meal 2">Meal 2 </th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="snackTwo">
+<th id="Snack 2">Snack 2</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="dinnerT">
+<th id="Meal 3">Meal 3</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr id="sleepTr">
+<th id="Sleep">Sleep</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+</table>
+<h2>Macronutrients</h2>
+<label for="non_veg">Non-Veg Intake:</label><br />
+<select id="non_veg" name="non_veg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option></select
+><br /><br />
 
-      <label for="veg">Veg Intake:</label><br />
-      <select id="veg" name="veg" required>
-        <option value="">Select...</option>
-        <option value="daily">Daily</option>
-        <option value="twice_weekly">Weekly Twice</option>
-        <option value="sunday">Sundays Only</option></select
-      ><br /><br />
-      <label for="egg">Egg Intake:</label><br />
-      <select id="egg" name="egg" required>
-        <option value="">Select...</option>
-        <option value="daily">Daily</option>
-        <option value="twice_weekly">Weekly Twice</option>
-        <option value="sunday">Sundays Only</option></select
-      ><br /><br />
-      <button type="submit" id="submitButton">Get result</button>
-    </form>
-    <div id="results">
-      <h3 id="resultBMI"></h3>
-      <canvas id="foo"></canvas>
-    </div>
-    <button type="submit" id="getPDFBtn">Get PDF</button>
-    <script
-      type="text/javascript"
-      src="https://bernii.github.io/gauge.js/dist/gauge.min.js"
-      defer
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"
-      defer
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
-    <script src="food.js" defer></script>
-  </body>
+<label for="veg">Veg Intake:</label><br />
+<select id="veg" name="veg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option></select
+><br /><br />
+<label for="egg">Egg Intake:</label><br />
+<select id="egg" name="egg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option></select
+><br /><br />
+<button type="submit" id="submitButton">Get result</button>
+</form>
+<div id="results">
+<h3 id="resultBMI"></h3>
+<canvas id="foo"></canvas>
+</div>
+<button type="submit" id="getPDFBtn">Get PDF</button>
+<script
+type="text/javascript"
+src="https://bernii.github.io/gauge.js/dist/gauge.min.js"
+defer
+></script>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"
+defer
+></script>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"
+defer
+></script>
+<script src="script.js" defer></script>
+<script src="food.js" defer></script>
+</body>
 </html>

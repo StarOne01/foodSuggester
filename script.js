@@ -12,10 +12,16 @@ const userInput = document.querySelectorAll("input[type='search']");
 const dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
+var timeInput = document.querySelectorAll("input[type='time']");
+
 
 const body = document.body;
 
 const trItems = document.querySelectorAll("table tr");
+
+const trTh = document.querySelectorAll("tr th");
+
+
 
 const tdtrObj = {
   "wakeTr":document.querySelectorAll("#wakeTr td"),
@@ -40,7 +46,7 @@ const daysNum = {
 };
 
 
-let daysForThis = [];
+let daysForThis = new Set();
 
 let allChecked = 0;
 
@@ -48,48 +54,67 @@ const CheckAll = (i) => {
   if(!allChecked && i) {
     days.forEach((j) => {
     j.checked = true;
-    daysForThis.push(j.value);
+    daysForThis.add(j.value);
     allChecked = 1;
     selectAll.checked = true;
   });
   }
   
   else {
-   daysForThis = []
+   daysForThis = new Set();
    days.forEach((j) => {
     j.checked = false;
-   })
+   });
     allChecked = 0;
     selectAll.checked = false;
   }
-}
+};
 
 selectAll.addEventListener("click", ()=> {
   CheckAll(1);
 });
-
+/*
+timeInput.addEventListener("change", ()=> {
+  var enteredTime = timeInput.value;
+  trTh[]
+})
+*/
 days.forEach((i)=> {
   i.addEventListener("click", (e)=> {
       if(!e.target.checked) {
-        let index = daysForThis.indexOf(e.target.value);
-        if(index > -1) {
-          daysForThis.splice(index, 1);
-        }
+          daysForThis.delete(e.target.value);
 	  }
       else {
-      daysForThis.push(e.target.value);
+      daysForThis.add(e.target.value);
       }
 }
   )});
 
 const showResultsBtn = document.getElementById("submitButton");
-const BMIShow = document.getElementById("resultBMI")
+const BMIShow = document.getElementById("resultBMI");
+
+const Timebtn = document.getElementById("timeBtn");
 
 const getPDFBtn = document.getElementById("getPDFBtn");
-console.log(getPDFBtn)
+console.log(getPDFBtn);
 
-const resultsDiv = document.getElementById("results")
+const resultsDiv = document.getElementById("results");
 
+Timebtn.addEventListener("click", (e)=> {
+  e.preventDefault();
+for(let k = 0; k <  7; k++) {
+trTh[8+k].textContent = `${trTh[8+k].id} (${convertTime(timeInput[k].value)})`;
+}});
+
+function convertTime(timeString) {
+  // Function to convert 24-hour time to 12-hour format with AM/PM
+  var hours = parseInt(timeString.substring(0, 2));
+  var minutes = timeString.substring(3);
+  var ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12; // Convert 0 to 12
+  return hours + ":" + minutes + " " + ampm;
+}
 
 showResultsBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -100,7 +125,7 @@ showResultsBtn.addEventListener("click", (e) => {
     const clientID = document.getElementById("membership_id").value;
 
     const BMI = weight / (height/100 * height/100);
-    console.log(BMI)
+    console.log(BMI);
     BMIShow.textContent = `Your BMI: ${BMI}`;
   /*
   let p = document.createElement("p");
@@ -140,7 +165,7 @@ showResultsBtn.addEventListener("click", (e) => {
     generateGradient: true,
     highDpiSupport: true,     // High resolution support
     
-  }
+  };
   
   var target = document.getElementById('foo'); // your canvas element
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
@@ -149,7 +174,7 @@ showResultsBtn.addEventListener("click", (e) => {
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
   gauge.set(BMI);
   var imagedata = target.toDataURL("image/png"); 
-  downloadlink.href = imagedata
+  downloadlink.href = imagedata;
   getPDFBtn.style.display = "block";
 });
 
@@ -157,7 +182,7 @@ showResultsBtn.addEventListener("click", (e) => {
 
 getPDFBtn.addEventListener("click", (e)=> {
   e.preventDefault();
-  console.log("Clicked")
+  console.log("Clicked");
   let weight = document.getElementById("current_weight").value;
   let height = document.getElementById("current_height").value;
     const age = document.getElementById("current_age").value;
@@ -299,7 +324,7 @@ getPDFBtn.addEventListener("click", (e)=> {
       },
       {
         margin: [0, 20, 0, 0],
-        text: 'Based on your Response, we are designed your recommended food chart for you...',
+        text: 'Based on your Response, we have designed your recommended food chart for you...',
       },
     ],
 };
