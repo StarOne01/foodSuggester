@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Client Information Form</title>
 <link href="style.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+
 </head>
 <body>
+  <div id="bodyDiv">
 <h1>Client Information Form</h1>
 <form>
 <label for="client_name">Client Name:</label><br />
@@ -458,7 +461,7 @@ mention portion sizes or quantities if known.
 <p>Snack 2 Time: <input type="time"></p>
 <p>Dinner Time: <input type="time"></p>
 <p>Sleep Time: <input type="time"></p>
-<button id="timeBtn">Set Time</button>
+<button class="btn btn-danger" id="timeBtn" type="button">Set Time</button>
 <br /><br />
 <label for="wake_up_food">Wake-up:</label><br>
 <input
@@ -468,8 +471,15 @@ id="wakeUp"
 placeholder="Search items..."
 />
 <datalist id="itemList"></datalist>
-
-<button id="wakeUpI">Add Selected Item</button>
+<div id="noDate" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Select alteast a day
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+<button class="btn btn-outline-secondary btn-sm" id="wakeUpI">Add Selected Item</button>
 <br />
 <ul class="selectedItems"></ul>
 
@@ -481,7 +491,7 @@ id="breakfast"
 placeholder="Search items..."
 />
 
-<button id="breakfastI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="breakfastI">Add Selected Item</button>
 <br />
 <ul class="selectedItems"></ul>
 
@@ -493,7 +503,7 @@ id="morningSnack"
 placeholder="Search items..."
 />
 
-<button id="morningSnackI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="morningSnackI">Add Selected Item</button>
 <br />
 <ul class="selectedItems"></ul>
 
@@ -505,7 +515,7 @@ id="lunch"
 placeholder="Search items..."
 />
 
-<button id="lunchI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="lunchI">Add Selected Item</button>
 <br />
 <ul class="selectedItems"></ul>
 
@@ -517,7 +527,7 @@ id="eveningSnack"
 placeholder="Search items..."
 />
 
-<button id="eveningSnackI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="eveningSnackI">Add Selected Item</button>
 
 <ul class="selectedItems"></ul>
 
@@ -529,7 +539,7 @@ id="dinner"
 placeholder="Search items..."
 />
 
-<button id="dinnerI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="dinnerI">Add Selected Item</button>
 
 <ul class="selectedItems"></ul>
 <label for="before_sleep_food">Before Sleep:</label><br />
@@ -540,14 +550,14 @@ id="beforeSleep"
 placeholder="Search items..."
 />
 
-<button id="beforeSleepI">Add Selected Item</button>
+<button class="btn btn-outline-secondary btn-sm" id="beforeSleepI">Add Selected Item</button>
 <br />
 <ul class="selectedItems"></ul>
 <p id="calrie"></p>
 
-
-<table>
-<tr id="HeadingTh">
+<div class="table-responsive">
+<table class="table table-bordered">
+<tr class="table-dark" id="HeadingTh">
 <th></th>
 <th>Sunday</th>
 <th>Monday</th>
@@ -627,8 +637,18 @@ placeholder="Search items..."
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr id="calorieRow">
+  <th>Total Calories</th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
 </table>
+</div>
 <h2>Macronutrients</h2>
 <label for="non_veg">Non-Veg Intake:</label><br />
 <select id="non_veg" name="non_veg" required>
@@ -646,19 +666,23 @@ placeholder="Search items..."
 <option value="sunday">Sundays Only</option></select
 ><br /><br />
 <label for="egg">Egg Intake:</label><br />
-<select id="egg" name="egg" required>
+<select class="form-select" id="egg" name="egg" required>
 <option value="">Select...</option>
 <option value="daily">Daily</option>
 <option value="twice_weekly">Weekly Twice</option>
 <option value="sunday">Sundays Only</option></select
 ><br /><br />
-<button type="submit" id="submitButton">Get result</button>
+<button class="btn btn-outline-light" type="submit" id="submitButton">Get result</button>
 </form>
 <div id="results">
 <h3 id="resultBMI"></h3>
 <canvas id="foo"></canvas>
+
+<button type="submit" class="btn btn-outline-light" id="getPDFBtn">Get PDF</button>
 </div>
-<button type="submit" id="getPDFBtn">Get PDF</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
 <script
 type="text/javascript"
 src="https://bernii.github.io/gauge.js/dist/gauge.min.js"

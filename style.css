@@ -2,13 +2,31 @@
     display: none;
 }
 
+h2 {
+  padding-top: 90px;
+}
+
+input {
+  border-radius: 5px;
+}
+
 #results {
     display: none;
 }
 
-#getPDFBtn {
-    display: none;
+.toast {
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
+
+
+body {
+  margin: 10px !important;
+}
+
+#getPDFBtn {
+    }
 
 table {
     border-collapse: collapse;
@@ -31,4 +49,20 @@ table {
 
 table p::before {
   content: "• ";
+}
+
+#bodyDiv {
+  padding:20px;
+  background: black !important;
+  color: white !important;
+  margin-inline: auto !important;
+}
+
+input[type='search'] {
+  width: 40vw;
+  max-width: 300px;
+}
+
+select {
+  max-width: 90vw !important;
 }
