@@ -10,9 +10,6 @@ input {
   border-radius: 5px;
 }
 
-#results {
-    display: none;
-}
 
 .toast {
   position: fixed;
@@ -25,8 +22,7 @@ body {
   margin: 10px !important;
 }
 
-#getPDFBtn {
-    }
+
 
 table {
     border-collapse: collapse;
