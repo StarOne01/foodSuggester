@@ -43,6 +43,36 @@ li {
     list-style: none;
 }
 
+#SevereThinness, #ModerateThinness, #MildThinness, #normal, #Overweight, #ObeseClass1, #ObeseClass2, #ObeseClass3 {
+  display: inline-block;
+  width: 10px;
+  padding-right: 2px;
+  height: 10px;
+}
+
+p {
+  display: inline-block;
+}
+
+#SevereThinness {
+  background: red;
+}
+
+#medium {
+  background: yellow;
+}
+
+#normal {
+  background: green;
+}
+#foo {
+  display: block;
+}
+
+#Overweight {
+  background:orange;
+}
+
 table {
   font-size: small;
 }
@@ -56,6 +86,10 @@ table p::before {
   background: black !important;
   color: white !important;
   margin-inline: auto !important;
+}
+
+canvas {
+  float: right;
 }
 
 input[type='search'] {

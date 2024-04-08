@@ -1,3 +1,130 @@
+window.onload = () => {
+
+const weightIn = document.getElementById("current_weight");
+  const heightIn = document.getElementById("current_height");
+  const ageIn = document.getElementById("current_age");
+  const nameIn = document.getElementById("client_name");
+  const clientID = document.getElementById("membership_id");
+let weight = 0;
+let height = 1;
+let age = 0;
+
+
+let opts = {
+    angle: -0.2,
+    // The span of the gauge arc
+    lineWidth: 0.2,
+    // The line thickness
+    radiusScale: 1,
+    // Relative radius
+    pointer: {
+      length: 0.6,
+      // // Relative to gauge radius
+      strokeWidth: 0.035,
+      // The thickness
+      color: '#FFFFFF' // Fill color
+    },
+    staticZones: [{
+      strokeStyle: "#F03E3E",
+      min: 0,
+      max: 16
+    },
+      // Red from 100 to 130
+      {
+        strokeStyle: "#FFDD00",
+        min: 16,
+        max: 17,
+        name:"Average"
+      },
+            {
+        strokeStyle: "#ff9b68",
+        min: 17,
+        max: 18.5,
+        name:"Average"
+      },
+      // Yellow
+      {
+        strokeStyle: "#30B32D",
+        min: 18.5,
+        max: 25
+      },
+      // Green
+      {
+        strokeStyle: "#FFDD00",
+        min: 25,
+        max: 30
+      },
+                  {
+        strokeStyle: "#ff9b68",
+        min: 30,
+        max: 35,
+        name:"Average"
+      },
+      // Yellow
+      {
+        strokeStyle: "#F03E3E",
+        min: 35,
+        max: 45
+      } // Red
+    ],
+    limitMax: false,
+    // If false, max value increases automatically if value > maxValue
+    staticLabels: {
+      font: "10px sans-serif",
+      // Specifies font
+      labels: [16,
+        17,
+        18.5,
+        25,
+        30,
+        35,
+        40],
+      // Print labels at these values
+      color: "#FFFFFF",
+      // Optional: Label text color
+      fractionDigits: 0 // Optional: Numerical precision. 0=round off.
+    },
+    limitMin: true,
+    // If true, the min value of the gauge will be fixed
+    //colorStart: '#6FADCF',
+    // Colors
+    //colorStop: '#8FC0DA',
+    strokeColor: '#E0E0E0',
+    generateGradient: true,
+    highDpiSupport: true,
+
+  };
+var target = document.getElementById('foo'); // your canvas element
+  var gauge = new Gauge(target).setOptions(opts); 
+  gauge.setMinValue(0); 
+    gauge.maxValue = 45; // set max gauge value
+  // Prefer setter over gauge.minValue = 0
+  gauge.animationSpeed = 32; // set animation speed (32 is default value)*/
+  gauge.set(0)
+weightIn.addEventListener("keyup", (e)=> {
+  
+
+  // create sexy gauge!
+
+  weight = Number(e.target.value);
+  if(weight/(height/100 * height/100)< 45) {
+  gauge.set(Number(weight/(height/100 * height/100)));
+  }
+})
+
+heightIn.addEventListener("keyup", (e)=> {
+  height = Number(e.target.value);
+  if(weight/(height/100 * height/100)< 45) {
+  gauge.set(Number(weight/(height/100 * height/100)));
+  }
+})
+
+ageIn.addEventListener("keyup",(e)=> {
+  age = Number(e.target.value)
+})
+
+
+
 const wakeUp = document.getElementById("wakeUpI");
 const breakfast = document.getElementById("breakfastI");
 const morningSnack = document.getElementById("morningSnackI");
@@ -13,13 +140,15 @@ selectElements.forEach((i)=>
 	i.setAttribute("class", "form-select");
     })
 */
+
+
 const calorieRow = document.querySelectorAll("#calorieRow td")
 const days = document.querySelectorAll("input[name='day']");
 let calorieCount = [0, 0, 0, 0, 0, 0, 0]
 let foodData = [[[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []]];
 
 const userInput = document.querySelectorAll("input[type='search']");
-const dataList = document.getElementById("itemList");
+let dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
 var timeInput = document.querySelectorAll("input[type='time']");
@@ -126,13 +255,9 @@ function convertTime(timeString) {
 
 showResultsBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let weight = document.getElementById("current_weight").value;
-  let height = document.getElementById("current_height").value;
-  const age = document.getElementById("current_age").value;
-  const name = document.getElementById("client_name").value;
-  const clientID = document.getElementById("membership_id").value;
+  
 
-  const BMI = weight / (height/100 * height/100);
+  let BMI = weight / (height/100 * height/100);
   console.log(BMI);
   BMIShow.textContent = `Your BMI: ${BMI}`;
   /*
@@ -145,89 +270,9 @@ showResultsBtn.addEventListener("click", (e) => {
   resultsDiv.style.display = "block";
 
   console.log(getPDFBtn);
-  var opts = {
-    angle: -0.2,
-    // The span of the gauge arc
-    lineWidth: 0.2,
-    // The line thickness
-    radiusScale: 1,
-    // Relative radius
-    pointer: {
-      length: 0.6,
-      // // Relative to gauge radius
-      strokeWidth: 0.035,
-      // The thickness
-      color: '#FFFFFF' // Fill color
-    },
-    staticZones: [{
-      strokeStyle: "#F03E3E",
-      min: 0,
-      max: 16
-    },
-      // Red from 100 to 130
-      {
-        strokeStyle: "#FFDD00",
-        min: 16,
-        max: 17
-      },
-      // Yellow
-      {
-        strokeStyle: "#30B32D",
-        min: 18.5,
-        max: 25
-      },
-      // Green
-      {
-        strokeStyle: "#FFDD00",
-        min: 25,
-        max: 30
-      },
-      // Yellow
-      {
-        strokeStyle: "#F03E3E",
-        min: 35,
-        max: 45
-      } // Red
-    ],
-    limitMax: false,
-    // If false, max value increases automatically if value > maxValue
-    staticLabels: {
-      font: "10px sans-serif",
-      // Specifies font
-      labels: [16,
-        17,
-        18.5,
-        25,
-        30,
-        35,
-        40],
-      // Print labels at these values
-      color: "#FFFFFF",
-      // Optional: Label text color
-      fractionDigits: 0 // Optional: Numerical precision. 0=round off.
-    },
-    limitMin: false,
-    // If true, the min value of the gauge will be fixed
-    colorStart: '#6FADCF',
-    // Colors
-    colorStop: '#8FC0DA',
-    // just experiment with them
-    strokeColor: '#E0E0E0',
-    // to see which ones work best for you
-    generateGradient: true,
-    highDpiSupport: true,
-    // High resolution support
-
-  };
-
-  var target = document.getElementById('foo'); // your canvas element
-  var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-  gauge.maxValue = 45; // set max gauge value
-  gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
-  gauge.animationSpeed = 32; // set animation speed (32 is default value)
-  gauge.set(BMI); /*
+  
   var imagedata = target.toDataURL("image/png");
-  downloadlink.href = imagedata;*/
+  downloadlink.href = imagedata;
   console.log(((tdtrObj[trItems[2].id])[2]).textContent)
 });
 
@@ -518,7 +563,6 @@ return filteredOptions;
 
 const showSuggestions = (i) => {
 const userInputValue = i.value;
-console.log(userInput);
 const filteredOptions = filterOptions(userInputValue);
 dataList.innerHTML = ""; // Clear existing options
 
@@ -530,28 +574,15 @@ optionElement.textContent = option;
 dataList.appendChild(optionElement);
 });
 }
-};
-/*
 
-const addItem = (selectedItem, i) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = selectedItem;
-  console.log(selectedItem)
-  selectedItemsList[0].appendChild(listItem);
-  userInput.value = "";
 };
-*/
+
 
 userInput.forEach((i) => {
 i.addEventListener("keyup", (i) => showSuggestions(i.target));
 });
 
-dataList.addEventListener("click", (event) => {
-const clickedOption = event.target; /*
-  if (clickedOption.tagName === "OPTION") {
-    addItem(event.target.value,event.target)
-  }*/
-});
+
 
 function checkRadio() {
 let selectedRadio = document.querySelector(
@@ -570,7 +601,7 @@ return "Female";
 }
 
 
-function addSelected(e, i) {
+const addSelected = (e, i) => {
 e.preventDefault();
 console.log(daysForThis)
 if (daysForThis.size === 0) {
@@ -583,7 +614,7 @@ return;
 const selectedOption = userInput[i].value;
 if (selectedOption) {
 const newListItem = document.createElement("li");
-newListItem.textContent = selectedOption;
+newListItem.innerHTML = `${selectedOption} <button type="button" class="btn btn-outline-danger btn-sm">Delete</button> `;
 selectedItemsList[i].appendChild(newListItem);
 // Clear input field after adding
 userInput[i].value = "";
@@ -614,7 +645,7 @@ let gender = document.querySelectorAll('input[name="gender"]');
 gender.forEach((i) => {
 i.addEventListener("click", checkRadio);
 });
-
+}
 // set actual value
 // Optional: Hide datalist on outside clicks (add event listener to document and check for clicks outside the search container)
 
