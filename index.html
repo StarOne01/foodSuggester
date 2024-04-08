@@ -70,7 +70,17 @@ type="number"
 id="current_age"
 name="current_age"
 required
-/><br />
+/><br /><br>
+<label for="male">Male</label>
+<input type="radio" id="male" name="gender" value="male" required />
+<label for="female">Female</label>
+<input
+type="radio"
+id="female"
+name="gender"
+value="female"
+required
+/>
 
 <h3 id="resultBMR"></h3>
 <br />
@@ -94,17 +104,6 @@ Extra Active: very intense exercise daily, or physical job
 </option></select
 ><br /><br />
 
-<h2>Gender</h2>
-<label for="male">Male</label>
-<input type="radio" id="male" name="gender" value="male" required />
-<label for="female">Female</label>
-<input
-type="radio"
-id="female"
-name="gender"
-value="female"
-required
-/><br /><br />
 
 <h2>Goals</h2>
 <label for="goal">What are you looking for?</label><br />
@@ -131,7 +130,7 @@ required
 <option value="20_years_ago">20 Years Ago</option>
 <option value="30_years_ago">30 Years Ago</option>
 <option value="throughout_life">Throughout Life</option>
-<option value="other">Other</option></select
+<option value="none">None</option></select
 ><br /><br />
 
 <label for="weight_gain_reason"
@@ -148,8 +147,7 @@ required
 <input type="checkbox" value="marriage">Marriage</input><br />
 <input type="checkbox" value="smoking_cessation">Smoking Cessation</input><br />
 <input type="checkbox" value="stress">Stress</input><br />
-<input type="checkbox" value="divorck seeds soaked ovee">Divorce</input><br />
-<input type="checkbox" value="other">Other</input><br />
+<input type="checkbox" value="divorck seeds soaked ovee">Divorce</input><br /><br />
 <br /><br />
 
 <h2>Diet</h2>
@@ -162,7 +160,8 @@ required
 <option value="three_meals">Three Meals</option>
 <option value="one_to_two_meals">One to Two Meals</option>
 <option value="two_to_three_meals">Two to Three Meals</option>
-<option value="three_or_more_meals">Three or More Meals</option></select
+<option value="three_or_more_meals">Three or More Meals</option>
+<option value="none">None</option></select
 ><br /><br />
 
 <label for="skipped_meal"
@@ -172,7 +171,8 @@ required
 <option value="">Select...</option>
 <option value="breakfast">Breakfast</option>
 <option value="lunch">Lunch</option>
-<option value="dinner">Dinner</option></select
+<option value="dinner">Dinner</option>
+<option value="none">None</option></select
 ><br /><br />
 
 <label for="skipped_meal_days"
@@ -199,9 +199,32 @@ required
 <option value="between_meals">Snack Between All Meals</option>
 <option value="grazing">
 Grazing on Food Throughout the Day
-</option></select
+</option><option value="none">None</option></select
 ><br /><br />
 
+<label for="non_veg">Non-Veg Intake:</label><br />
+<select id="non_veg" name="non_veg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option>
+<option value="none">None</option></select
+><br /><br />
+
+<label for="veg">Veg Intake:</label><br />
+<select id="veg" name="veg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option></select
+><br /><br />
+<label for="egg">Egg Intake:</label><br />
+<select id="egg" name="egg" required>
+<option value="">Select...</option>
+<option value="daily">Daily</option>
+<option value="twice_weekly">Weekly Twice</option>
+<option value="sunday">Sundays Only</option></select
+><br /><br />
 <label for="alcohol">Do you drink alcohol?</label><br />
 <input
 type="radio"
@@ -328,9 +351,7 @@ required
 />
 <label for="BrothersD">Brothers</label><br />
 <input type="checkbox" id="SisterD" name="SisterD" value="no" required />
-<label for="SisterD">Sisters</label><br />
-<input type="checkbox" id="otherD" name="otherD" value="no" required />
-<label for="otherD">Other</label><br /><br /><br />
+<label for="SisterD">Sisters</label><br /><br>
 <label for="cardiovascular">Cardiovascular:</label><br />
 <input
 type="checkbox"
@@ -359,10 +380,7 @@ required
 <br />
 <input type="checkbox" id="SisterC" name="SisterC" value="Sister" required />
 <label for="SisterC">Sisters</label>
-<br />
-<input type="checkbox" id="otherC" name="otherC" value="otherC" required />
-
-<label for="otherC">Other</label><br /><br />
+<br /><br /><br />
 <label for="respiratory">Respiratory:</label><br />
 <input
 type="checkbox"
@@ -391,10 +409,7 @@ required
 <br />
 <input type="checkbox" id="SisterR" name="SisterR" value="Sister" required />
 
-<label for="SisterC">Sisters</label><br />
-<input type="checkbox" id="otherR" name="otherR" value="otherC" required />
-
-<label for="otherC">Other</label><br /><br />
+<label for="SisterC">Sisters</label><br /><br /><br />
 
 <fieldset id="female_questions">
 <h2>Female Specific Questions</h2>
@@ -451,7 +466,7 @@ value="yes"
 <p>
 Please list the typical foods you consume throughout the day. You can
 mention portion sizes or quantities if known.
-</p>
+</p><br />
 <input type="checkbox" name="day" id="Sunday" value="Sunday" />
 <label for="Sunday">Sunday</label><br />
 <input type="checkbox" name="day" value="Monday" />
@@ -665,37 +680,10 @@ placeholder="Search items..."
   <td></td>
 </tr>
 </table>
-</div>
-<h2>Macronutrients</h2>
-<label for="non_veg">Non-Veg Intake:</label><br />
-<select id="non_veg" name="non_veg" required>
-<option value="">Select...</option>
-<option value="daily">Daily</option>
-<option value="twice_weekly">Weekly Twice</option>
-<option value="sunday">Sundays Only</option></select
-><br /><br />
-
-<label for="veg">Veg Intake:</label><br />
-<select id="veg" name="veg" required>
-<option value="">Select...</option>
-<option value="daily">Daily</option>
-<option value="twice_weekly">Weekly Twice</option>
-<option value="sunday">Sundays Only</option></select
-><br /><br />
-<label for="egg">Egg Intake:</label><br />
-<select class="form-select" id="egg" name="egg" required>
-<option value="">Select...</option>
-<option value="daily">Daily</option>
-<option value="twice_weekly">Weekly Twice</option>
-<option value="sunday">Sundays Only</option></select
-><br /><br />
+</div><br /><br />
 
 </form>
-<div id="results">
-
-
 <button type="submit" class="btn btn-outline-light" id="getPDFBtn">Get PDF</button>
-</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  
