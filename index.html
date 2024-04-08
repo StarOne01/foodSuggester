@@ -70,7 +70,10 @@ type="number"
 id="current_age"
 name="current_age"
 required
-/><br /><br />
+/><br />
+
+<h3 id="resultBMR"></h3>
+<br />
 
 <label for="cactivity">Activity</label><br />
 <select id="cactivity" name="cactivity">
@@ -133,20 +136,20 @@ required
 
 <label for="weight_gain_reason"
 >What do you think is reason for your weight gain?</label
-><br />
-<label for="weight_gain_reason" name="weight_gain_reason"></label>
-<label for="injury" name="weight_gain_reason"></label>
-<input type="checkbox" value="injury">Injury</input>
-<input type="checkbox" value="pregnancy">Pregnancy</input>
-<input type="checkbox" value="overeating">Overeating</input>
-<input type="checkbox"value="poor_eating_habits">Poor Eating Habits</input>
-<input type="checkbox" value="heredity">Heredity</input>
-<input type="checkbox" value="lack_of_exercise">Lack of Exercise</input>
-<input type="checkbox" value="marriage">Marriage</input>
-<input type="checkbox" value="smoking_cessation">Smoking Cessation</input>
-<input type="checkbox" value="stress">Stress</input>
-<input type="checkbox" value="divorck seeds soaked ovee">Divorce</input>
-<input type="checkbox" value="other">Other</input>
+><br /><br />
+<label for="weight_gain_reason" name="weight_gain_reason"></label><br />
+<label for="injury" name="weight_gain_reason"></label><br />
+<input type="checkbox" value="injury">Injury</input><br />
+<input type="checkbox" value="pregnancy">Pregnancy</input><br />
+<input type="checkbox" value="overeating">Overeating</input><br />
+<input type="checkbox"value="poor_eating_habits">Poor Eating Habits</input><br />
+<input type="checkbox" value="heredity">Heredity</input><br />
+<input type="checkbox" value="lack_of_exercise">Lack of Exercise</input><br />
+<input type="checkbox" value="marriage">Marriage</input><br />
+<input type="checkbox" value="smoking_cessation">Smoking Cessation</input><br />
+<input type="checkbox" value="stress">Stress</input><br />
+<input type="checkbox" value="divorck seeds soaked ovee">Divorce</input><br />
+<input type="checkbox" value="other">Other</input><br />
 <br /><br />
 
 <h2>Diet</h2>
@@ -297,6 +300,7 @@ required
 <label for="respiratory_no">No</label><br /><br />
 
 <h2>Family Health History</h2>
+<br />
 <label for="diabetes_fam">Diabetes:</label><br />
 <input
 type="checkbox"
@@ -306,6 +310,7 @@ value="parents"
 required
 />
 <label for="parentsD">Parents</label>
+<br />
 <input
 type="checkbox"
 name="Grandparents"
@@ -313,7 +318,7 @@ id="GrandparentsD"
 value="Grandparents"
 required
 />
-<label for="GrandparentsD">Grand Parents</label>
+<label for="GrandparentsD">Grand Parents</label><br />
 <input
 type="checkbox"
 id="BrothersD"
@@ -321,11 +326,11 @@ name="brothersD"
 value="parents"
 required
 />
-<label for="BrothersD">Brothers</label>
+<label for="BrothersD">Brothers</label><br />
 <input type="checkbox" id="SisterD" name="SisterD" value="no" required />
-<label for="SisterD">Sisters</label>
+<label for="SisterD">Sisters</label><br />
 <input type="checkbox" id="otherD" name="otherD" value="no" required />
-<label for="otherD">Other</label><br /><br />
+<label for="otherD">Other</label><br /><br /><br />
 <label for="cardiovascular">Cardiovascular:</label><br />
 <input
 type="checkbox"
@@ -334,7 +339,7 @@ id="parentsC"
 value="parents"
 required
 />
-<label for="parentsC">Parents</label>
+<label for="parentsC">Parents</label><br />
 <input
 type="checkbox"
 name="GrandparentsC"
@@ -342,7 +347,7 @@ id="GrandparentsC"
 value="Grandparents"
 required
 />
-<label for="GrandparentsC">Grand Parents</label>
+<label for="GrandparentsC">Grand Parents</label><br />
 <input
 type="checkbox"
 id="BrothersC"
@@ -351,10 +356,10 @@ value="parents"
 required
 />
 <label for="BrothersC">Brothers</label>
-
+<br />
 <input type="checkbox" id="SisterC" name="SisterC" value="Sister" required />
-
 <label for="SisterC">Sisters</label>
+<br />
 <input type="checkbox" id="otherC" name="otherC" value="otherC" required />
 
 <label for="otherC">Other</label><br /><br />
@@ -366,7 +371,7 @@ id="parentsR"
 value="parents"
 required
 />
-<label for="parentsR">Parents</label>
+<label for="parentsR">Parents</label><br />
 <input
 type="checkbox"
 name="GrandparentsR"
@@ -374,7 +379,7 @@ id="GrandparentsR"
 value="Grandparents"
 required
 />
-<label for="GrandparentsR">Grand Parents</label>
+<label for="GrandparentsR">Grand Parents</label><br />
 <input
 type="checkbox"
 id="BrothersR"
@@ -383,10 +388,10 @@ value="parents"
 required
 />
 <label for="BrothersR">Brothers</label>
-
+<br />
 <input type="checkbox" id="SisterR" name="SisterR" value="Sister" required />
 
-<label for="SisterC">Sisters</label>
+<label for="SisterC">Sisters</label><br />
 <input type="checkbox" id="otherR" name="otherR" value="otherC" required />
 
 <label for="otherC">Other</label><br /><br />
@@ -448,31 +453,31 @@ Please list the typical foods you consume throughout the day. You can
 mention portion sizes or quantities if known.
 </p>
 <input type="checkbox" name="day" id="Sunday" value="Sunday" />
-<label for="Sunday">Sunday</label>
+<label for="Sunday">Sunday</label><br />
 <input type="checkbox" name="day" value="Monday" />
 <label for="Monday">Monday
-</label>
+</label><br />
 <input type="checkbox" name="day" value="Tuesday" />
-<label for="Tuesday">Tuesday</label>
+<label for="Tuesday">Tuesday</label><br />
 <input type="checkbox" name="day" value="Wednesday" />
-<label for="Wednesday">Wednesday</label>
+<label for="Wednesday">Wednesday</label><br />
 <input type="checkbox" name="day" value="Thursday" />
-<label for="Thursday">Thursday</label>
+<label for="Thursday">Thursday</label><br />
 <input type="checkbox" name="day" value="Friday" />
-<label for="Friday">Friday</label>
+<label for="Friday">Friday</label><br />
 <input type="checkbox" name="day" value="Saturday">
 <label for="Saturday">Saturday</label>
-
+<br />
 <input type="checkbox" id="Allday" value="selectAll">
 <label for="Allday">Select All</label>
 <br><br>
-<p>WakeUp Time: <input type="time"></p>
-<p>Meal 1 Time: <input type="time"></p>
-<p>Snack 1 Time: <input type="time"></p>
-<p>Meal 2 Time:<input type="time"></p>
-<p>Snack 2 Time: <input type="time"></p>
-<p>Dinner Time: <input type="time"></p>
-<p>Sleep Time: <input type="time"></p>
+<p>WakeUp Time: <input type="time"></p><br />
+<p>Meal 1 Time: <input type="time"></p><br />
+<p>Snack 1 Time: <input type="time"></p><br />
+<p>Meal 2 Time:<input type="time"></p><br />
+<p>Snack 2 Time: <input type="time"></p><br />
+<p>Dinner Time: <input type="time"></p><br />
+<p>Sleep Time: <input type="time"></p><br />
 <button class="btn btn-danger" id="timeBtn" type="button">Set Time</button>
 <br /><br />
 <label for="wake_up_food">Wake-up:</label><br>
@@ -684,7 +689,7 @@ placeholder="Search items..."
 <option value="twice_weekly">Weekly Twice</option>
 <option value="sunday">Sundays Only</option></select
 ><br /><br />
-<button class="btn btn-outline-light" type="submit" id="submitButton">Get result</button>
+
 </form>
 <div id="results">
 

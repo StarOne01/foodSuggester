@@ -10,6 +10,9 @@ input {
   border-radius: 5px;
 }
 
+#results {
+    display: none;
+}
 
 .toast {
   position: fixed;
@@ -22,8 +25,6 @@ body {
   margin: 10px !important;
 }
 
-
-
 table {
     border-collapse: collapse;
     border: 1px solid black;
@@ -35,9 +36,6 @@ table {
   }
   tr:nth-child(even) {background-color: #f2f2f2;}
 
-li {
-    list-style: none;
-}
 
 #SevereThinness, #ModerateThinness, #MildThinness, #normal, #Overweight, #ObeseClass1, #ObeseClass2, #ObeseClass3 {
   display: inline-block;
