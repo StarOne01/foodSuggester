@@ -34,7 +34,10 @@ table {
     border: 1px solid black;
     padding: 8px;
   }
-  tr:nth-child(even) {background-color: #f2f2f2;}
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+    
+  }
 
 
 #SevereThinness, #ModerateThinness, #MildThinness, #normal, #Overweight, #ObeseClass1, #ObeseClass2, #ObeseClass3 {
@@ -48,8 +51,16 @@ p {
   display: inline-block;
 }
 
+#ModerateThinness {
+  background:#ffaa5cb8;
+}
+
 #SevereThinness {
-  background: red;
+  background: #f49797a3;
+}
+
+#MildThinness {
+  background: orange;
 }
 
 #medium {
@@ -57,14 +68,14 @@ p {
 }
 
 #normal {
-  background: green;
+  background: #35ff31;
 }
 #foo {
   display: block;
 }
 
 #Overweight {
-  background:orange;
+  background:yellow;
 }
 
 table {
@@ -74,6 +85,11 @@ table {
 table p::before {
   content: "• ";
 }
+#resultDiv {
+  float: right;
+  white-space: pre;
+  text-align: center;
+}
 
 #bodyDiv {
   padding:20px;
@@ -81,9 +97,13 @@ table p::before {
   color: white !important;
   margin-inline: auto !important;
 }
-
+/*
 canvas {
   float: right;
+}*/
+
+#BMRTable {
+  max-width: 400px;
 }
 
 input[type='search'] {
@@ -92,5 +112,5 @@ input[type='search'] {
 }
 
 select {
-  max-width: 90vw !important;
+  max-width: 40vw !important;
 }

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Client Information Form</title>
 <link href="style.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
 </head>
 <body>
-  <div id="bodyDiv">
+<div id="bodyDiv" class="container-sm">
 <h1>Client Information Form</h1>
 <form>
 <label for="client_name">Client Name:</label><br />
@@ -36,34 +36,6 @@ required
 /><br /><br />
 
 <h2>Client Measurements</h2>
-<label for="current_weight">Current Weight (in kg):</label><br />
-<input
-type="number"
-id="current_weight"
-name="current_weight"
-required
-/><br /><br />
-
-<label for="current_height">Current Height (in CM):</label><br />
-<input
-type="number"
-id="current_height"
-name="current_height"
-required
-/><br /><br />
-<div>
-
-<h3 id="resultBMI"></h3>
-<canvas id="foo"></canvas>
-<div id="SevereThinness"></div><p>Overweight</p>
-<div id="ModerateThinness"></div><p>ModerateThinness</p>
-<div id="MildThinness"></div><p>MildThinness</p>
-<div id="normal"></div><p>normal</p>
-<div id="Overweight"></div><p>Overweight</p>
-<div id="ObeseClass1"></div><p>ObeseClass1</p>
-<div id="ObeseClass2"></div>
-<div id="ObeseClass3"></div>
-</div>
 <label for="current_age">Current Age:</label><br />
 <input
 type="number"
@@ -81,10 +53,7 @@ name="gender"
 value="female"
 required
 />
-
-<h3 id="resultBMR"></h3>
-<br />
-
+<br /><br>
 <label for="cactivity">Activity</label><br />
 <select id="cactivity" name="cactivity">
 <option value="1">Basal Metabolic Rate (BMR)</option>
@@ -103,6 +72,50 @@ Very Active: intense exercise 6-7 times/week
 Extra Active: very intense exercise daily, or physical job
 </option></select
 ><br /><br />
+<label for="current_weight">Current Weight (in kg):</label><br />
+<input
+type="number"
+id="current_weight"
+name="current_weight"
+required
+/><br /><br />
+
+<label for="current_height">Current Height (in CM):</label><br />
+<input
+type="number"
+id="current_height"
+name="current_height"
+required
+/><br /><br />
+
+<div>
+<table class="table table-bordered">
+<tr>
+<td>Fat</td>
+</tr>
+<tr>
+<td>Carbohydrates</td>
+</tr>
+<tr>
+<td>Protein</td>
+
+</tr>
+<tr>
+<td>Calorie</td>
+
+</tr>
+</table>
+</div>
+
+<div id="resultDiv">
+<h3 id="resultBMI"></h3>
+<canvas id="foo"></canvas>
+<h3 id="youAre"></h3>
+<div id="SevereThinness"></div><p>Severe Thinness </p><div id="ModerateThinness"></div><p>ModerateThinness</p>
+<div id="MildThinness"></div><p>MildThinness</p>  <div id="normal"></div><p>  normal</p>
+<div id="Overweight"></div><p>Overweight</p><div id="ObeseClass1"></div><p>ObeseClass1</p><br><div id="ObeseClass2"></div><div id="ObeseClass3"></div><br></div><br>
+
+
 
 
 <h2>Goals</h2>
@@ -131,33 +144,32 @@ Extra Active: very intense exercise daily, or physical job
 <option value="30_years_ago">30 Years Ago</option>
 <option value="throughout_life">Throughout Life</option>
 <option value="none">None</option></select
-><br /><br />
+><br /><br /><br>
 
 <label for="weight_gain_reason"
 >What do you think is reason for your weight gain?</label
-><br /><br />
+><br />
 <label for="weight_gain_reason" name="weight_gain_reason"></label><br />
+<input type="checkbox" id="injury" value="injury">
 <label for="injury" name="weight_gain_reason">Injury</label><br />
-<input type="checkbox" id="injury" value="injury"><br />
-
-<input type="checkbox" id= "pregnancy" value="pregnancy">
+<input type="checkbox" id="pregnancy" value="pregnancy">
 <label for="pregnancy" name="weight_gain_reason">Pregnancy</label><br>
+<input type="checkbox" id="overeating" value="overeating">
 <label for="overeating" name="weight_gain_reason">Overeating</label><br />
-<input type="checkbox" value="overeating"><br />
+<input type="checkbox" id="poor_eating_habits" value="poor_eating_habits">
 <label for="poor_eating_habits" name="weight_gain_reason">Poor Eating Habits</label><br />
-<input type="checkbox" id="poor_eating_habits" value="poor_eating_habits"><br />
+<input type="checkbox" id="heredity" value="heredity">
 <label for="heredity" name="weight_gain_reason">Heredity</label><br />
-<input type="checkbox" id="heredity" value="heredity"><br />
-<label for="lack_of_exercise" name="weight_gain_reason">Lack of Exercise</label>
-<input type="checkbox" id="lack_of_exercise" value="lack_of_exercise"><br />
-<label for="marriage" name="weight_gain_reason">Marriage</label>
-<input type="checkbox" id="marriage" value="marriage"><br />
+<input type="checkbox" id="lack_of_exercise" value="lack_of_exercise">
+<label for="lack_of_exercise" name="weight_gain_reason">Lack of Exercise</label><br>
+<input type="checkbox" id="marriage" value="marriage">
+<label for="marriage" name="weight_gain_reason">Marriage</label><br>
+<input type="checkbox" id="smoking_cessation" value="smoking_cessation">
 <label for="smoking_cessation" name="weight_gain_reason">Smoking Cessation</label><br />
-<input type="checkbox" id="smoking_cessation" value="smoking_cessation"><br />
-<label for="stress" name="weight_gain_reason">Stress</label>
-<input type="checkbox" id="stress" value="stress"><br />
+<input type="checkbox" id="stress" value="stress">
+<label for="stress" name="weight_gain_reason">Stress</label><br>
+<input type="checkbox" id="divorce" value="divorce">
 <label for="divorce" name="weight_gain_reason">Injury</label><br />
-<input type="checkbox" id="divorce" value="divorce"><br /><br />
 <br /><br />
 
 <h2>Diet</h2>
@@ -476,7 +488,8 @@ value="yes"
 <p>
 Please list the typical foods you consume throughout the day. You can
 mention portion sizes or quantities if known.
-</p><br />
+</p>
+<br />
 <input type="checkbox" name="day" id="Sunday" value="Sunday" />
 <label for="Sunday">Sunday</label><br />
 <input type="checkbox" name="day" value="Monday" />
@@ -496,13 +509,34 @@ mention portion sizes or quantities if known.
 <input type="checkbox" id="Allday" value="selectAll">
 <label for="Allday">Select All</label>
 <br><br>
-<p>WakeUp Time: <input type="time"></p><br />
-<p>Meal 1 Time: <input type="time"></p><br />
-<p>Snack 1 Time: <input type="time"></p><br />
-<p>Meal 2 Time:<input type="time"></p><br />
-<p>Snack 2 Time: <input type="time"></p><br />
-<p>Dinner Time: <input type="time"></p><br />
-<p>Sleep Time: <input type="time"></p><br />
+<p>
+WakeUp Time: <input type="time">
+</p>
+<br />
+<p>
+Meal 1 Time: <input type="time">
+</p>
+<br />
+<p>
+Snack 1 Time: <input type="time">
+</p>
+<br />
+<p>
+Meal 2 Time:<input type="time">
+</p>
+<br />
+<p>
+Snack 2 Time: <input type="time">
+</p>
+<br />
+<p>
+Dinner Time: <input type="time">
+</p>
+<br />
+<p>
+Sleep Time: <input type="time">
+</p>
+<br />
 <button class="btn btn-danger" id="timeBtn" type="button">Set Time</button>
 <br /><br />
 <label for="wake_up_food">Wake-up:</label><br>
@@ -514,16 +548,16 @@ placeholder="Search items..."
 />
 <datalist id="itemList"></datalist>
 <div id="noDate" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="d-flex">
-    <div class="toast-body">
-      Select alteast a day
-    </div>
-    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
+<div class="d-flex">
+<div class="toast-body">
+Select alteast a day
+</div>
+<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
 </div>
 <button class="btn btn-outline-secondary btn-sm" id="wakeUpI">Add Selected Item</button>
 <br />
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="wakeTr"></ul>
 
 <label for="breakfast_food">Meal 1:</label><br />
 <input
@@ -535,7 +569,7 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="breakfastI">Add Selected Item</button>
 <br />
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="breakTr"></ul>
 
 <label for="morning_snacks_food">Snack 1:</label><br />
 <input
@@ -547,7 +581,7 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="morningSnackI">Add Selected Item</button>
 <br />
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="snackOne"></ul>
 
 <label for="lunch_food">Meal 2:</label><br />
 <input
@@ -559,7 +593,7 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="lunchI">Add Selected Item</button>
 <br />
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="lunchTr"></ul>
 
 <label for="evening_snacks_food">Snacks 2:</label><br />
 <input
@@ -571,7 +605,7 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="eveningSnackI">Add Selected Item</button>
 
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="snackTwo"></ul>
 
 <label for="dinner_food">Meal 3:</label><br />
 <input
@@ -583,7 +617,7 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="dinnerI">Add Selected Item</button>
 
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="dinnerT"></ul>
 <label for="before_sleep_food">Before Sleep:</label><br />
 <input
 type="search"
@@ -594,11 +628,11 @@ placeholder="Search items..."
 
 <button class="btn btn-outline-secondary btn-sm" id="beforeSleepI">Add Selected Item</button>
 <br />
-<ul class="selectedItems"></ul>
+<ul class="selectedItems" data-parent="sleepTr"></ul>
 <p id="calrie"></p>
 
 <div class="table-responsive">
-<table class="table table-bordered">
+<table id="foodTable" class="table table-bordered">
 <tr class="table-dark" id="HeadingTh">
 <th></th>
 <th>Sunday</th>
@@ -680,23 +714,24 @@ placeholder="Search items..."
 <td></td>
 </tr>
 <tr id="calorieRow">
-  <th>Total Calories</th>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+<th>Total Calories</th>
+<td id="0"></td>
+<td id="1"></td>
+<td id="2"></td>
+<td id="3"></td>
+<td id="4"></td>
+<td id="5"></td>
+<td id="6"></td>
 </tr>
 </table>
-</div><br /><br />
+</div>
+<br /><br />
 
 </form>
 <button type="submit" class="btn btn-outline-light" id="getPDFBtn">Get PDF</button>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
- 
+
 <script
 type="text/javascript"
 src="https://bernii.github.io/gauge.js/dist/gauge.min.js"
@@ -712,7 +747,12 @@ type="text/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"
 defer
 ></script>
-<script src="script.js" defer></script>
-<script src="food.js" defer></script>
+<script src="./domGet.js" defer></script>
+<script src="./data.js" defer></script>
+<script src="./gaugeDesign.js" defer></script>
+<script src="./food.js" defer></script>
+<script src="./printPdf.js" defer></script>
+<script src="./eventListeners.js" defer></script>
+<script src="./script.js" defer></script>
 </body>
 </html>
