@@ -3,15 +3,21 @@ const weightIn = document.getElementById("current_weight");
   const ageIn = document.getElementById("current_age");
   const nameIn = document.getElementById("client_name");
   const clientID = document.getElementById("membership_id");
-  const BMRH = document.getElementById("resultBMI");
+  const BMRH = document.getElementById("resultBMR");
   const userNature = document.getElementById("youAre")
   const wakeUp = document.getElementById("wakeUpI");
+  const fatNeeded = document.getElementById("fatNeeded")
+  const carbNeeded = document.getElementById("carbNeeded")
+  const BMRTable = document.getElementById("BMRTable")
+  const proteinNeeded = document.getElementById("proteinNeeded")
+  const calorieNeeded = document.getElementById("calorieNeeded")
 const breakfast = document.getElementById("breakfastI");
 const morningSnack = document.getElementById("morningSnackI");
 const lunch = document.getElementById("lunchI");
 const eveningSnack = document.getElementById("eveningSnackI");
 const dinner = document.getElementById("dinnerI");
 const beforeSleep = document.getElementById("beforeSleepI");
+const cactivity = document.getElementById("cactivity")
 const calorieRow = document.querySelectorAll("#calorieRow td")
 const days = document.querySelectorAll("input[name='day']");
 const userInput = document.querySelectorAll("input[type='search']");
@@ -28,8 +34,8 @@ const trTh = document.querySelectorAll("tr th");
 const offCanvasText = document.getElementById("offcanvasText");
 
 const selectAll = document.getElementById("Allday");
-const showResultsBtn = document.getElementById("submitButton");
-const BMIShow = document.getElementById("resultBMI");
+const showResultsBtn = document.getElementById("sutButton");
+const BMIn = document.getElementById("resultBMI");
 let delt = [];
 const Timebtn = document.getElementById("timeBtn");
 let gender = document.querySelectorAll('input[name="gender"]');

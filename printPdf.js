@@ -1,12 +1,9 @@
 getPDFBtn.addEventListener("click", (e)=> {
   e.preventDefault();
-  let weight = document.getElementById("current_weight").value;
-  let height = document.getElementById("current_height").value;
-  const age = document.getElementById("current_age").value;
-  const name = document.getElementById("client_name").value;
-  const clientID = document.getElementById("membership_id").value;
+   name = document.getElementById("client_name").value;
+   clientID = document.getElementById("membership_id").value;
 
-  const BMI = weight / (height/100 * height/100);
+ 
 const canvasy = document.getElementById("foo");
 const imageData = canvasy.toDataURL("image/png");
   const docDefinition = {

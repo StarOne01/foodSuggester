@@ -21,6 +21,10 @@ return "Female";
 }
 }
 
+ageIn.addEventListener("click", ()=> {
+  age = ageIn.value
+})
+
 gender.forEach((i) => {
 i.addEventListener("click", checkRadio);
 });
@@ -49,3 +53,11 @@ days.forEach((i)=> {
   for (let k = 0; k < 7; k++) {
     trTh[8+k].textContent = `${trTh[8+k].id} (${convertTime(timeInput[k].value)})`;
   }});
+  let last = 1;
+  cactivity.addEventListener("change", (i) => {
+    BMR /=last
+    ca = Number(e.cactivity.value);
+    BMR *= ca
+    last = ca;
+    
+  })

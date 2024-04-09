@@ -22,7 +22,7 @@ function convertTime(timeString) {
   let minutes = timeString.substring(3);
   let ampm = hours >= 12 ? "PM": "AM";
   hours = hours % 12;
-  hours = hours ? hours: 12; // Convert 0 to 12
+  hours = hours ? hours: 12; 
   return hours + ":" + minutes + " " + ampm;
 }
 
@@ -36,7 +36,7 @@ return filteredOptions;
 const showSuggestions = (i) => {
 const userInputValue = i.value;
 const filteredOptions = filterOptions(userInputValue);
-dataList.innerHTML = ""; // Clear existing options
+dataList.innerHTML = ""; 
 
 if (filteredOptions.length > 0) {
 filteredOptions.forEach((option) => {
@@ -67,35 +67,25 @@ newListItem.setAttribute("data-in", selectedOption)
 let delt = document.querySelectorAll(".delt");
 delt.forEach((i) =>  {
   i.addEventListener("click", (e)=> {
-    deleteItem(e.target.parentNode.getAttribute("data-in"),e.target.parentNode.parentNode.getAttribute("data-parent"))
+    deleteItem(e.target.parentNode.getAttribute("data-in"),e.target.parentNode.parentNode.getAttribute("data-parent"),e)
     updateTable();
 })
 })
 userInput[i].value = "";
 addItem(selectedOption, newListItem.parentNode.getAttribute("data-parent"))
 updateTable()
-/*
-daysForThis.forEach((j) => {
-foodData[daysNum[j]][i].push(selectedOption);
-console.log(foodData)
-calorieCount[daysNum[j]] += calorieCounts[items.indexOf(selectedOption)]
-calorieRow[daysNum[j]].textContent = calorieCount[daysNum[j]];
-let newp = document.createElement("p");
-newp.innerHTML = `${selectedOption} , `;
-((tdtrObj[trItems[i+1].id])[daysNum[j]]).appendChild(newp)
-newp.setAttribute("id", `${indexi}`)
-newp.setAttribute("data-day", i + i)
-  });
-*/  }
+}
 }
 
 function addItem(option, time) {
   daysForThis.forEach((i) => {
-    foodData[daysNum[i]][timeNum[time]].push(option);
+    foodData[daysNum[i]][timeNum[time]].push(option)
+    console.log(items.indexOf(option))
+    calorieCount[daysNum[i]] += calorieCounts[items.indexOf(option)]
   })
 }
 
-function deleteItem(option, time) {
+function deleteItem(option, time,e) {
   daysForThis.forEach((i) => {
     const dayData = foodData[daysNum[i]][timeNum[time]]; 
     if (dayData) { 
@@ -105,22 +95,13 @@ function deleteItem(option, time) {
         console.log("Removed item from", daysNum[i], timeNum[time]);
       }
     }
+    calorieCount[daysNum[i]] -= calorieCounts[items.indexOf(option)]
   });
+  e.target.parentNode.remove()
 }
-/*
-function deleteItem(option, time) {
-  daysForThis.forEach((i) => {
-    
-    for(const x in foodData[daysNum[i]][timeNum[time]]) {
-      if(x === option) {
-        console.log("Is In")
-        (foodData[daysNum[i]][timeNum[time]]).splice( foodData[daysNum[i]][timeNum[time]].indexOf(option),1)
-      }
-    }
-    console.log(foodData[daysNum[i]][timeNum[time]])
-  })
-}
-*/
+
+updateTable()
+
 function updateTable() {
   for(let i = 0; i < 7; i++) {
     for(let j = 0; j < 7;j++){
@@ -132,5 +113,6 @@ newp.innerHTML = `${foodData[i][j][k]} , `;
   newp.textContent = foodData[i][j][k];
       }
     }
+    calorieRow[i].textContent = calorieCount[i]
   }
 }

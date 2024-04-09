@@ -1,8 +1,12 @@
 let weight = 0;
-let height = 1;
+let height = 0;
 let age = 0;
 let BMI = 0;
-
+let ca = 1;
+let carbs = 0;
+let protein = 0;
+let fat = 0;
+let caloriesN = 0;
 let calorieCount = [0, 0, 0, 0, 0, 0, 0]
 let foodData = [[[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []], [[], [], [], [], [], [], []]];
 
@@ -40,6 +44,8 @@ const timeNum = {
   "dinnerT": 5,
   "sleepTr": 6
 };
+
+let BMR = 0;
 
 
 let daysForThis = new Set();

@@ -6,13 +6,14 @@ h2 {
   padding-top: 40px;
 }
 
+button {
+  padding: 10px;
+}
+
 input {
   border-radius: 5px;
 }
 
-#results {
-    display: none;
-}
 
 .toast {
   position: fixed;
@@ -62,9 +63,16 @@ p {
 #MildThinness {
   background: orange;
 }
+#ObeseClass2 {
+  background: red;
+}
 
-#medium {
+#ObeseClass1 {
   background: yellow;
+}
+
+#ObeseClass3 {
+  background: #fc9393;
 }
 
 #normal {
@@ -75,7 +83,7 @@ p {
 }
 
 #Overweight {
-  background:yellow;
+  background:green;
 }
 
 table {
@@ -87,7 +95,7 @@ table p::before {
 }
 #resultDiv {
   float: right;
-  white-space: pre;
+  white-space:pre-wrap;
   text-align: center;
 }
 
@@ -103,7 +111,11 @@ canvas {
 }*/
 
 #BMRTable {
-  max-width: 400px;
+  height: 450px;
+  width: 83vw;
+  display: block;
+  max-width: 500px;
+  padding-bottom: 30px;
 }
 
 input[type='search'] {

@@ -98,26 +98,62 @@ var target = document.getElementById('foo'); // your canvas element
   
 weightIn.addEventListener("keyup", (e)=> {
   weight = Number(e.target.value);
-  if((weight/(height/100 * height/100)< 45) && (weight/(height/100 * height/100 > 5))) {
-    BMI = (weight / (((height / 100) * height) / 100)).toFixed(2);
-  gauge.set(Number(weight/(height/100 * height/100)));
-   BMRH.textContent = `Your BMI: ${(BMI)}`;
-  }
-})
+  })
+
 
 heightIn.addEventListener("keyup", (e) => {
     height = Number(e.target.value);
-    if (weight / (((height / 100) * height) / 100) < 45) {
-      BMI = (weight / (((height / 100) * height) / 100)).toFixed(2);
-
-      gauge.set(Number(weight / (((height / 100) * height) / 100)));
-    BMRH.textContent = `Your BMI: ${(BMI)}`;
+    if(checkRadio() == "Male") {
+      BMR = ca *(10 * weight + 6.25 * height  - 5 * age + 5)
+    }
+    else {
+      BMR = ca *(10 * weight + 6.25 * height  - 5 * age - 161)
+    }
+    console.log(weight +"  "+ height)
+    
+    BMI = (Number(weight) / (Number(height) / 100 * (Number(height)) / 100)).toFixed(2)
+    BMIn.textContent = `Your BMI: ${BMI}` 
+    calorieN = BMR;
+    fat = 0.3 * calorieN;
+    carbs = 0.5 * calorieN;
+    protein = 0.2 * calorieN;
+    calorieNeeded.innerHTML = `<h5>${calorieN} Cal</h5>`;
+    
+    fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
+    carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
+    
+    proteinNeeded.innerHTML = `<h5>${protein}g</h5>`;
+    BMRH.textContent = `Your BMR: ${BMR}`
+    if (BMI < 45) {
+            gauge.set(BMI);
      if(BMI <= 16) {
      userNature.textContent = "Severe Thinness"
    }
    else if (BMI < 18.5 && BMI > 16) {
+     userNature.textContent = "Moderate Thinness"
+   }
+   
+   else if (BMI < 25 && BMI > 18.5) {
      userNature.textContent = "Mild Thinness"
-   }}
+   }
+   
+   else if (BMI < 30 && BMI > 25) {
+     userNature.textContent = "Normal"
+   }
+   
+   else if (BMI >= 30 && BMI < 35) {
+     userNature.textContent = "Slightly Overweight"
+   }
+     else if (BMI >= 35 && BMI < 40) {
+     userNature.textContent = "Overweight"
+     }
+   
+   else if (BMI >= 40 && BMI > 45) {
+     userNature.textContent = "Obese"
+   }
+      
+      
+    }
   });
 
 
