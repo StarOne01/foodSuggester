@@ -117,10 +117,10 @@ heightIn.addEventListener("keyup", (e) => {
     protein =  carbs;
     calorieNeeded.innerHTML = `<h5>${calorieN} Cal</h5>`;
     
-    fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
-    carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
+    fatNeeded.innerHTML = `<h5>${fat} Cal</h5>`;
+    carbNeeded.innerHTML = `<h5>${carbs} Cal</h5>`;
     
-    proteinNeeded.innerHTML = `<h5>${protein}g</h5>`;
+    proteinNeeded.innerHTML = `<h5>${protein} Cal</h5>`;
     BMRH.textContent = `Your BMR: ${BMR}`
     if (BMI < 45) {
             gauge.set(BMI);
