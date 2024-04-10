@@ -84,8 +84,12 @@ const addSelected = (e, i) => {
 
 function addItem(option, time) {
   daysForThis.forEach((i) => {
-    foodData[daysNum[i]][timeNum[time]].push(option);
+    
     let inde = items.indexOf(option);
+    if(inde === -1) {
+      return
+    }
+    foodData[daysNum[i]][timeNum[time]].push(option);
     calorieCount[daysNum[i]] += calorieCounts[inde];
     fatCount[daysNum[i]] += fatCounts[inde];
     proteinCount[daysNum[i]] += proteinCounts[inde];
@@ -101,8 +105,12 @@ function deleteItem(option, time, e) {
       if (index !== -1) {
         dayData.splice(index, 1);
       }
+      else {
+        return
+      }
     }
-    calorieCount[daysNum[i]] -= calorieCounts[items.indexOf(option)];
+    let inde = items.indexOf(option);
+    calorieCount[daysNum[i]] -= calorieCounts[inde];
     fatCount[daysNum[i]] -= fatCounts[inde];
     proteinCount[daysNum[i]] -= proteinCounts[inde];
     carbsCount[daysNum[i]] -= carbohydrateCounts[inde];
@@ -120,7 +128,6 @@ function updateTable() {
         let newp = document.createElement("p");
         newp.innerHTML = `${foodData[i][j][k]} , `;
         tdtrObj[trItems[j + 1].id][i].appendChild(newp);
-        newp.textContent = foodData[i][j][k];
       }
     }
     fatRow[i].textContent = `${fatCount[i]}     (${fat})`;
