@@ -52,15 +52,19 @@ let numIn = 0;
 const addSelected = (e, i) => {
   e.preventDefault();
   if (daysForThis.size === 0) {
-    const toastLiveExample = document.getElementById("noDate");
-
-    const toastBootstrap =
-      bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+    toastBody.textContent = "Select alteast a day"
     toastBootstrap.show();
     return;
   }
   const selectedOption = userInput[i].value;
+      const inde = items.indexOf(selectedOption);
   if (selectedOption) {
+    
+    if(inde === -1) {
+      toastBody.textContent = "Please select items from the dropdown"
+      toastBootstrap.show();
+      return
+    }
     const newListItem = document.createElement("li");
     newListItem.innerHTML = `${selectedOption} <button type="button" class="delt btn btn-outline-danger btn-sm">Delete</button>`;
     selectedItemsList[i].appendChild(newListItem);
@@ -85,10 +89,7 @@ const addSelected = (e, i) => {
 function addItem(option, time) {
   daysForThis.forEach((i) => {
     
-    let inde = items.indexOf(option);
-    if(inde === -1) {
-      return
-    }
+        const inde = items.indexOf(option);
     foodData[daysNum[i]][timeNum[time]].push(option);
     calorieCount[daysNum[i]] += calorieCounts[inde];
     fatCount[daysNum[i]] += fatCounts[inde];

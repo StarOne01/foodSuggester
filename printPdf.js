@@ -120,21 +120,22 @@ getPDFBtn.addEventListener("click", (e) => {
         text: "Based on your Response, we have designed your recommended food chart for you...",
       },
       {
-        margin: [20, 20, 0, 0],
+        margin: [0, 20, 0, 0],
         text: "",
       },
       {
+        margin:0,
         table: {
           headerRows: 1,
           widths: [
-            "auto",
-            "auto",
-            "auto",
-            "auto",
-            "auto",
-            "auto",
-            "auto",
-            "auto",
+            55,
+            55,
+            55,
+            55,
+            55,
+            55,
+            55,
+            55,
           ],
 
           body: [
@@ -256,6 +257,10 @@ getPDFBtn.addEventListener("click", (e) => {
         },
       },
     ],
+    defaultStyle: {
+    fontSize: 8,
+    bold: true
+  }
   };
 
   pdfMake.createPdf(docDefinition).download("Diet.pdf");
