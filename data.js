@@ -4,7 +4,9 @@ let age = 0;
 let BMI = 0;
 let ca = 1;
 let carbs = 0;
+let redVal =0;
 let protein = 0;
+let condition = "";
 let fat = 0;
 let caloriesN = 0;
 

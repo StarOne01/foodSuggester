@@ -56,18 +56,21 @@ days.forEach((i)=> {
   let goal =  e.target.value
   if(goal === "weight_loss" || goal === "fat_loss") {
     caloriesN = caloriesN - 500;
+    redVal = -500;
   }
   else if (goal === "weight_gain"){
-    caloriesN = caloriesN - 500;
+    caloriesN = caloriesN + 500;
+    redVal = 500;
   }
   
   else if(goal === "clean_bulking") {
     caloriesN = caloriesN + 200;
+    redVal = 200;
   }
   else if(goal === "bikini") {
     caloriesN = caloriesN - 600;
+    redVal = -600;
   }
-  console.log(caloriesN)
   })
 
 

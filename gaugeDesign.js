@@ -114,7 +114,7 @@ heightIn.addEventListener("keyup", (e) => {
     
     if (BMI < 45 && BMI > 10) {
       
-    caloriesN = caloriesN + BMR;
+    caloriesN = redVal + BMR;
     
     BMIn.textContent = `Your BMI: ${BMI}` 
     fat = ((0.3*caloriesN)/9).toFixed(2);
@@ -131,28 +131,35 @@ heightIn.addEventListener("keyup", (e) => {
             gauge.set(BMI);
      if(BMI <= 16) {
      userNature.textContent = "Severe Thinness"
+     condition = "Severe Thinness";
    }
    else if (BMI < 18.5 && BMI > 16) {
      userNature.textContent = "Moderate Thinness"
+     condition = "Moderate Thinness";
    }
    
    else if (BMI < 25 && BMI > 18.5) {
      userNature.textContent = "Mild Thinness"
+     condition = "Mild Thinness";
    }
    
    else if (BMI < 30 && BMI > 25) {
      userNature.textContent = "Normal"
+      condition = "Normal";
    }
    
    else if (BMI >= 30 && BMI < 35) {
      userNature.textContent = "Slightly Overweight"
+     condition = "Overweight - Slightly";
    }
      else if (BMI >= 35 && BMI < 40) {
      userNature.textContent = "Overweight"
+     condition = "Overweight";
      }
    
    else if (BMI >= 40 && BMI > 45) {
      userNature.textContent = "Obese"
+     condition = "Obese";
    }
       
       

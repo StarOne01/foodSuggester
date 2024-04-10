@@ -73,12 +73,24 @@ const imageData = canvasy.toDataURL();
           ],
         ],
       },
-           {
+      {
+        columns: [
+          [{
         image:imageData,
         width:200,
         height:100,
-        alignment:'left',
+        alignment:'right',
       },
+      {
+        margin: [410,
+          10,
+          0,
+          0],
+        text:`${condition}`, bold: true
+      },
+    ],
+  ],
+  },
       {
         margin: [20,
           10,
@@ -108,7 +120,7 @@ const imageData = canvasy.toDataURL();
         text: `Goal: ${goals.value}`,
       },
             {
-      margin: [100,
+      margin: [400,
           0,
           0,
           0],
@@ -117,15 +129,19 @@ const imageData = canvasy.toDataURL();
           body : [ 
             [
             {text: 'Protein', bold: true},
-            proteinNeeded.textContent = `${protein}`
+            `${protein}`
           ], 
           [
             {text: 'Cabs', bold: true},
-            carbNeeded.textContent = `${carbs}`
+            `${carbs}`
           ], 
           [
             {text: 'fat', bold: true},
-            fatNeeded.textContent = `${fat}`
+            `${fat}`
+          ], 
+          [
+            {text: 'Calorie', bold: true},
+            `${caloriesN}`
           ], 
           ]
 
@@ -149,8 +165,6 @@ const imageData = canvasy.toDataURL();
       {
 
         table: {
-          // headers are automatically repeated if the table spans over multiple pages
-          // you can declare how many rows should be treated as headers
           headerRows: 1,
           widths: ['auto',
             'auto',
@@ -264,5 +278,7 @@ const imageData = canvasy.toDataURL();
   ],
 };
 
-  pdfMake.createPdf(docDefinition).open();
+pdfMake.createPdf(docDefinition).download('Diet.pdf');
+pdfMake.createPdf(docDefinition).open()
+
 });
