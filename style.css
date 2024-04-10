@@ -87,6 +87,10 @@ p {
   background:green;
 }
 
+#resultDiv p {
+  padding: 5px;
+}
+
 table {
   font-size: small;
 }
@@ -96,7 +100,6 @@ table p::before {
 }
 #resultDiv {
   float: right;
-  white-space:pre-wrap;
   text-align: center;
 }
 
@@ -109,7 +112,6 @@ table p::before {
 
 
 #BMRTable {
-  height: 450px;
   width: 83vw;
   display: block;
   max-width: 500px;
