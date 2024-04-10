@@ -51,6 +51,26 @@ days.forEach((i)=> {
   for (let k = 0; k < 7; k++) {
     trTh[8+k].textContent = `${trTh[8+k].id} (${convertTime(timeInput[k].value)})`;
   }});
+  
+  goals.addEventListener("change",(e)=> {
+  let goal =  e.target.value
+  if(goal === "weight_loss" || goal === "fat_loss") {
+    caloriesN = caloriesN - 500;
+  }
+  else if (goal === "weight_gain"){
+    caloriesN = caloriesN - 500;
+  }
+  
+  else if(goal === "clean_bulking") {
+    caloriesN = caloriesN + 200;
+  }
+  else if(goal === "bikini") {
+    caloriesN = caloriesN - 600;
+  }
+  console.log(caloriesN)
+  })
+
+
   let last = 1;
   cactivity.addEventListener("change", (e) => {
     BMR = (BMR/last).toFixed(1)

@@ -42,7 +42,3 @@ let gender = document.querySelectorAll('input[name="gender"]');
 let deltBtn = 0;
 
 let getPDFBtn = document.getElementById("getPDFBtn");
-const ctx = foo.getContext("2d");
-
-ctx.fillStyle = "black";
-ctx.fillRect(20, 20, 150, 100);

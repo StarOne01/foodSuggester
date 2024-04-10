@@ -110,19 +110,22 @@ heightIn.addEventListener("keyup", (e) => {
       BMR = ca *(10 * weight + 6.25 * height  - 5 * age - 161)
     }
     BMI = (Number(weight) / (Number(height) / 100 * (Number(height)) / 100)).toFixed(2)
+    
+    if (BMI < 45 && BMI > 10) {
+      
+    caloriesN = caloriesN + BMR;
+    BMR = caloriesN
     BMIn.textContent = `Your BMI: ${BMI}` 
-    calorieN = BMR;
-    fat = ((0.3*calorieN)/9).toFixed(2);
-    carbs = ((0.5 * calorieN)/4).toFixed(2);
-    protein =  ((0.2 * calorieN)/4).toFixed(2);
-    calorieNeeded.innerHTML = `<h5>${calorieN}g</h5>`;
+    fat = ((0.3*caloriesN)/9).toFixed(2);
+    carbs = ((0.5 * caloriesN)/4).toFixed(2);
+    protein =  ((0.2 * caloriesN)/4).toFixed(2);
+    calorieNeeded.innerHTML = `<h5>${caloriesN}g</h5>`;
     
     fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
     carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
     
     proteinNeeded.innerHTML = `<h5>${protein} Cal</h5>`;
     BMRH.textContent = `Your BMR: ${BMR}`
-    if (BMI < 45) {
             gauge.set(BMI);
      if(BMI <= 16) {
      userNature.textContent = "Severe Thinness"
