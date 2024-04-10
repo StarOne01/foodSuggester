@@ -102,6 +102,7 @@ weightIn.addEventListener("keyup", (e)=> {
 
 
 heightIn.addEventListener("keyup", (e) => {
+ 
     height = Number(e.target.value);
     if(checkRadio() == "Male") {
       BMR = ca *(10 * weight + 6.25 * height  - 5 * age + 5)
@@ -114,17 +115,18 @@ heightIn.addEventListener("keyup", (e) => {
     if (BMI < 45 && BMI > 10) {
       
     caloriesN = caloriesN + BMR;
-    BMR = caloriesN
+    
     BMIn.textContent = `Your BMI: ${BMI}` 
     fat = ((0.3*caloriesN)/9).toFixed(2);
     carbs = ((0.5 * caloriesN)/4).toFixed(2);
     protein =  ((0.2 * caloriesN)/4).toFixed(2);
     calorieNeeded.innerHTML = `<h5>${caloriesN}g</h5>`;
-    
+    acutalCal.innerHTML =  `<h5>${BMR}g</h5>`;
     fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
     carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
     
     proteinNeeded.innerHTML = `<h5>${protein}g</h5>`;
+    BMR = caloriesN
     BMRH.textContent = `Your BMR: ${BMR}`
             gauge.set(BMI);
      if(BMI <= 16) {

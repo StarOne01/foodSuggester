@@ -35,7 +35,7 @@ const imageData = canvasy.toDataURL();
       ],
     },
       {
-        margin: [0,
+        margin: [20,
           10,
           0,
           0],
@@ -56,7 +56,7 @@ const imageData = canvasy.toDataURL();
         ],
       },
       {
-        margin: [0,
+        margin: [20,
           10,
           0,
           0],
@@ -73,8 +73,14 @@ const imageData = canvasy.toDataURL();
           ],
         ],
       },
+           {
+        image:imageData,
+        width:200,
+        height:100,
+        alignment:'left',
+      },
       {
-        margin: [0,
+        margin: [20,
           10,
           0,
           0],
@@ -86,8 +92,23 @@ const imageData = canvasy.toDataURL();
           ],
         ],
       },
+
       {
-      margin: [400,
+        margin: [20,
+          10,
+          0,
+          0],
+        text: `Current Age: ${age}                                                                 Gender: ${checkRadio()}`,
+      },
+      {
+        margin: [20,
+          10,
+          0,
+          0],
+        text: `Goal: ${goals.value}`,
+      },
+            {
+      margin: [100,
           0,
           0,
           0],
@@ -110,29 +131,16 @@ const imageData = canvasy.toDataURL();
 
       }
       },
+
       {
-        margin: [0,
-          10,
-          0,
-          0],
-        text: `Current Age: ${age}         Gender: ${checkRadio()}`,
-      },
-      {
-        margin: [0,
-          10,
-          0,
-          0],
-        text: `Goal: ${goals.value}`,
-      },
-      {
-        margin: [0,
+        margin: [20,
           20,
           0,
           0],
         text: 'Based on your Response, we have designed your recommended food chart for you...',
       },
       {
-        margin: [0,
+        margin: [20,
           20,
           0,
           0],
