@@ -1,3 +1,4 @@
+
 const CheckAll = (i) => {
   if (!allChecked && i) {
     days.forEach((j) => {
