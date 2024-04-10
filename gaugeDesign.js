@@ -112,9 +112,9 @@ heightIn.addEventListener("keyup", (e) => {
     BMI = (Number(weight) / (Number(height) / 100 * (Number(height)) / 100)).toFixed(2)
     BMIn.textContent = `Your BMI: ${BMI}` 
     calorieN = BMR;
-    fat = 0.3 * calorieN;
-    carbs = 0.5 * calorieN;
-    protein = 0.2 * calorieN;
+    fat = (calorieN/9).toFixed(2);
+    carbs = (calorieN/4).toFixed(2);
+    protein =  carbs;
     calorieNeeded.innerHTML = `<h5>${calorieN} Cal</h5>`;
     
     fatNeeded.innerHTML = `<h5>${fat}g</h5>`;

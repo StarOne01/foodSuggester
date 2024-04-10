@@ -129,7 +129,7 @@ const imageData = canvasy.toDataURL();
           10,
           0,
           0],
-        text: 'Goal: Weight loss',
+        text: `Goal: ${goals.value}`,
       },
       {
         margin: [0,
