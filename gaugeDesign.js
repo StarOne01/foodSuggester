@@ -10,7 +10,7 @@ let opts = {
       // // Relative to gauge radius
       strokeWidth: 0.035,
       // The thickness
-      color: '#FFFFFF' // Fill color
+      color: '#000000' // Fill color
     },
     staticZones: [{
       strokeStyle: "#f49797a3",
@@ -73,7 +73,7 @@ let opts = {
         35,
         40],
       // Print labels at these values
-      color: "#FFFFFF",
+      color: "#000000",
       // Optional: Label text color
       fractionDigits: 0 // Optional: Numerical precision. 0=round off.
     },
@@ -82,7 +82,7 @@ let opts = {
     //colorStart: '#6FADCF',
     // Colors
     //colorStop: '#8FC0DA',
-    strokeColor: '#E0E0E0',
+    strokeColor: 'cyan',
     generateGradient: true,
     highDpiSupport: true,
 

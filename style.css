@@ -80,6 +80,7 @@ p {
 }
 #foo {
   display: block;
+  background: white ;
 }
 
 #Overweight {
@@ -106,9 +107,6 @@ table p::before {
   margin-inline: auto !important;
 }
 
-canvas {
-  background: black;
-}
 
 #BMRTable {
   height: 450px;

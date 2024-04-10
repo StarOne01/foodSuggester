@@ -9,11 +9,12 @@ const imageData = canvasy.toDataURL();
   const docDefinition = {
     pageSize: 'A4',
     content: [{
-      margin: [0,
-          5,
+ 
+      columns: [{
+        margin: [0,
+          -20,
           0,
           0],
-      columns: [{
         image: logo,
       width: 100,
       height: 100
@@ -27,25 +28,12 @@ const imageData = canvasy.toDataURL();
         },
         {
           width: 'auto',
-          text: 'Sri MK Towers\nVeeranadhi Pirivu CRE-641047\nwww.uruvamfitnesszone.in',
+          text: 'Sri MK Towers\nVeeranadhi Pirivu CBE-641047\nwww.uruvamfitnesszone.in',
           fontSize: 8,
           alignment: 'right',
         },
       ],
     },
-      {
-        margin: [0,
-          20,
-          0,
-          0],
-        columns: [{
-          width: '*',
-          text: 'UFZ\'S FOOD REPORT',
-          fontSize: 16,
-          alignment: 'center',
-        },
-        ],
-      },
       {
         margin: [0,
           10,
@@ -57,21 +45,13 @@ const imageData = canvasy.toDataURL();
             text: `Client Name: ${nameval}`,
             alignment: "left"
           },
-            {
-              width: '*',
-              text: '',
-            },
           ],
           [{
             width: 'auto',
             text: `Client Id: ${clientid}`,
-            alignment: "left"
+            
           },
-            {
-              width: '*',
-              text: '',
-              alignment: "left"
-            },
+
           ],
         ],
       },
@@ -88,19 +68,7 @@ const imageData = canvasy.toDataURL();
             {
               width: 'auto',
               text: `BMI: ${BMI}`,
-            },
-          ],
-          [{
-            width: 'auto',
-            text: '',
-          },
-            {
-              width: 'auto',
-              text: '',
-            },
-            {
-              width: 'auto',
-              text: '',
+              alignment:"left"
             },
           ],
         ],
@@ -116,16 +84,31 @@ const imageData = canvasy.toDataURL();
             text: `Current Height: ${height}`,
           },
           ],
-          [{
-            width: 'auto',
-            text: '',
-          },
-            {
-              width: 'auto',
-              text: '',
-            },
-          ],
         ],
+      },
+      {
+      margin: [400,
+          0,
+          0,
+          0],
+        table: {
+          
+          body : [ 
+            [
+            {text: 'Protein', bold: true},
+            proteinNeeded.textContent = `${protein}`
+          ], 
+          [
+            {text: 'Cabs', bold: true},
+            carbNeeded.textContent = `${carbs}`
+          ], 
+          [
+            {text: 'fat', bold: true},
+            fatNeeded.textContent = `${fat}`
+          ], 
+          ]
+
+      }
       },
       {
         margin: [0,
@@ -133,6 +116,13 @@ const imageData = canvasy.toDataURL();
           0,
           0],
         text: `Current Age: ${age}         Gender: ${checkRadio()}`,
+      },
+            {
+        
+        image:imageData,
+        width:200,
+        height:100,
+        alignment:'right',
       },
       {
         margin: [0,
@@ -154,7 +144,7 @@ const imageData = canvasy.toDataURL();
           0,
           0],
         text: '',
-      },
+      },      
       {
 
         table: {

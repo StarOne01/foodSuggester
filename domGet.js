@@ -9,12 +9,13 @@ const weightIn = document.getElementById("current_weight");
   const BMRTable = document.getElementById("BMRTable")
   const proteinNeeded = document.getElementById("proteinNeeded")
   const calorieNeeded = document.getElementById("calorieNeeded")
+  const goals = document.getElementById("goal")
 const breakfast = document.getElementById("breakfastI");
 const morningSnack = document.getElementById("morningSnackI");
 const lunch = document.getElementById("lunchI");
 const fatRow = document.querySelectorAll("#fatRow td")
-const proteinRow = document.querySelectorAll('#proteinRow td')
-const carbRow = document.querySelectorAll("#carbRow td")
+const proteinRow = document.querySelectorAll('#proteinRow td');
+const carbRow = document.querySelectorAll("#carbRow td");
 const eveningSnack = document.getElementById("eveningSnackI");
 const dinner = document.getElementById("dinnerI");
 const beforeSleep = document.getElementById("beforeSleepI");
@@ -41,3 +42,7 @@ let gender = document.querySelectorAll('input[name="gender"]');
 let deltBtn = 0;
 
 let getPDFBtn = document.getElementById("getPDFBtn");
+const ctx = foo.getContext("2d");
+
+ctx.fillStyle = "black";
+ctx.fillRect(20, 20, 150, 100);
