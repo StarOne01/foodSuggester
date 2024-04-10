@@ -86,55 +86,47 @@ const items = [
   "Multigrain atta parotas (1 piece)",
   "Quinoa upma (1 cup)",
   "Popcorn (1 cup)",
-  "Fish (3 ounces)",
-  "Chicken leg (3.5 ounces)",
-  "Chicken breast (3.5 ounces)",
-  "Beef (3.5 ounces)",
-  "Red meat any (3.5 ounces)",
-  "Mutton (3.5 ounces)",
+  "Fish (100 grams)",
+  "Chicken leg (100 grams)",
+  "Chicken breast (100 grams)",
+  "Beef (100 grams)",
+  "Red meat any (100 grams)",
+  "Mutton (100 grams)",
   "Idiyappam (1 piece)",
-  "Dark chocolate (1 ounce)",
+  "Dark chocolate (25 grams)",
   "Mushroom (1/2 cup)",
-  "Prawn (3 ounces)",
-  "Crab (3 ounces)",
+  "Prawn (100 grams)",
+  "Crab (100 grams)",
   "Veg-Bitter gourd (1/2 cup sliced)",
-  "Veg-pumpkin (1/2 cup mashed)",
-  "Veg-green banana (1 medium)",
-  "Veg-bottle gourd (1/2 cup diced)",
-  "Veg-ridge gourd (1/2 cup sliced)",
+  "Veg-pumpkin (1/2 cup)",
+  "Veg-green banana (1/2 cup sliced)",
+  "Veg-bottle gourd (1/2 cup)",
+  "Veg-ridge gourd (1/2 cup)",
   "Veg-radish (1/2 cup sliced)",
   "Veg-peas (1/2 cup)",
-  "Papaya (1 cup cubed)",
+  "Papaya (1/2 cup diced)",
   "Orange (1 medium)",
   "Mango (1 medium)",
-  "Jackfruit (1 cup)",
-  "Cheese (1 ounce)",
+  "Jackfruit (1/2 cup sliced)",
+  "Cheese (30 grams)",
   "Butter (1 tablespoon)",
   "Olive oil (1 tablespoon)",
   "Sunflower seed (1/4 cup)",
   "Peanut butter (1 tablespoon)",
   "Mayonnaise (1 tablespoon)",
-  "Chia seeds (1 ounce)",
-  "Flaxseed (1 ounce)",
-  "Egg whites (1 large)",
-  "Egg full (1 large)",
+  "Chia seeds (1 tablespoon)",
+  "Flaxseed (1 tablespoon)",
+  "Egg whites (2 egg whites)",
+  "Egg full (1 egg)",
   "Oats masala (1 cup)",
   "Sweet potato (1 medium)",
   "Whey (1 scoop)",
   "Weight gainer protein shake (1 scoop)",
-  "Protein shake - milk 100 ml + oats 50 gram+ banana 1 + egg 3 + peanut butter 1 spoon  ice cubes (1 serving)",
-  "Wheat bread toasted with 1 spoon peanut butter with 1 spoon honey stuffed with half banana (1 slice)",
+  "Protein shake - milk 100 ml + oats 50 grams + banana 1 + egg 3 + peanut butter 1 tablespoon + ice cubes (1 serving)",
+  "Wheat bread toasted with 1 tablespoon peanut butter with 1 tablespoon honey stuffed with half banana (1 slice)",
   "Potato (1 medium)",
   "Tapioca root (1 cup)",
-  "Gulfi (1 cone)"
-];
-
-const calorieCounts = [
-  52, 160, 69, 89, 16, 3, 16, 12, 2, 1, 1, 1, 8, 207, 40, 59, 42, 34, 172, 42, 62, 265, 67, 22, 33, 330, 146, 60, 66, 19, 40, 95, 64, 98, 27, 87, 131, 16, 64, 23, 56, 22, 82, 235, 366, 264, 132, 167, 177, 130, 180, 160, 140, 590, 74, 282, 570, 282, 562, 130, 113, 111, 8, 41, 18, 31, 25, 34, 156, 164, 212, 218, 216, 198, 900, 30, 83, 45, 34, 30, 61, 40, 61, 31, 186, 143, 387, 206, 172, 165, 250, 250, 234, 157, 500, 22, 100, 83, 17, 20, 90, 15, 20, 16, 81, 43, 47, 60, 95, 402, 717, 884, 584, 588, 680, 486, 534, 52, 155, 394, 86, 103, 340, 139, 245, 77, 358, 120
-];
-
-const proteinCounts = [
-  0.3, 2, 0.6, 1.3, 0, 0, 0.3, 1.2, 0, 0, 0.2, 0.2, 0.1, 2.2, 1, 9.7, 3.4, 3.4, 8.4, 6.8, 8.1, 5.7, 18.6, 1.1, 1.3, 1.1, 0.8, 1.1, 0.7, 0.9, 2.9, 0.1, 3.6, 3.4, 2.7, 6.2, 2.9, 1.4, 3, 1.6, 0.4, 1.5, 1.9, 1.6, 2.4, 2.2, 1.7, 1.4, 2.5, 2.8, 1.8, 0.2, 0.5, 2.3, 7.4, 4.7, 2.6, 4.2, 0.8, 2.5, 0.6, 2.1, 1.9, 0.7, 1.2, 0.3, 1.4, 3.4, 2.5, 7.3, 8.9, 8.3, 7.6, 8.7, 7.6, 9.4, 2.6, 4.6, 1.4, 0.1, 20.1, 1.6, 2.6, 2.9, 0.3, 0.8, 0.8, 1.2, 0.8, 1.5, 3.4, 4.1, 0.5, 1.3, 0.1, 0.4, 1.2, 1.7, 0.6, 1.2, 0.9, 1.5, 0.5, 1, 0.8, 0.3, 1.3, 1.7, 2.1, 0.8, 0.5, 2.4, 1.6, 4.3, 1.2
+  "Gulfi (1 stick)"
 ];
 
 const carbohydrateCounts = [
@@ -144,3 +136,9 @@ const carbohydrateCounts = [
 const fatCounts = [
   0.2, 14.7, 0.2, 0.3, 0, 0, 0, 0.1, 0, 0, 0, 0, 0, 11, 0.2, 0.4, 1.2, 0.2, 1.2, 1.1, 4.8, 20, 3.3, 0.3, 0.3, 0.4, 32.7, 4, 3.3, 3.4, 0.1, 5.5, 0.6, 7.1, 1.1, 0.3, 5.9, 5.8, 5, 0.5, 0.2, 0.7, 11.8, 4.8, 6.3, 8.3, 9.4, 9.7, 8.2, 4.9, 2.5, 0.3, 0.2, 0.5, 1, 0.2, 0.4, 0.1, 0.2, 0.1, 0.2, 0, 0.2, 0.1, 0, 0, 0, 0, 0.2, 1.7, 0.3, 0.3, 0.2, 0.1, 0.8, 0.4, 0.3, 0.6, 0.5, 0.2, 0.9, 0.1, 5, 9.3, 15.5, 6.2, 0.3, 9.4, 0.1, 0.1, 0.2, 0.4, 0.4, 13.8, 3.3, 0.1, 0.2, 0.1, 0.2, 0.1, 0.2, 0, 3.3, 14, 14.6, 12, 3.7, 21.3, 1.4, 3, 0.5, 0.2, 0.7, 0.2, 0.6, 0.2, 0.1, 0.3, 0.5, 0.3, 1.1
 ];
+
+const proteinCounts = [
+  0.3, 2, 0.6, 1.3, 0, 0, 0.3, 1.2, 0, 0, 0.2, 0.2, 0.1, 2.2, 1, 9.7, 3.4, 3.4, 8.4, 6.8, 8.1, 5.7, 18.6, 1.1, 1.3, 1.1, 0.8, 1.1, 0.7, 0.9, 2.9, 0.1, 3.6, 3.4, 2.7, 6.2, 2.9, 1.4, 3, 1.6, 0.4, 1.5, 1.9, 1.6, 2.4, 2.2, 1.7, 1.4, 2.5, 2.8, 1.8, 0.2, 0.5, 2.3, 7.4, 4.7, 2.6, 4.2, 0.8, 2.5, 0.6, 2.1, 1.9, 0.7, 1.2, 0.3, 1.4, 3.4, 2.5, 7.3, 8.9, 8.3, 7.6, 8.7, 7.6, 9.4, 2.6, 4.6, 1.4, 0.1, 20.1, 1.6, 2.6, 2.9, 0.3, 0.8, 0.8, 1.2, 0.8, 1.5, 3.4, 4.1, 0.5, 1.3, 0.1, 0.4, 1.2, 1.7, 0.6, 1.2, 0.9, 1.5, 0.5, 1, 0.8, 0.3, 1.3, 1.7, 2.1, 0.8, 0.5, 2.4, 1.6, 4.3, 1.2
+];
+
+// Now we have the food items, carbohydrate, fat, and protein counts in the appropriate units for Indian usage.
