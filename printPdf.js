@@ -117,13 +117,6 @@ const imageData = canvasy.toDataURL();
           0],
         text: `Current Age: ${age}         Gender: ${checkRadio()}`,
       },
-            {
-        
-        image:imageData,
-        width:200,
-        height:100,
-        alignment:'right',
-      },
       {
         margin: [0,
           10,
