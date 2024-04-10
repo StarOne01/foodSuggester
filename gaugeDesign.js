@@ -109,8 +109,6 @@ heightIn.addEventListener("keyup", (e) => {
     else {
       BMR = ca *(10 * weight + 6.25 * height  - 5 * age - 161)
     }
-    console.log(weight +"  "+ height)
-    
     BMI = (Number(weight) / (Number(height) / 100 * (Number(height)) / 100)).toFixed(2)
     BMIn.textContent = `Your BMI: ${BMI}` 
     calorieN = BMR;

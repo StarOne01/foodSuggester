@@ -7,9 +7,7 @@ dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
   
 const checkRadio = () => {
-let selectedRadio = document.querySelector(
-'input[name="gender"]:checked'
-).value;
+let selectedRadio = document.querySelector('input[name="gender"]:checked').value;
 let femaleQuestion = document.getElementById("female_questions");
 
 if (selectedRadio == "male") {

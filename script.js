@@ -80,8 +80,11 @@ updateTable()
 function addItem(option, time) {
   daysForThis.forEach((i) => {
     foodData[daysNum[i]][timeNum[time]].push(option)
-    console.log(items.indexOf(option))
-    calorieCount[daysNum[i]] += calorieCounts[items.indexOf(option)]
+    let inde = items.indexOf(option)
+    calorieCount[daysNum[i]] += calorieCounts[inde]
+    fatCount[daysNum[i]] += fatCounts[inde]
+    proteinCount[daysNum[i]] +=  proteinCounts[inde]
+    carbsCount[daysNum[i]] += carbohydrateCounts[inde]
   })
 }
 
@@ -96,6 +99,9 @@ function deleteItem(option, time,e) {
       }
     }
     calorieCount[daysNum[i]] -= calorieCounts[items.indexOf(option)]
+        fatCount[daysNum[i]] -= fatCounts[inde]
+    proteinCount[daysNum[i]] -=  proteinCounts[inde]
+    carbsCount[daysNum[i]] -= carbohydrateCounts[inde]
   });
   e.target.parentNode.remove()
 }
@@ -113,6 +119,9 @@ newp.innerHTML = `${foodData[i][j][k]} , `;
   newp.textContent = foodData[i][j][k];
       }
     }
-    calorieRow[i].textContent = calorieCount[i]
+    fatRow[i].textContent = `${fatCount[i]}     (${fat})`
+    proteinRow[i].textContent = `${proteinCount[i]}     (${protein})`
+    carbRow[i].textContent = `${carbsCount[i]}     (${carbs})`
+    calorieRow[i].textContent = `${calorieCount[i]}     (${caloriesN})`
   }
 }

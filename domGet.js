@@ -1,8 +1,6 @@
 const weightIn = document.getElementById("current_weight");
   const heightIn = document.getElementById("current_height");
   const ageIn = document.getElementById("current_age");
-  const nameIn = document.getElementById("client_name");
-  const clientID = document.getElementById("membership_id");
   const BMRH = document.getElementById("resultBMR");
   const userNature = document.getElementById("youAre")
   const wakeUp = document.getElementById("wakeUpI");
@@ -14,6 +12,9 @@ const weightIn = document.getElementById("current_weight");
 const breakfast = document.getElementById("breakfastI");
 const morningSnack = document.getElementById("morningSnackI");
 const lunch = document.getElementById("lunchI");
+const fatRow = document.querySelectorAll("#fatRow td")
+const proteinRow = document.querySelectorAll('#proteinRow td')
+const carbRow = document.querySelectorAll("#carbRow td")
 const eveningSnack = document.getElementById("eveningSnackI");
 const dinner = document.getElementById("dinnerI");
 const beforeSleep = document.getElementById("beforeSleepI");
@@ -30,8 +31,6 @@ const body = document.body;
 const trItems = document.querySelectorAll("#foodTable tr");
 
 const trTh = document.querySelectorAll("tr th");
-
-const offCanvasText = document.getElementById("offcanvasText");
 
 const selectAll = document.getElementById("Allday");
 const showResultsBtn = document.getElementById("sutButton");

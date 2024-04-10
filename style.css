@@ -105,10 +105,10 @@ table p::before {
   color: white !important;
   margin-inline: auto !important;
 }
-/*
+
 canvas {
-  float: right;
-}*/
+  background: black;
+}
 
 #BMRTable {
   height: 450px;
