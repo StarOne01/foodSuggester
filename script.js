@@ -95,7 +95,6 @@ function deleteItem(option, time,e) {
       const index = dayData.indexOf(option);
       if (index !== -1) {
         dayData.splice(index, 1);
-        console.log("Removed item from", daysNum[i], timeNum[time]);
       }
     }
     calorieCount[daysNum[i]] -= calorieCounts[items.indexOf(option)]

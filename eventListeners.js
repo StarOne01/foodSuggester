@@ -52,9 +52,9 @@ days.forEach((i)=> {
     trTh[8+k].textContent = `${trTh[8+k].id} (${convertTime(timeInput[k].value)})`;
   }});
   let last = 1;
-  cactivity.addEventListener("change", (i) => {
-    BMR /=last
-    ca = Number(e.cactivity.value);
+  cactivity.addEventListener("change", (e) => {
+    BMR = (BMR/last).toFixed(1)
+    ca = Number(e.target.value);
     BMR *= ca
     last = ca;
     
