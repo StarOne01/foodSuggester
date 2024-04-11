@@ -92,9 +92,9 @@ function addItem(option, time) {
         const inde = items.indexOf(option);
     foodData[daysNum[i]][timeNum[time]].push(option);
     calorieCount[daysNum[i]] += calorieCounts[inde];
-    fatCount[daysNum[i]] += fatCounts[inde];
-    proteinCount[daysNum[i]] += proteinCounts[inde];
-    carbsCount[daysNum[i]] += carbohydrateCounts[inde];
+    fatCount[daysNum[i]] += fatCounts[option];
+    proteinCount[daysNum[i]] += proteinCounts[option];
+    carbsCount[daysNum[i]] += carbohydrateCounts[option];
   });
 }
 
@@ -112,9 +112,9 @@ function deleteItem(option, time, e) {
     }
     let inde = items.indexOf(option);
     calorieCount[daysNum[i]] -= calorieCounts[inde];
-    fatCount[daysNum[i]] -= fatCounts[inde];
-    proteinCount[daysNum[i]] -= proteinCounts[inde];
-    carbsCount[daysNum[i]] -= carbohydrateCounts[inde];
+    fatCount[daysNum[i]] -= fatCounts[option];
+    proteinCount[daysNum[i]] -= proteinCounts[option];
+    carbsCount[daysNum[i]] -= carbohydrateCounts[option];
   });
   e.target.parentNode.remove();
 }
