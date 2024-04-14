@@ -1,19 +1,21 @@
 const CheckAll = (i) => {
-  if (!allChecked && i) {
+  
+  if (i) {
+    daysForThis = new Set();
     days.forEach((j) => {
       j.checked = true;
       daysForThis.add(j.value);
       allChecked = 1;
       selectAll.checked = true;
     });
-  } else {
-    daysForThis = new Set();
+  } else if(!i){
     days.forEach((j) => {
       j.checked = false;
     });
-    allChecked = 0;
+   allChecked = 0;
     selectAll.checked = false;
   }
+  console.log(daysForThis)
 };
 
 function convertTime(timeString) {
@@ -52,7 +54,7 @@ let numIn = 0;
 const addSelected = (e, i) => {
   e.preventDefault();
   if (daysForThis.size === 0) {
-    toastBody.textContent = "Select alteast a day"
+    toastBody.textContent = "Select alteast a day";
     toastBootstrap.show();
     return;
   }
@@ -61,9 +63,9 @@ const addSelected = (e, i) => {
   if (selectedOption) {
     
     if(inde === -1) {
-      toastBody.textContent = "Please select items from the dropdown"
+      toastBody.textContent = "Please select items from the dropdown";
       toastBootstrap.show();
-      return
+      return;
     }
     const newListItem = document.createElement("li");
     newListItem.innerHTML = `${selectedOption} <button type="button" class="delt btn btn-outline-danger btn-sm">Delete</button>`;
@@ -91,10 +93,11 @@ function addItem(option, time) {
     
         const inde = items.indexOf(option);
     foodData[daysNum[i]][timeNum[time]].push(option);
-    calorieCount[daysNum[i]] += calorieCounts[inde];
-    fatCount[daysNum[i]] += fatCounts[option];
-    proteinCount[daysNum[i]] += proteinCounts[option];
-    carbsCount[daysNum[i]] += carbohydrateCounts[option];
+    console.log(calorieCount[daysNum[i]] + calorieCounts[inde])
+    calorieCount[daysNum[i]] = (Number(calorieCount[daysNum[i]]) + Number(calorieCounts[inde])).toFixed(2);
+    fatCount[daysNum[i]] = (Number(fatCount[daysNum[i]]) + Number(fatCounts[option])).toFixed(2);
+    proteinCount[daysNum[i]] = (Number(proteinCount[daysNum[i]]) + Number(proteinCounts[option])).toFixed(2);
+    carbsCount[daysNum[i]] = (Number(carbsCount[daysNum[i]]) + Number(carbohydrateCounts[option])).toFixed(2);
   });
 }
 
@@ -107,14 +110,14 @@ function deleteItem(option, time, e) {
         dayData.splice(index, 1);
       }
       else {
-        return
+        return;
       }
     }
     let inde = items.indexOf(option);
-    calorieCount[daysNum[i]] -= calorieCounts[inde];
-    fatCount[daysNum[i]] -= fatCounts[option];
-    proteinCount[daysNum[i]] -= proteinCounts[option];
-    carbsCount[daysNum[i]] -= carbohydrateCounts[option];
+    calorieCount[daysNum[i]] = (Number(calorieCount[daysNum[i]]) - Number(calorieCounts[inde])).toFixed(2);
+    fatCount[daysNum[i]] = (Number(fatCount[daysNum[i]]) - Number(fatCounts[option])).toFixed(2);
+    proteinCount[daysNum[i]] = (Number(proteinCount[daysNum[i]]) - Number(proteinCounts[option])).toFixed(2);
+    carbsCount[daysNum[i]] = (Number(carbsCount[daysNum[i]]) - Number(carbohydrateCounts[option])).toFixed(2);
   });
   e.target.parentNode.remove();
 }

@@ -35,16 +35,17 @@ detailedInfo.forEach((j) => {
     'input[name="detailedInfo"]:checked'
   ).value;
   if(selectedRadio == "yes") {
-    detailedForm.style.display = "block"
+    detailedForm.style.display = "block";
   }
   else {
-    detailedForm.style.display = "none"
+    detailedForm.style.display = "none";
   }
-  })
-})
+  });
+});
 
 selectAll.addEventListener("click", () => {
   CheckAll(1);
+  
 });
 
 userInput.forEach((i) => {
@@ -55,10 +56,14 @@ userInput.forEach((i) => {
 
 days.forEach((i) => {
   i.addEventListener("click", (e) => {
-    if (!e.target.checked) {
-      daysForThis.delete(e.target.value);
-    } else {
+    if (e.target.checked) {
       daysForThis.add(e.target.value);
+    } else {
+      daysForThis.delete(e.target.value);
+      if(allChecked) {
+      selectAll.checked = false;
+      AllChecked = 0;
+      }
     }
   });
 });
