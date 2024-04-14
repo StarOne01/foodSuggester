@@ -263,6 +263,5 @@ getPDFBtn.addEventListener("click", (e) => {
   }
   };
 
-  pdfMake.createPdf(docDefinition).download("Diet.pdf");
-  pdfMake.createPdf(docDefinition).open();
+  pdfMake.createPdf(docDefinition).download(`${nameval}-Diet.pdf`);
 });
