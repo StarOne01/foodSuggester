@@ -29,6 +29,20 @@ gender.forEach((i) => {
   i.addEventListener("click", checkRadio);
 });
 
+detailedInfo.forEach((j) => {
+  j.addEventListener("click", ()=> {
+     let selectedRadio = document.querySelector(
+    'input[name="detailedInfo"]:checked'
+  ).value;
+  if(selectedRadio == "yes") {
+    detailedForm.style.display = "block"
+  }
+  else {
+    detailedForm.style.display = "none"
+  }
+  })
+})
+
 selectAll.addEventListener("click", () => {
   CheckAll(1);
 });

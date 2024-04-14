@@ -2,6 +2,10 @@
   display: none;
 }
 
+#detailedForm {
+  display: none;
+}
+
 h2 {
   padding-top: 40px;
 }

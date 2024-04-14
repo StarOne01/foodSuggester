@@ -153,7 +153,19 @@
           </table>
         </div>
         <br /><br /><br />
-
+        <h2>More detailed ?</h2>
+       <input
+          type="radio"
+          id="detailed_yes"
+          name="detailedInfo"
+          value="yes"
+          required
+        />
+        <label for="detailed_yes">Yes</label>
+        <input type="radio" id="detailed_no" name="detailedInfo" value="no" required checked/>
+        <label for="detailed_no">No</label>
+        <br /><br />
+<div id="detailedForm">
         <h2>Weight History</h2>
         <label for="weight_problem_start"
           >When did your weight problem begin?</label
@@ -563,6 +575,7 @@
           <input type="radio" id="urine_loss_no" name="urine_loss" value="no" />
           <label for="urine_loss_no">No</label><br /><br />
         </fieldset>
+        </div>
         <h2>Diet (Food Intake)</h2><br>
         <p>WakeUp Time: <input type="time" /></p>
         <br />

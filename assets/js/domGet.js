@@ -27,6 +27,8 @@ const cactivity = document.getElementById("cactivity");
 const calorieRow = document.querySelectorAll("#calorieRow td");
 const days = document.querySelectorAll("input[name='day']");
 const userInput = document.querySelectorAll("input[type='search']");
+const detailedInfo = document.querySelectorAll("input[name='detailedInfo']");
+const detailedForm = document.getElementById("detailedForm")
 let dataList = document.getElementById("itemList");
 const addButton = document.getElementById("addButton");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
