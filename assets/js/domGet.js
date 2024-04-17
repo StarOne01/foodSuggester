@@ -12,8 +12,8 @@ const fatNeeded = document.getElementById("fatNeeded");
 const carbNeeded = document.getElementById("carbNeeded");
 const BMRTable = document.getElementById("BMRTable");
 const proteinNeeded = document.getElementById("proteinNeeded");
-
-const ExTbls = document.querySelectorAll(".ExTbl tr th")
+const ExTblTr = document.querySelectorAll(".ExTbl tr")
+const ExTbl = document.querySelectorAll(".ExTbl")
 let order = document.querySelectorAll("#my-list li")
 const setOrderBtn = document.getElementById("setOrder")
 

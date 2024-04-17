@@ -9,9 +9,19 @@ beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
 let isRest = false
 order.forEach(i => {
   i.addEventListener("click", (e) => {
+    if(WorkOfTheDay.has(e.target.textContent)) {
+              e.target.style.textDecoration = "line-through";
+        e.target.style.color ="white";
+        e.target.style.backgroundColor = "black"
+        WorkOfTheDay.delete(e.target.textContent)
+        if(e.target.textContent === "Rest") {
+          isRest = false;
+        }
+        return;
+    }
     if(!isRest) {
       e.target.style.textDecoration = "none";
-      WorkOfTheDay.push(e.target.textContent)
+      WorkOfTheDay.add(e.target.textContent)
       console.log(WorkOfTheDay)
       e.target.style.backgroundColor ="white";
       e.target.style.color ="black";
@@ -22,15 +32,18 @@ order.forEach(i => {
         j.style.textDecoration = "line-through";
         j.style.color ="white";
         j.style.backgroundColor = "black"
-        WorkOfTheDay = []
+      } )
+      WorkOfTheDay = new Set()
         e.target.style.textDecoration = "none";
-        WorkOfTheDay.push(e.target.textContent)
+        WorkOfTheDay.add(e.target.textContent)
         console.log(WorkOfTheDay)
         e.target.style.backgroundColor ="white";
         e.target.style.color ="black";
-  })
-}
-})
+        
+  }
+  }
+      );
+      
 })
 
 
@@ -141,6 +154,7 @@ setOrderBtn.addEventListener("click", (e) => {
 e.preventDefault();
   order.forEach(o => {
     orderAf.push(o.textContent)
+  const newTr = document.createElement('tr');
   })
   console.log(orderAf)
 })
