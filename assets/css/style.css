@@ -28,6 +28,8 @@ input {
 
 body {
   margin: 10px !important;
+  color: white;
+  background-color: black;
 }
 
 table {
