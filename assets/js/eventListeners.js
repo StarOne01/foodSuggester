@@ -44,7 +44,7 @@ detailedInfo.forEach((j) => {
 });
 
 selectAll.addEventListener("click", () => {
-  CheckAll(1);
+  CheckAll();
   
 });
 
@@ -56,15 +56,17 @@ userInput.forEach((i) => {
 
 days.forEach((i) => {
   i.addEventListener("click", (e) => {
+    if(allChecked) {
+      selectAll.checked = false;
+      allChecked = 0;
+      }
     if (e.target.checked) {
       daysForThis.add(e.target.value);
     } else {
       daysForThis.delete(e.target.value);
-      if(allChecked) {
-      selectAll.checked = false;
-      AllChecked = 0;
-      }
     }
+
+  console.log(daysForThis)
   });
 });
 
