@@ -12,6 +12,10 @@ const fatNeeded = document.getElementById("fatNeeded");
 const carbNeeded = document.getElementById("carbNeeded");
 const BMRTable = document.getElementById("BMRTable");
 const proteinNeeded = document.getElementById("proteinNeeded");
+
+let order = document.querySelectorAll("#my-list li")
+const setOrderBtn = document.getElementById("setOrder")
+
 const calorieNeeded = document.getElementById("calorieNeeded");
 const goals = document.getElementById("goal");
 const breakfast = document.getElementById("breakfastI");

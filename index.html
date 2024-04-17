@@ -1,8 +1,9 @@
-<!DOCTYPE HTML5>
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Client Information Form</title>
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -924,6 +925,18 @@
           </table>
         </div>
         <br /><br />
+
+        <h2>WorkOut order</h2>
+        <ul id="my-list">
+          <li>Warmup</li>
+          <li>Cardio</li>
+          <li>Core Major</li>
+          <li>Core Minor</li>
+          <li>HIIT</li>
+          <li>Abs</li>
+          <li>Warmdown</li>
+        </ul>
+        <button class="btn btn-outline-light" id="setOrder">Set Order</button>
         <br /><br />
         <label for="">Warmup</label><br />
         <input
@@ -1041,7 +1054,8 @@
         <p id="calrie"></p>
         <br />
         <br />
-
+        <input type="checkbox" id="Allday" value="selectAll" />
+        <label for="Allday">Select All</label>
         <br />
         <div class="table-responsive">
           <table id="foodTable" class="table table-bordered">
@@ -1542,10 +1556,12 @@
         </div>
         <br /><br />
       </form>
+
       <button type="submit" class="btn btn-outline-light" id="getPDFBtn">
         Get PDF
       </button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script
       src="assets/vendor/bootstrap/bootstrap.bundle.min.js"
       defer

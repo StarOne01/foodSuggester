@@ -35,6 +35,11 @@ const filterOptions = (userInputValue) => {
   return filteredOptions;
 };
 
+const sortableList = Sortable.create(document.getElementById("my-list"), {
+  ghostClass: 'dragging',
+  animation: 150
+});
+
 const showSuggestions = (i) => {
   const userInputValue = i.value;
   const filteredOptions = filterOptions(userInputValue);
@@ -48,10 +53,9 @@ const showSuggestions = (i) => {
       dataList.appendChild(optionElement);
     });
   }
-};
+}
 
 let numIn = 0;
-
 const addSelected = (e, i) => {
   e.preventDefault();
   if (daysForThis.size === 0) {

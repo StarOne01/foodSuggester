@@ -2,6 +2,30 @@
   display: none;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#my-list {
+  padding: 25px;
+  border-radius: 7px;
+  padding: 30px 25px 20px;
+}
+#my-list li {
+  list-style: none;
+  display: flex;
+  cursor: move;
+  background: #fff;
+  align-items: center;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 13px;
+  margin-bottom: 11px;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+}
+
 
 
 #detailedForm {

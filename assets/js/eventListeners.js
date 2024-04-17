@@ -105,3 +105,14 @@ cactivity.addEventListener("change", (e) => {
   BMR *= ca;
   last = ca;
 });
+
+let orderAf = [];
+setOrderBtn.addEventListener("click", (e) => {
+  orderAf = [];
+  order = document.querySelectorAll("#my-list li")
+e.preventDefault();
+  order.forEach(o => {
+    orderAf.push(o.textContent)
+  })
+  console.log(orderAf)
+})
