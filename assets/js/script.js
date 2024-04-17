@@ -1,20 +1,21 @@
-const CheckAll = (i) => {
-  
-  if (i) {
-    daysForThis = new Set();
-    days.forEach((j) => {
-      j.checked = true;
-      daysForThis.add(j.value);
-      allChecked = 1;
+const CheckAll = () => {
+  daysForThis = new Set()
+    if(allChecked === 0){
       selectAll.checked = true;
-    });
-  } else if(!i){
-    days.forEach((j) => {
-      j.checked = false;
-    });
-   allChecked = 0;
-    selectAll.checked = false;
-  }
+      allChecked = 1;
+      days.forEach((j) => {
+        j.checked = true;
+        daysForThis.add(j.value);
+      });
+    }
+    else {
+      selectAll.checked = false;
+      allChecked = 0;
+      days.forEach((j) => {
+        j.checked = false;
+      });
+    }
+
   console.log(daysForThis)
 };
 
