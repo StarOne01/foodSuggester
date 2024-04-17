@@ -103,15 +103,15 @@ const BMIfunc = (e) => {
     (((Number(height) / 100) * Number(height)) / 100)
   )).toFixed(2);
   if (BMI < 45 && BMI > 10) {
-    caloriesN = redVal + Number(BMR);
+    caloriesN = (Number(redVal + Number(BMR))).toFixed(2);
     console.log(caloriesN)
 console.log("Here")
     BMIn.textContent = `Your BMI: ${BMI}`;
     fat = ((0.3 * caloriesN) / 9).toFixed(2);
     carbs = ((0.5 * caloriesN) / 4).toFixed(2);
     protein = ((0.2 * caloriesN) / 4).toFixed(2);
-    calorieNeeded.innerHTML = `<h5>${caloriesN}g</h5>`;
-    acutalCal.innerHTML = `<h5>${BMR}g</h5>`;
+    calorieNeeded.innerHTML = `<h5>${BMR}g</h5>`;
+    acutalCal.innerHTML = `<h5>${caloriesN}g</h5>`;
     fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
     carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
 
