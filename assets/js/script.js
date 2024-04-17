@@ -1,14 +1,13 @@
-const CheckAll = (i) => {
-  
-  if (i) {
-    daysForThis = new Set();
+const CheckAll = () => {
+  daysForThis = new Set();
+  if (!allChecked) {
     days.forEach((j) => {
       j.checked = true;
       daysForThis.add(j.value);
+    });
       allChecked = 1;
       selectAll.checked = true;
-    });
-  } else if(!i){
+  } else if(allChecked){
     days.forEach((j) => {
       j.checked = false;
     });

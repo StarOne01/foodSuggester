@@ -44,7 +44,7 @@ detailedInfo.forEach((j) => {
 });
 
 selectAll.addEventListener("click", () => {
-  CheckAll(1);
+  CheckAll();
   
 });
 
@@ -62,7 +62,7 @@ days.forEach((i) => {
       daysForThis.delete(e.target.value);
       if(allChecked) {
       selectAll.checked = false;
-      AllChecked = 0;
+      allChecked = 0;
       }
     }
   });
