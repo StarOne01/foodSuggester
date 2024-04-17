@@ -2,6 +2,8 @@
   display: none;
 }
 
+
+
 #detailedForm {
   display: none;
 }
@@ -122,7 +124,6 @@ table p::before {
   width: 83vw;
   display: block;
   max-width: 500px;
-  padding-bottom: 30px;
 }
 
 input[type="search"] {
