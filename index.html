@@ -50,7 +50,7 @@
         ><br /><br />
 
         <label for="goal">Type</label><br />
-        <select id="goal" name="goal" required>
+        <select id="m" name="ngoal" required>
           <option value="">Select...</option>
           <option value="weight_loss">Beginner</option>
           <option value="weight_gain">Intermediate</option>
@@ -58,7 +58,7 @@
           <option value="maintain">Novice</option></select
         ><br /><br />
         <label for="goal">Set</label><br />
-        <select id="goal" name="goal" required>
+        <select id="k" name="gkal" required>
           <option value="">Select...</option>
           <option value="weight_loss">Straight Sets</option>
           <option value="weight_gain">Drop Sets</option>
@@ -164,11 +164,11 @@
               <td id="proteinNeeded"></td>
             </tr>
             <tr>
-              <td>Calorie</td>
+              <td>Actual Calorie</td>
               <td id="calorieNeeded"></td>
             </tr>
             <tr>
-              <td>Actual Calorie</td>
+              <td>Total Calorie</td>
               <td id="aCalorieNeeded"></td>
             </tr>
           </table>
@@ -612,28 +612,9 @@
         <br />
         <p>Sleep Time: <input type="time" /></p>
         <br />
-        <button class="btn btn-danger" id="timeBtn" type="button">
+        <button class="btn btn-outline-light" id="timeBtn" type="button">
           Set Time
         </button>
-        <br /><br />
-        <br />
-        <input type="checkbox" name="day" id="Sunday" value="Sunday" />
-        <label for="Sunday">Sunday</label><br />
-        <input type="checkbox" name="day" id="Monday" value="Monday" />
-        <label for="Monday">Monday </label><br />
-        <input type="checkbox" name="day" id="Tuesday" value="Tuesday" />
-        <label for="Tuesday">Tuesday</label><br />
-        <input type="checkbox" id="Wednesday" name="day" value="Wednesday" />
-        <label for="Wednesday">Wednesday</label><br />
-        <input type="checkbox" id="Thursday" name="day" value="Thursday" />
-        <label for="Thursday">Thursday</label><br />
-        <input type="checkbox" id="Friday" name="day" value="Friday" />
-        <label for="Friday">Friday</label><br />
-        <input type="checkbox" id="Saturday" name="day" value="Saturday" />
-        <label for="Saturday">Saturday</label>
-        <br />
-        <input type="checkbox" id="Allday" value="selectAll" />
-        <label for="Allday">Select All</label>
         <br /><br />
         <label for="wake_up_food">Wake-up:</label><br />
         <input
@@ -749,18 +730,30 @@
         <br />
         <ul class="selectedItems" data-parent="sleepTr"></ul>
         <p id="calrie"></p>
+        <br />
+<br />
 
+        <br />
+        <input type="checkbox" id="Allday" value="selectAll" />
+        <label for="Allday">Select All</label>
         <div class="table-responsive">
           <table id="foodTable" class="table table-bordered">
             <tr class="table-dark" id="HeadingTh">
               <th></th>
-              <th>Sunday</th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
+              <th><input type="checkbox" name="day" id="Sunday" value="Sunday" />
+                <label for="Sunday">Sunday</label></th>
+              <th>        <input type="checkbox" name="day" id="Monday" value="Monday" />
+                <label for="Monday">Monday </label></th>
+              <th>        <input type="checkbox" name="day" id="Tuesday" value="Tuesday" />
+                <label for="Tuesday">Tuesday</label></th>
+              <th>        <input type="checkbox" id="Wednesday" name="day" value="Wednesday" />
+                <label for="Wednesday">Wednesday</label></th>
+              <th>        <input type="checkbox" id="Thursday" name="day" value="Thursday" />
+                <label for="Thursday">Thursday</label></th>
+              <th>        <input type="checkbox" id="Friday" name="day" value="Friday" />
+                <label for="Friday">Friday</label></th>
+              <th>        <input type="checkbox" id="Saturday" name="day" value="Saturday" />
+                <label for="Saturday">Saturday</label></th>
             </tr>
             <tr id="wakeTr">
               <th id="Wakeup">WakeUp</th>

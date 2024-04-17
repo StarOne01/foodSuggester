@@ -56,15 +56,17 @@ userInput.forEach((i) => {
 
 days.forEach((i) => {
   i.addEventListener("click", (e) => {
+    if(allChecked) {
+      selectAll.checked = false;
+      allChecked = 0;
+      }
     if (e.target.checked) {
       daysForThis.add(e.target.value);
     } else {
       daysForThis.delete(e.target.value);
-      if(allChecked) {
-      selectAll.checked = false;
-      allChecked = 0;
-      }
     }
+
+  console.log(daysForThis)
   });
 });
 
@@ -80,18 +82,20 @@ Timebtn.addEventListener("click", (e) => {
 goals.addEventListener("change", (e) => {
   let goal = e.target.value;
   if (goal === "weight_loss" || goal === "fat_loss") {
-    caloriesN = caloriesN - 500;
+   
     redVal = -500;
   } else if (goal === "weight_gain") {
-    caloriesN = caloriesN + 500;
+    
     redVal = 500;
   } else if (goal === "clean_bulking") {
     caloriesN = caloriesN + 200;
     redVal = 200;
   } else if (goal === "bikini") {
-    caloriesN = caloriesN - 600;
+ 
     redVal = -600;
   }
+  console.log("Trig")
+  BMIfunc(e)
 });
 
 let last = 1;

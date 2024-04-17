@@ -650,10 +650,3 @@ const calorieCounts = [
   360,
   150
   ];
-  
-  
-  
-  
-
-  // All arrays now have the same length, and each food item is correctly mapped with its corresponding nutrient count.
-console.log(calorieCounts.length + " " + carbohydrateCounts.length + " " + fatCounts.length + " " + items.length)
