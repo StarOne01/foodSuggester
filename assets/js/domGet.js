@@ -13,6 +13,7 @@ const carbNeeded = document.getElementById("carbNeeded");
 const BMRTable = document.getElementById("BMRTable");
 const proteinNeeded = document.getElementById("proteinNeeded");
 
+const ExTbls = document.querySelectorAll(".ExTbl tr th")
 let order = document.querySelectorAll("#my-list li")
 const setOrderBtn = document.getElementById("setOrder")
 

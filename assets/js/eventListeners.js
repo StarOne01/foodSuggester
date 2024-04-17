@@ -6,6 +6,17 @@ eveningSnack.addEventListener("click", (e) => addSelected(e, 4));
 dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
 
+order.forEach(i => {
+  i.addEventListener("click", (e) => {
+    e.target.style.textDecoration = "none";
+    WorkOfTheDay.add(e.target.textContent)
+    console.log(WorkOfTheDay)
+    e.target.style.backgroundColor ="white";
+    e.target.style.color ="black";
+  })
+})
+
+
 const checkRadio = () => {
   let selectedRadio = document.querySelector(
     'input[name="gender"]:checked'
