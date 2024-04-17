@@ -50,7 +50,7 @@
         ><br /><br />
 
         <label for="goal">Type</label><br />
-        <select id="goal" name="goal" required>
+        <select id="m" name="ngoal" required>
           <option value="">Select...</option>
           <option value="weight_loss">Beginner</option>
           <option value="weight_gain">Intermediate</option>
@@ -58,7 +58,7 @@
           <option value="maintain">Novice</option></select
         ><br /><br />
         <label for="goal">Set</label><br />
-        <select id="goal" name="goal" required>
+        <select id="k" name="gkal" required>
           <option value="">Select...</option>
           <option value="weight_loss">Straight Sets</option>
           <option value="weight_gain">Drop Sets</option>
@@ -164,11 +164,11 @@
               <td id="proteinNeeded"></td>
             </tr>
             <tr>
-              <td>Calorie</td>
+              <td>Actual Calorie</td>
               <td id="calorieNeeded"></td>
             </tr>
             <tr>
-              <td>Actual Calorie</td>
+              <td>Total Calorie</td>
               <td id="aCalorieNeeded"></td>
             </tr>
           </table>
@@ -612,7 +612,7 @@
         <br />
         <p>Sleep Time: <input type="time" /></p>
         <br />
-        <button class="btn btn-danger" id="timeBtn" type="button">
+        <button class="btn btn-outline-light" id="timeBtn" type="button">
           Set Time
         </button>
         <br /><br />

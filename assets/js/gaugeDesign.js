@@ -81,33 +81,31 @@ let opts = {
   generateGradient: true,
   highDpiSupport: true,
 };
-var target = document.getElementById("foo"); // your canvas element
+var target = document.getElementById("foo");
 var gauge = new Gauge(target).setOptions(opts);
 gauge.setMinValue(0);
-gauge.maxValue = 45; // set max gauge value
-// Prefer setter over gauge.minValue = 0
-gauge.animationSpeed = 32; // set animation speed (32 is default value)*/
+gauge.maxValue = 45;
+gauge.animationSpeed = 32; 
 gauge.set(0);
 
 weightIn.addEventListener("keyup", (e) => {
   weight = Number(e.target.value);
 });
 
-heightIn.addEventListener("keyup", (e) => {
-  height = Number(e.target.value);
+const BMIfunc = (e) => {
   if (checkRadio() == "Male") {
     BMR = ca * (10 * weight + 6.25 * height - 5 * age + 5);
   } else {
     BMR = ca * (10 * weight + 6.25 * height - 5 * age - 161);
   }
-  BMI = (
+  BMI = (Number(
     Number(weight) /
     (((Number(height) / 100) * Number(height)) / 100)
-  ).toFixed(2);
-
+  )).toFixed(2);
   if (BMI < 45 && BMI > 10) {
-    caloriesN = redVal + BMR;
-
+    caloriesN = redVal + Number(BMR);
+    console.log(caloriesN)
+console.log("Here")
     BMIn.textContent = `Your BMI: ${BMI}`;
     fat = ((0.3 * caloriesN) / 9).toFixed(2);
     carbs = ((0.5 * caloriesN) / 4).toFixed(2);
@@ -143,7 +141,11 @@ heightIn.addEventListener("keyup", (e) => {
       userNature.textContent = "Obese";
       condition = "Obese";
     }
-  }
+  }}
+
+heightIn.addEventListener("keyup", (e) => { 
+  height = Number(e.target.value);
+  BMIfunc(e)
 });
 
 ageIn.addEventListener("keyup", (e) => {
