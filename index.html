@@ -123,25 +123,38 @@
           <h3 id="resultBMI"></h3>
           <canvas id="foo"></canvas>
           <h3 id="youAre"></h3>
+          <ul><li>
           <div id="SevereThinness"></div>
-          <p>Severe Thinness</p>
+          <p>Severe Thinness</p></li>
+          <li>
           <div id="ModerateThinness"></div>
           <p>ModerateThinness</p>
-          <br />
+          </li>
+          <li>
           <div id="MildThinness"></div>
           <p>MildThinness</p>
+          </li>
+          <li>
           <div id="normal"></div>
           <p>normal</p>
-          <br />
+          </li>
+          <li>
           <div id="Overweight"></div>
           <p>Overweight</p>
+          </li>
+          <li>
           <div id="ObeseClass1"></div>
           <p>ObeseClass1</p>
-          <br />
+          </li>
+          <li>
           <div id="ObeseClass2"></div>
           <p>Obese Class 2</p>
+          </li>
+          <li>
           <div id="ObeseClass3"></div>
           <p>Obese Class 3</p>
+          </li>
+          </ul>
           <br />
         </div>
         <br />
@@ -618,7 +631,8 @@
             <label for="urine_loss_no">No</label><br /><br />
           </fieldset>
         </div>
-        <h2>Diet (Food Intake)</h2>
+        <div id="dietTime">
+        <h2 >Diet (Food Intake)</h2>
         <br />
         <p>WakeUp Time: <input type="time" /></p>
         <br />
@@ -637,6 +651,7 @@
         <button class="btn btn-outline-light" id="timeBtn" type="button">
           Set Time
         </button>
+        </div>
         <br /><br />
         <label for="wake_up_food">Wake-up:</label><br />
         <input
@@ -925,25 +940,26 @@
           </table>
         </div>
         <br /><br />
-        <input type="checkbox" name="day" id="Sunday" value="Sunday" />
-        <label for="Sunday">Sunday</label><br />
-        <input type="checkbox" name="day" id="Monday" value="Monday" />
-        <label for="Monday">Monday </label><br />
-        <input type="checkbox" name="day" id="Tuesday" value="Tuesday" />
-        <label for="Tuesday">Tuesday</label><br />
-        <input type="checkbox" id="Wednesday" name="day" value="Wednesday" />
-        <label for="Wednesday">Wednesday</label><br />
-        <input type="checkbox" id="Thursday" name="day" value="Thursday" />
-        <label for="Thursday">Thursday</label><br />
-        <input type="checkbox" id="Friday" name="day" value="Friday" />
-        <label for="Friday">Friday</label><br />
-        <input type="checkbox" id="Saturday" name="day" value="Saturday" />
-        <label for="Saturday">Saturday</label>
+                <h2>WorkOut order</h2>
+                 <br />
+        <input type="checkbox" name="dayEx" id="Day1" value="Sunday" />
+        <label for="Day1">Day 1</label><br />
+        <input type="checkbox" name="dayEx" id="Day2" value="Monday" />
+        <label for="Day2">Day 2 </label><br />
+        <input type="checkbox" name="dayEx" id="Day3" value="Tuesday" />
+        <label for="Day3">Day 3</label><br />
+        <input type="checkbox" id="Day4" name="dayEx" value="Wednesday" />
+        <label for="Day4">Day 4</label><br />
+        <input type="checkbox" id="Day5" name="dayEx" value="Thursday" />
+        <label for="Day5">Day 5</label><br />
+        <input type="checkbox" id="Day6" name="dayEx" value="Friday" />
+        <label for="Day6">Day 6</label><br />
+        <input type="checkbox" id="Day7" name="dayEx" value="Day 7" />
+        <label for="Day7">Day 7</label>
         <br />
-        <input type="checkbox" id="Allday" value="selectAll" />
-        <label for="Allday">Select All</label>
+        <input type="checkbox" id="AlldayEx" value="selectAll" />
+        <label for="AlldayEx">Select All</label>
         <br /><br />
-        <h2>WorkOut order</h2>
         <ul id="my-list">
           <li>Warmup</li>
           <li>Cardio</li>
@@ -956,13 +972,7 @@
         </ul>
         <button class="btn btn-outline-light" id="setOrder">Set Order</button>
         <br /><br />
-        <label for="">Warmup</label><br />
-        <input
-          type="search"
-          list="itemListEx"
-          id="wakeUp"
-          placeholder="Search items..."
-        />
+        <div id="exEnteries">
         <datalist id="itemList"></datalist>
         <div
           id="noDate"
@@ -981,462 +991,32 @@
             ></button>
           </div>
         </div>
-        <button class="btn btn-outline-secondary btn-sm" id="wakeUpI">
-          Add Selected Item
-        </button>
-        <br />
-        <ul class="selectedItems" data-parent="wakeTr"></ul>
 
-        <label for="breakfast_food">Cardio</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="breakfast"
-          placeholder="Search items..."
-        />
 
-        <button class="btn btn-outline-secondary btn-sm" id="breakfastI">
-          Add Selected Item
-        </button>
-        <br />
-        <ul class="selectedItems" data-parent="breakTr"></ul>
-
-        <label for="morning_snacks_food">Core Major:</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="morningSnack"
-          placeholder="Search items..."
-        />
-
-        <button class="btn btn-outline-secondary btn-sm" id="morningSnackI">
-          Add Selected Item
-        </button>
-        <br />
-        <ul class="selectedItems" data-parent="snackOne"></ul>
-
-        <label for="lunch_food">Core Minor:</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="lunch"
-          placeholder="Search items..."
-        />
-
-        <button class="btn btn-outline-secondary btn-sm" id="lunchI">
-          Add Selected Item
-        </button>
-        <br />
-        <ul class="selectedItems" data-parent="lunchTr"></ul>
-
-        <label for="evening_snacks_food">HIIT</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="eveningSnack"
-          placeholder="Search items..."
-        />
-
-        <button class="btn btn-outline-secondary btn-sm" id="eveningSnackI">
-          Add Selected Item
-        </button>
-
-        <ul class="selectedItems" data-parent="snackTwo"></ul>
-
-        <label for="dinner_food">Abs:</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="dinner"
-          placeholder="Search items..."
-        />
-
-        <button class="btn btn-outline-secondary btn-sm" id="dinnerI">
-          Add Selected Item
-        </button>
-
-        <ul class="selectedItems" data-parent="dinnerT"></ul>
-        <label for="before_sleep_food">Warm Down:</label><br />
-        <input
-          type="search"
-          list="itemList"
-          id="beforeSleep"
-          placeholder="Search items..."
-        />
-
-        <button class="btn btn-outline-secondary btn-sm" id="beforeSleepI">
-          Add Selected Item
-        </button>
-        <br />
-        <ul class="selectedItems" data-parent="sleepTr"></ul>
         <p id="calrie"></p>
         <br />
         <br />
-        <input type="checkbox" id="Allday" value="selectAll" />
-        <label for="Allday">Select All</label>
+        </div>
         <br />
         <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
+          <table id="Day1Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark" id="MondayTrEx">
               <th>
-                <input type="checkbox" name="dayTb" id="SundayTb" value="Sunday" />
-                <label for="SundayTb">Sunday</label>
+Day 1
               </th>
-              <th>Exercise</th>
+                            <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest</th>
-            </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+              </tr>
           </table>
         </div>
         <br /><br />
         <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl" >
+          <table id="Day2Tbl" class="table table-bordered ExTbl" >
             <tr class="table-dark">
               <th>
-                <input type="checkbox" name="dayTb" id="MondayTb" value="Sunday" />
-                <label for="MondayTb">Monday</label>
-              </th>
-              <th>Exercise</th>
-              <th>Rep</th>
-              <th>Set</th>
-              <th>Rest</th>
-            </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-        <br /><br />
-        <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
-            <tr class="table-dark">
-              <th>
-                <input type="checkbox" name="dayTb" id="TuesdayTb" value="Tuesday" />
-                <label for="TuesdayTb">Tuesday</label>
-              </th>
-              <th>Exercise</th>
-              <th>Rep</th>
-              <th>Set</th>
-              <th>Rest</th>
-            </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-        <br /><br />
-        <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
-            <tr class="table-dark">
-              <th>
-                <input type="checkbox" name="dayTb" id="SundayTb" value="Sunday" />
-                <label for="SundayTb">Wednesday</label>
-              </th>
-              <th>Exercise</th>
-              <th>Rep</th>
-              <th>Set</th>
-              <th>Rest</th>
-            </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-        <br /><br />
-        <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
-            <tr class="table-dark">
-              <th>
-                <input type="checkbox" name="dayTb" id="SundayTb" value="Sunday" />
-                <label for="SundayTb">Thursday</label>
-              </th>
-              <th>Exercise</th>
-              <th>Rep</th>
-              <th>Set</th>
-              <th>Rest</th>
-            </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-        <br /><br />
-        <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
-            <tr class="table-dark">
-              <th>
-                <input type="checkbox" name="dayTb" id="SundayTb" value="Sunday" />
-                <label for="SundayTb">Friday
-                </label>
+Day 2
               </th>
               <th>Exercise</th>
               <th>Rep</th>
@@ -1448,73 +1028,76 @@
         </div>
         <br /><br />
         <div class="table-responsive">
-          <table id="foodTable" class="table table-bordered ExTbl">
+          <table id="Day3Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
               <th>
-                <input type="checkbox" name="dayTb" id="SundayTb" value="Sunday" />
-                <label for="SundayTb">Saturday</label>
+Day 3
               </th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest</th>
             </tr>
-            <tr>
-              <th>Warmup</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+
+          </table>
+        </div>
+        <br /><br />
+        <div class="table-responsive">
+          <table id="Day4Tbl" class="table table-bordered ExTbl">
+            <tr class="table-dark">
+              <th>
+Day 4
+              </th>
+              <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest</th>
             </tr>
-            <tr>
-              <th >Cardio</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+          </table>
+        </div>
+        <br /><br />
+        <div class="table-responsive">
+          <table id="Day5Tbl" class="table table-bordered ExTbl">
+            <tr class="table-dark">
+              <th>
+Day 5
+              </th>
+                            <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest</th>
             </tr>
-            <tr >
-              <th >Core major</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+
+          </table>
+        </div>
+        <br /><br />
+        <div class="table-responsive">
+          <table id="Day6Tbl" class="table table-bordered ExTbl">
+            <tr class="table-dark">
+              <th>
+Day 6
+              </th>
+              <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest</th>
             </tr>
-            <tr>
-              <th >Core Minor</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+
+          </table>
+        </div>
+        <br /><br />
+        <div class="table-responsive">
+          <table id="Day7Tbl" class="table table-bordered ExTbl">
+            <tr class="table-dark">
+              <th>
+Day 7
+              </th>
+              <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest</th>
             </tr>
-            <tr>
-              <th >HIIT</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th >Abs</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th >Sleep</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr >
-              <th>Warm down</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+
           </table>
         </div>
         <br /><br />

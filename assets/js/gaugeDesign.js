@@ -10,7 +10,7 @@ let opts = {
     // // Relative to gauge radius
     strokeWidth: 0.035,
     // The thickness
-    color: "#000000", // Fill color
+    color: "#00e7ac", // Fill color
   },
   staticZones: [
     {
@@ -61,14 +61,14 @@ let opts = {
       max: 45,
     }, // Red
   ],
-  limitMax: false,
+  limitMax: true,
   // If false, max value increases automatically if value > maxValue
   staticLabels: {
     font: "10px sans-serif",
     // Specifies font
     labels: [16, 17, 18.5, 25, 30, 35, 40],
     // Print labels at these values
-    color: "#000000",
+    color: "#41ffb3",
     // Optional: Label text color
     fractionDigits: 0, // Optional: Numerical precision. 0=round off.
   },
@@ -77,11 +77,14 @@ let opts = {
   //colorStart: '#6FADCF',
   // Colors
   //colorStop: '#8FC0DA',
-  strokeColor: "cyan",
+  strokeColor: "#ffffff",
   generateGradient: true,
   highDpiSupport: true,
 };
+
+
 var target = document.getElementById("foo");
+
 var gauge = new Gauge(target).setOptions(opts);
 gauge.setMinValue(0);
 gauge.maxValue = 45;
@@ -102,7 +105,6 @@ const BMIfunc = (e) => {
     Number(weight) /
     (((Number(height) / 100) * Number(height)) / 100)
   )).toFixed(2);
-  if (BMI < 45 && BMI > 10) {
     caloriesN = (Number(redVal + Number(BMR))).toFixed(2);
     console.log(caloriesN)
 console.log("Here")
@@ -125,10 +127,10 @@ console.log("Here")
     } else if (BMI < 18.5 && BMI > 16) {
       userNature.textContent = "Moderate Thinness";
       condition = "Moderate Thinness";
-    } else if (BMI < 25 && BMI > 18.5) {
+    } else if (BMI < 25 && BMI >= 18.5) {
       userNature.textContent = "Mild Thinness";
       condition = "Mild Thinness";
-    } else if (BMI < 30 && BMI > 25) {
+    } else if (BMI < 30 && BMI >= 25) {
       userNature.textContent = "Normal";
       condition = "Normal";
     } else if (BMI >= 30 && BMI < 35) {
@@ -141,8 +143,7 @@ console.log("Here")
       userNature.textContent = "Obese";
       condition = "Obese";
     }
-  }}
-
+  }
 heightIn.addEventListener("keyup", (e) => { 
   height = Number(e.target.value);
   BMIfunc(e)

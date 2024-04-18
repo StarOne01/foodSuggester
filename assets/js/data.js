@@ -11,6 +11,8 @@ let condition = "";
 let fat = 0;
 let caloriesN = 0;
 
+let Exdays = new Set()
+
 let fatCount = [0, 0, 0, 0, 0, 0, 0];
 let carbsCount = [0, 0, 0, 0, 0, 0, 0];
 let proteinCount = [0, 0, 0, 0, 0, 0, 0];
@@ -62,3 +64,5 @@ let BMR = 0;
 let daysForThis = new Set();
 
 let allChecked = 0;
+
+let allCheckedEx = 0;

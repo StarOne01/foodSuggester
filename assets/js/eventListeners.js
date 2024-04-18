@@ -7,12 +7,10 @@ dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
 
 let isRest = false
-order.forEach(i => {
+orderLi.forEach(i => {
   i.addEventListener("click", (e) => {
     if(WorkOfTheDay.has(e.target.textContent)) {
-              e.target.style.textDecoration = "line-through";
-        e.target.style.color ="white";
-        e.target.style.backgroundColor = "black"
+        e.target.classList.remove("selected")
         WorkOfTheDay.delete(e.target.textContent)
         if(e.target.textContent === "Rest") {
           isRest = false;
@@ -20,26 +18,19 @@ order.forEach(i => {
         return;
     }
     if(!isRest) {
-      e.target.style.textDecoration = "none";
       WorkOfTheDay.add(e.target.textContent)
       console.log(WorkOfTheDay)
-      e.target.style.backgroundColor ="white";
-      e.target.style.color ="black";
+       e.target.classList.add("selected");
     }
     if (e.target.textContent === "Rest") {
       isRest = true
-      order.forEach(j =>{
-        j.style.textDecoration = "line-through";
-        j.style.color ="white";
-        j.style.backgroundColor = "black"
+      orderLi.forEach(j =>{
+        j.classList.remove("selected")
       } )
+        e.target.classList.add("selected");
       WorkOfTheDay = new Set()
-        e.target.style.textDecoration = "none";
         WorkOfTheDay.add(e.target.textContent)
         console.log(WorkOfTheDay)
-        e.target.style.backgroundColor ="white";
-        e.target.style.color ="black";
-        
   }
   }
       );
@@ -147,14 +138,99 @@ cactivity.addEventListener("change", (e) => {
   last = ca;
 });
 
-let orderAf = [];
+
+
 setOrderBtn.addEventListener("click", (e) => {
-  orderAf = [];
-  order = document.querySelectorAll("#my-list li")
-e.preventDefault();
-  order.forEach(o => {
-    orderAf.push(o.textContent)
-  const newTr = document.createElement('tr');
-  })
-  console.log(orderAf)
+  e.preventDefault();
+  let  order = document.getElementsByClassName("selected")
+  if(WorkOfTheDay.has("Rest")) {
+    return;
+  }
+  if (Exdays.size === 0) {
+    toastBody.textContent = "Select alteast a day";
+    toastBootstrap.show();
+    return;
+  }
+  for (let i = 0; i < order.length; i++) {
+  const newDiv = document.createElement('div');
+  newDiv.innerHTML = `<label for="'${order[i].textContent.split(" ").join("")}">${order[i].textContent}</label><br />
+  <label>Varience:</label><input id="${order[i].textContent.split(" ").join("")}Var" type="number" class="varient">        <button class="btn btn-outline-secondary btn-sm VarBtn" id="${order[i].textContent.split(" ").join("")}VarBtn">
+          Set Varience
+        </button><br>
+        <input
+          type="search"
+          list="itemListEx"
+          id='${order[i].textContent.split(" ").join("")}'
+          placeholder="Search items..."
+        />
+
+        <button class="btn btn-outline-secondary btn-sm" id="">
+          Add Exercise
+        </button>
+        <br />
+        <ul class="selectedItemsEx"></ul><br>`
+        exEnteries.appendChild(newDiv)
+        VarBtn = document.querySelectorAll(".VarBtn")
+        
+        
+        document.getElementById(`${order[i].textContent.split(" ").join("")}VarBtn`).addEventListener("click", (e)=>{
+          
+    e.preventDefault()
+    
+    Exdays.forEach(Selecteday => {
+      console.log(`${Selecteday}Tbl`)
+
+     console.log()
+     for(let j = 0; j < 4; j++) {
+       const newTd = document.createElement('td')
+       let htm = ""
+    htm = "<table border='2'>"
+     for(let g = 0; g < Number(document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).value) ;g++) {
+            
+     htm += "<tr><td>Cell</td></tr>"
+     
+     }
+     htm+= "</table>"
+     newTd.innerHTML = htm
+     console.log(`${e.target.id.substring(0,e.target.id.length-6)}Tr`)
+    document.querySelector(`#${Selecteday}Tbl #${e.target.id.substring(0,e.target.id.length-6)}Tr`).appendChild(newTd);
+     }
+      
+    
 })
+  })
+        
+        
+        
+        Exdays.forEach(Selecteday => {
+          
+        const newTr = document.createElement('tr');
+        newTr.innerHTML = `<td>${order[i].textContent}</td>
+`;
+    document.getElementById(`${Selecteday}Tbl`).appendChild(newTr)
+    newTr.setAttribute("id", `${order[i].textContent.split(" ").join("")}Tr`)
+        })
+  }
+})
+
+DayExChks.forEach((i) => {
+  i.addEventListener("click", (e) => {
+    if(allCheckedEx) {
+      selectAllEx.checked = false;
+      allCheckedEx = 0;
+      }
+    if (e.target.checked) {
+      Exdays.add(e.target.id);
+    } else {
+      Exdays.delete(e.target.id);
+    }
+
+  console.log(Exdays)
+  });
+});
+const updateVarBtn = () => {
+VarBtn.forEach(ele => {
+  console.log("Works")
+  
+})
+}
