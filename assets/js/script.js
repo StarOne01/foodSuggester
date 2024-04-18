@@ -19,6 +19,29 @@ const CheckAll = () => {
   console.log(daysForThis)
 };
 
+const CheckAllEx = () => {
+  Exdays = new Set()
+  console.log("In Exx")
+    if(allCheckedEx === 0){
+      AlldayEx.checked = true;
+      allCheckedEx = 1;
+      DayExChks.forEach((j) => {
+        j.checked = true;
+        Exdays.add(j.id);
+      });
+    }
+    else {
+      AlldayEx.checked = false;
+      allCheckedEx = 0;
+      DayExChks.forEach((j) => {
+        j.checked = false;
+      });
+    }
+
+  
+};
+AlldayEx.addEventListener("click",CheckAllEx)
+
 function convertTime(timeString) {
   let hours = parseInt(timeString.substring(0, 2));
   let minutes = timeString.substring(3);

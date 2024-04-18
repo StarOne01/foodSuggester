@@ -213,10 +213,12 @@ setOrderBtn.addEventListener("click", (e) => {
   }
 })
 
+
+
 DayExChks.forEach((i) => {
   i.addEventListener("click", (e) => {
     if(allCheckedEx) {
-      selectAllEx.checked = false;
+      AlldayEx.checked = false;
       allCheckedEx = 0;
       }
     if (e.target.checked) {

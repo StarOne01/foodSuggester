@@ -2,6 +2,7 @@ const weightIn = document.getElementById("current_weight");
 const heightIn = document.getElementById("current_height");
 const ageIn = document.getElementById("current_age");
 const toastLiveExample = document.getElementById("noDate");
+const AlldayEx = document.getElementById("AlldayEx")
 const DayExChks = document.querySelectorAll("input[name='dayEx']")
 const toastBootstrap =
       bootstrap.Toast.getOrCreateInstance(toastLiveExample);
