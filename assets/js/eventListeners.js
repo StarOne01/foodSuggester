@@ -151,6 +151,18 @@ setOrderBtn.addEventListener("click", (e) => {
     toastBootstrap.show();
     return;
   }
+          Exdays.forEach(Selecteday => {
+         document.getElementById(`${Selecteday}Tbl`).innerHTML=`           <tr class="table-dark">
+              <th>
+              ${Selecteday}
+              </th>
+              <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest</th>
+            </tr>`
+        })
+        exEnteries.innerHTML=""
   for (let i = 0; i < order.length; i++) {
   const newDiv = document.createElement('div');
   newDiv.innerHTML = `<label for="'${order[i].textContent.split(" ").join("")}">${order[i].textContent}</label><br />
@@ -202,8 +214,8 @@ setOrderBtn.addEventListener("click", (e) => {
         
         
         
-        Exdays.forEach(Selecteday => {
-          
+
+            Exdays.forEach(Selecteday => {
         const newTr = document.createElement('tr');
         newTr.innerHTML = `<td>${order[i].textContent}</td>
 `;
