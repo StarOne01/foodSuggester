@@ -76,7 +76,7 @@ getPDFBtn.addEventListener("click", (e) => {
               alignment: "right",
             },
             {
-              margin: [410, 10, 0, 0],
+              margin: [380, 10, 0, 0],
               text: `${condition}`,
               bold: true,
             },
