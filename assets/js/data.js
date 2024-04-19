@@ -3,6 +3,7 @@ let height = 0;
 let age = 0;
 let BMI = 0;
 let ca = 1;
+let isRest = false
 let carbs = 0;
 let redVal = 0;
 let WorkOfTheDay = new Set()

@@ -19,28 +19,7 @@ const CheckAll = () => {
   console.log(daysForThis)
 };
 
-const CheckAllEx = () => {
-  Exdays = new Set()
-  console.log("In Exx")
-    if(allCheckedEx === 0){
-      AlldayEx.checked = true;
-      allCheckedEx = 1;
-      DayExChks.forEach((j) => {
-        j.checked = true;
-        Exdays.add(j.id);
-      });
-    }
-    else {
-      AlldayEx.checked = false;
-      allCheckedEx = 0;
-      DayExChks.forEach((j) => {
-        j.checked = false;
-      });
-    }
 
-  
-};
-AlldayEx.addEventListener("click",CheckAllEx)
 
 function convertTime(timeString) {
   let hours = parseInt(timeString.substring(0, 2));
@@ -57,11 +36,6 @@ const filterOptions = (userInputValue) => {
   );
   return filteredOptions;
 };
-
-const sortableList = Sortable.create(document.getElementById("my-list"), {
-  ghostClass: 'dragging',
-  animation: 150
-});
 
 const showSuggestions = (i) => {
   const userInputValue = i.value;

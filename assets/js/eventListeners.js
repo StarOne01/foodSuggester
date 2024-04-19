@@ -6,7 +6,7 @@ eveningSnack.addEventListener("click", (e) => addSelected(e, 4));
 dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
 
-let isRest = false
+
 orderLi.forEach(i => {
   i.addEventListener("click", (e) => {
     if(WorkOfTheDay.has(e.target.textContent)) {
@@ -242,9 +242,6 @@ DayExChks.forEach((i) => {
   console.log(Exdays)
   });
 });
-const updateVarBtn = () => {
-VarBtn.forEach(ele => {
-  console.log("Works")
-  
-})
-}
+
+
+AlldayEx.addEventListener("click",CheckAllEx)
