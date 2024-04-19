@@ -213,7 +213,7 @@ setOrderBtn.addEventListener("click", (e) => {
     htm = `<table id="${order[i].textContent.split(" ").join("")}TblR" width='100%'>`
     console.log(`id="${order[i].textContent.split(" ").join("")}TblR"`)
     /*
-     for(let g = 0; g < Number(document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).value) ;g++) {
+     for(let g = 0;  ;g++) {
             
      htm += "<tr><td>Cell</td></tr>"
      
