@@ -35,11 +35,15 @@ const beforeSleep = document.getElementById("beforeSleepI");
 const cactivity = document.getElementById("cactivity");
 const calorieRow = document.querySelectorAll("#calorieRow td");
 const days = document.querySelectorAll("input[name='day']");
-const userInput = document.querySelectorAll("input[type='search']");
+const userInput = document.querySelectorAll("[list='itemList']");
+const userInputEx = document.querySelectorAll("[list='itemListEx']");
+
 const detailedInfo = document.querySelectorAll("input[name='detailedInfo']");
 const detailedForm = document.getElementById("detailedForm")
 let dataList = document.getElementById("itemList");
+let dataListEx = document.getElementById("itemListEx");
 const addButton = document.getElementById("addButton");
+const selectedItemsEx = document.getElementsByClassName("selectedItemsEx");
 const selectedItemsList = document.getElementsByClassName("selectedItems");
 var timeInput = document.querySelectorAll("input[type='time']");
 const body = document.body;
@@ -49,9 +53,7 @@ const trItems = document.querySelectorAll("#foodTable tr");
 const trTh = document.querySelectorAll("tr th");
 
 const selectAll = document.getElementById("Allday");
-const showResultsBtn = document.getElementById("sutButton");
 const BMIn = document.getElementById("resultBMI");
-let delt = [];
 const Timebtn = document.getElementById("timeBtn");
 let gender = document.querySelectorAll('input[name="gender"]');
 let deltBtn = 0;

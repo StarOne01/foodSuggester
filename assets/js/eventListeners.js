@@ -7,35 +7,41 @@ dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
 
 
+
 orderLi.forEach(i => {
   i.addEventListener("click", (e) => {
-    if(WorkOfTheDay.has(e.target.textContent)) {
-        e.target.classList.remove("selected")
-        WorkOfTheDay.delete(e.target.textContent)
+    const indexOfele = WorkOfTheDay.indexOf(e.target.textContent);
+    if(indexOfele>=0) {
+        e.target.classList.remove("selected");
+        const indexToDelete = WorkOfTheDay.indexOf(e.target.textContent);
+if (indexToDelete !== -1) {
+  WorkOfTheDay.splice(indexToDelete, 1);
+}
         if(e.target.textContent === "Rest") {
           isRest = false;
         }
         return;
     }
     if(!isRest) {
-      WorkOfTheDay.add(e.target.textContent)
-      console.log(WorkOfTheDay)
+      WorkOfTheDay.push(e.target.textContent);
        e.target.classList.add("selected");
+       
     }
     if (e.target.textContent === "Rest") {
-      isRest = true
+      isRest = true;
       orderLi.forEach(j =>{
-        j.classList.remove("selected")
-      } )
-        e.target.classList.add("selected");
-      WorkOfTheDay = new Set()
-        WorkOfTheDay.add(e.target.textContent)
-        console.log(WorkOfTheDay)
-  }
+        j.classList.remove("selected");
+      } );
+        e.target.classList.push("selected");
+      WorkOfTheDay = [];
+        WorkOfTheDay.push(e.target.textContent);
+      
+    }
+        
   }
       );
       
-})
+});
 
 
 const checkRadio = () => {
@@ -97,8 +103,6 @@ days.forEach((i) => {
     } else {
       daysForThis.delete(e.target.value);
     }
-
-  console.log(daysForThis)
   });
 });
 
@@ -126,8 +130,7 @@ goals.addEventListener("change", (e) => {
  
     redVal = -600;
   }
-  console.log("Trig")
-  BMIfunc(e)
+  BMIfunc(e);
 });
 
 let last = 1;
@@ -142,8 +145,10 @@ cactivity.addEventListener("change", (e) => {
 
 setOrderBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let  order = document.getElementsByClassName("selected")
-  if(WorkOfTheDay.has("Rest")) {
+
+  let  order = document.getElementsByClassName("selected");
+  const indexOfele = WorkOfTheDay.indexOf("Rest");
+    if(indexOfele>=0) {
     return;
   }
   if (Exdays.size === 0) {
@@ -151,7 +156,10 @@ setOrderBtn.addEventListener("click", (e) => {
     toastBootstrap.show();
     return;
   }
+  setDays = Exdays;
           Exdays.forEach(Selecteday => {
+              ExDb[Selecteday] = {};
+  
          document.getElementById(`${Selecteday}Tbl`).innerHTML=`           <tr class="table-dark">
               <th>
               ${Selecteday}
@@ -160,13 +168,16 @@ setOrderBtn.addEventListener("click", (e) => {
               <th>Rep</th>
               <th>Set</th>
               <th>Rest</th>
-            </tr>`
-        })
-        exEnteries.innerHTML=""
+            </tr>`;
+        });
+        exEnteries.innerHTML="";
   for (let i = 0; i < order.length; i++) {
+    
   const newDiv = document.createElement('div');
-  newDiv.innerHTML = `<label for="'${order[i].textContent.split(" ").join("")}">${order[i].textContent}</label><br />
-  <label>Varience:</label><input id="${order[i].textContent.split(" ").join("")}Var" type="number" class="varient">        <button class="btn btn-outline-secondary btn-sm VarBtn" id="${order[i].textContent.split(" ").join("")}VarBtn">
+  newDiv.innerHTML = `<label for="${order[i].textContent.split(" ").join("")}">${order[i].textContent}</label><br />
+  <label>Varience:</label>
+  <input id="${order[i].textContent.split(" ").join("")}Var" type="number" class="varient">        
+  <button class="btn btn-outline-secondary btn-sm VarBtn" id="${order[i].textContent.split(" ").join("")}VarBtn">
           Set Varience
         </button><br>
         <input
@@ -176,54 +187,62 @@ setOrderBtn.addEventListener("click", (e) => {
           placeholder="Search items..."
         />
 
-        <button class="btn btn-outline-secondary btn-sm" id="">
+        <button class="btn btn-outline-secondary btn-sm" id="${order[i].textContent.split(" ").join("")}Add">
           Add Exercise
         </button>
         <br />
-        <ul class="selectedItemsEx"></ul><br>`
-        exEnteries.appendChild(newDiv)
-        VarBtn = document.querySelectorAll(".VarBtn")
-        
-        
+        <ul id="${order[i].textContent.split(" ").join("")}Ul" class="selectedItemsEx"></ul><br>`;
+        exEnteries.appendChild(newDiv);
+        VarBtn = document.querySelectorAll(".VarBtn");
+        document.getElementById(`${order[i].textContent.split(" ").join("")}Add`).addEventListener("click", addSelectedEx)
+        const userInputEx = document.querySelectorAll("[list='itemListEx']");
+        console.log(userInputEx)
+        userInputEx.forEach(j => {
+ 
+  j.addEventListener("keyup", k => {
+    showSuggestionsEx(k.target);
+});
+        })
         document.getElementById(`${order[i].textContent.split(" ").join("")}VarBtn`).addEventListener("click", (e)=>{
-          
     e.preventDefault()
-    
     Exdays.forEach(Selecteday => {
-      console.log(`${Selecteday}Tbl`)
 
-     console.log()
-     for(let j = 0; j < 4; j++) {
+      console.log(`${Selecteday}Tbl`)
        const newTd = document.createElement('td')
        let htm = ""
-    htm = "<table border='2'>"
+    htm = `<table id="${order[i].textContent.split(" ").join("")}TblR" width='100%'>`
+    console.log(`id="${order[i].textContent.split(" ").join("")}TblR"`)
+    /*
      for(let g = 0; g < Number(document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).value) ;g++) {
             
      htm += "<tr><td>Cell</td></tr>"
      
-     }
+     }*/
+
      htm+= "</table>"
      newTd.innerHTML = htm
      console.log(`${e.target.id.substring(0,e.target.id.length-6)}Tr`)
     document.querySelector(`#${Selecteday}Tbl #${e.target.id.substring(0,e.target.id.length-6)}Tr`).appendChild(newTd);
-     }
-      
+     
+    
     
 })
   })
         
-        
+
         
 
             Exdays.forEach(Selecteday => {
         const newTr = document.createElement('tr');
-        newTr.innerHTML = `<td>${order[i].textContent}</td>
+              console.log(`${order[i].textContent.split(" ").join("")}`)
+      ExDb[Selecteday][`${order[i].textContent.split(" ").join("")}`] = []
+        newTr.innerHTML = `<td id="${order[i].textContent.split(" ").join("")}Td">${order[i].textContent}</td>
 `;
     document.getElementById(`${Selecteday}Tbl`).appendChild(newTr)
     newTr.setAttribute("id", `${order[i].textContent.split(" ").join("")}Tr`)
         })
-  }
-})
+        
+  }})
 
 
 
@@ -242,6 +261,5 @@ DayExChks.forEach((i) => {
   console.log(Exdays)
   });
 });
-
 
 AlldayEx.addEventListener("click",CheckAllEx)

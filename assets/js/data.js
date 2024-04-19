@@ -6,7 +6,7 @@ let ca = 1;
 let isRest = false
 let carbs = 0;
 let redVal = 0;
-let WorkOfTheDay = new Set()
+let WorkOfTheDay = []
 let protein = 0;
 let condition = "";
 let fat = 0;
@@ -59,11 +59,13 @@ const timeNum = {
   dinnerT: 5,
   sleepTr: 6,
 };
+let setDays = []
+let ExDb = {}
 
 let BMR = 0;
 
 let daysForThis = new Set();
 
 let allChecked = 0;
-
+let delt = [];
 let allCheckedEx = 0;
