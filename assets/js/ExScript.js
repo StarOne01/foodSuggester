@@ -35,7 +35,7 @@ const filterOptionsEx = (userInputValueEx, targ) => {
 };
 
 const showSuggestionsEx = (i) => {
-  if(!(i.id === "Warmup" || i.id === "Warmdown" || i.id==="Cardio")) {
+  if( i.id==="HIIT") {
     return;
   }
   const userInputValue = i.value;
@@ -54,6 +54,9 @@ const showSuggestionsEx = (i) => {
 
 const addSelectedEx = (e) => {
   e.preventDefault();
+  if(`${e.target.id.substring(0,e.target.id.length-3)}`==="HIIT") {
+    return;
+  }
   const selectedOption = document.getElementById(`${e.target.id.substring(0,e.target.id.length-3)}`).value;
   for (const da of setDays) {
     console.log(ExDb[da][`${e.target.id.substring(0,e.target.id.length-3)}`].length)
@@ -66,6 +69,12 @@ const addSelectedEx = (e) => {
     toastBody.textContent = "Reached Varience limit";
       toastBootstrap.show();
     return
+  }
+
+  if(exSessions[`${e.target.id.substring(0,e.target.id.length-3)}M`].indexOf(selectedOption) === -1) {
+          toastBody.textContent = "Please select items from the dropdown";
+      toastBootstrap.show();
+      return;
   }
   
   if(ExDb[da][`${e.target.id.substring(0,e.target.id.length-3)}`].indexOf(selectedOption) !== -1) {
