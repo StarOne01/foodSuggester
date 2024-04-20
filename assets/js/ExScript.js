@@ -58,6 +58,7 @@ const addSelectedEx = (e) => {
     return;
   }
   const selectedOption = document.getElementById(`${e.target.id.substring(0,e.target.id.length-3)}`).value;
+  document.getElementById(`${e.target.id.substring(0,e.target.id.length-3)}`).value = ""
   for (const da of setDays) {
     console.log(ExDb[da][`${e.target.id.substring(0,e.target.id.length-3)}`].length)
     if(document.getElementById(`${e.target.id.substring(0,e.target.id.length-3)}Var`).value === "") {
@@ -79,8 +80,6 @@ const addSelectedEx = (e) => {
     return
   }
   }
-  
-  console.log("Still in")
   
   const newListItem = document.createElement("li");
     newListItem.innerHTML = `${selectedOption} <button id="${e.target.id.substring(0,e.target.id.length-3)}${selectedOption.split(" ").join("")}" data-type="${e.target.id.substring(0,e.target.id.length-3)}" data-item="${selectedOption}" type="button" class="delet btn btn-outline-danger btn-sm">Delete</button>`;
