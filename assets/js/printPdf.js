@@ -3,7 +3,7 @@ getPDFBtn.addEventListener("click", (e) => {
   const nameval = document.getElementById("client_name").value;
   const clientid = document.getElementById("membership_id").value;
 const tableData = [
-  ['Column 1', 'Column 2', 'Column 3'],
+  ['Day 1', 'Exercise', 'Rep', 'Sets', 'Rest'],
   ['Data 1-1', 'Data 1-2', 'Data 1-3'],
   ['Data 2-1', 'Data 2-2', 'Data 2-3'],
 ];
@@ -139,6 +139,12 @@ const tableContent = tableData.map((row) => {
       {
         margin: [0, 20, 0, 0],
         text: "",
+      },
+      {
+        margin:0,
+        table: { 
+          body: tableContent
+        }
       },
       {
         margin:0,

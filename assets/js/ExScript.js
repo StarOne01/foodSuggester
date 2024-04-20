@@ -71,11 +71,7 @@ const addSelectedEx = (e) => {
     return
   }
 
-  if(exSessions[`${e.target.id.substring(0,e.target.id.length-3)}M`].indexOf(selectedOption) === -1) {
-          toastBody.textContent = "Please select items from the dropdown";
-      toastBootstrap.show();
-      return;
-  }
+  
   
   if(ExDb[da][`${e.target.id.substring(0,e.target.id.length-3)}`].indexOf(selectedOption) !== -1) {
     toastBody.textContent = "Um.. Again the Same Exercise ?";
@@ -87,7 +83,7 @@ const addSelectedEx = (e) => {
   console.log("Still in")
   
   const newListItem = document.createElement("li");
-    newListItem.innerHTML = `${selectedOption} <button id="${e.target.id.substring(0,e.target.id.length-3)}${selectedOption.split(" ").join("")}" type="button" class="delet btn btn-outline-danger btn-sm">Delete</button>`;
+    newListItem.innerHTML = `${selectedOption} <button id="${e.target.id.substring(0,e.target.id.length-3)}${selectedOption.split(" ").join("")}" data-type="${e.target.id.substring(0,e.target.id.length-3)}" data-item="${selectedOption}" type="button" class="delet btn btn-outline-danger btn-sm">Delete</button>`;
 document.getElementById(`${e.target.id.substring(0,e.target.id.length-3)}Ul`).appendChild(newListItem);
 setDays.forEach(da => {
   ExDb[da][`${e.target.id.substring(0,e.target.id.length-3)}`].push(selectedOption)
@@ -109,8 +105,15 @@ setDays.forEach(da => {
   })
 })
     let delet = document.querySelectorAll(".delet");
+    
     delet.forEach((i) => {
       i.addEventListener("click", (e) => {
+        setDays.forEach(da => {
+      let delinde = ExDb[da][e.target.getAttribute("data-type")].indexOf(e.target.getAttribute("data-item"))
+     if (delinde !== -1) {
+        ExDb[da][e.target.getAttribute("data-type")].splice(delinde, 1);
+      }
+    })
         console.log(e.target.id)
         let clas = document.getElementsByClassName(e.target.id)
         console.log(clas)
