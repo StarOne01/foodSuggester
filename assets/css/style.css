@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+textarea {
+  width: 82vw;
+  height: 200px;
+}
+
 .selected {
   color:black !important;
   background-color: white !important;
