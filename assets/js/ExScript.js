@@ -112,15 +112,22 @@ setDays.forEach(da => {
      if (delinde !== -1) {
         ExDb[da][e.target.getAttribute("data-type")].splice(delinde, 1);
       }
-    })
-        console.log(e.target.id)
-        let clas = document.getElementsByClassName(e.target.id)
-        console.log(clas)
-        for(const ele of clas ) {
-          ele.remove()
-        }
-          e.target.parentNode.remove()
-      });
-    });
+
+document.querySelector(`#${da}Tbl #${e.target.getAttribute("data-type")}TblR`).innerHTML = ""
+  ExDb[da][`${e.target.getAttribute("data-type")}`].forEach(fo => {
+    
+    const newTr = document.createElement('tr')
+    newTr.innerHTML=`<td>${fo}</td>`;
+    
+    
+    document.querySelector(`#${da}Tbl #${e.target.getAttribute("data-type")}TblR`).appendChild(newTr)
+    
+    
+    
+  })
+       })
+       e.target.parentNode.remove()
+      })
+       })
     
 }
