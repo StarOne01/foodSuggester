@@ -213,6 +213,8 @@ setOrderBtn.addEventListener("click", (e) => {
     Exdays.forEach(Selecteday => {
 
       console.log(`${Selecteday}Tbl`)
+      
+        
        const newTd = document.createElement('td')
        let htm = ""
     htm = `<table id="${order[i].textContent.split(" ").join("")}TblR" width='100%'>`
@@ -226,9 +228,16 @@ setOrderBtn.addEventListener("click", (e) => {
 
      htm+= "</table>"
      newTd.innerHTML = htm
-     console.log(`${order[i].textContent.split(" ").join("")}Tr`)
-    document.querySelector(`#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`).appendChild(newTd);
-     
+     document.querySelector(`#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`).appendChild(newTd);
+     for(let lea = 0; lea <3;lea++) {
+     const newTd1 = document.createElement('td')
+       let htm1 = ""
+    htm1 = `<table width='100%'>`
+    htm1+= "</table>" 
+    newTd1.innerHTML = htm1
+    document.querySelector(`#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`).appendChild(newTd1);
+   newTd1.setAttribute("contenteditable","true")
+      }
     
     
 })
