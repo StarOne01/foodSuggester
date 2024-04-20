@@ -173,13 +173,19 @@ setOrderBtn.addEventListener("click", (e) => {
         exEnteries.innerHTML="";
   for (let i = 0; i < order.length; i++) {
     
+            Exdays.forEach(Selecteday => {
+        const newTr = document.createElement('tr');
+              console.log(`${order[i].textContent.split(" ").join("")}`)
+      ExDb[Selecteday][`${order[i].textContent.split(" ").join("")}`] = []
+        newTr.innerHTML = `<td id="${order[i].textContent.split(" ").join("")}Td">${order[i].textContent}</td>
+`;
+    document.getElementById(`${Selecteday}Tbl`).appendChild(newTr)
+    newTr.setAttribute("id", `${order[i].textContent.split(" ").join("")}Tr`)
+        })
   const newDiv = document.createElement('div');
   newDiv.innerHTML = `<label for="${order[i].textContent.split(" ").join("")}">${order[i].textContent}</label><br />
   <label>Varience:</label>
-  <input id="${order[i].textContent.split(" ").join("")}Var" type="number" class="varient">        
-  <button class="btn btn-outline-secondary btn-sm VarBtn" id="${order[i].textContent.split(" ").join("")}VarBtn">
-          Set Varience
-        </button><br>
+  <input id="${order[i].textContent.split(" ").join("")}Var" type="number" class="varient"> <br>
         <input
           type="search"
           list="itemListEx"
@@ -203,8 +209,7 @@ setOrderBtn.addEventListener("click", (e) => {
     showSuggestionsEx(k.target);
 });
         })
-        document.getElementById(`${order[i].textContent.split(" ").join("")}VarBtn`).addEventListener("click", (e)=>{
-    e.preventDefault()
+
     Exdays.forEach(Selecteday => {
 
       console.log(`${Selecteday}Tbl`)
@@ -221,26 +226,16 @@ setOrderBtn.addEventListener("click", (e) => {
 
      htm+= "</table>"
      newTd.innerHTML = htm
-     console.log(`${e.target.id.substring(0,e.target.id.length-6)}Tr`)
-    document.querySelector(`#${Selecteday}Tbl #${e.target.id.substring(0,e.target.id.length-6)}Tr`).appendChild(newTd);
+     console.log(`${order[i].textContent.split(" ").join("")}Tr`)
+    document.querySelector(`#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`).appendChild(newTd);
      
     
     
 })
-  })
         
 
         
 
-            Exdays.forEach(Selecteday => {
-        const newTr = document.createElement('tr');
-              console.log(`${order[i].textContent.split(" ").join("")}`)
-      ExDb[Selecteday][`${order[i].textContent.split(" ").join("")}`] = []
-        newTr.innerHTML = `<td id="${order[i].textContent.split(" ").join("")}Td">${order[i].textContent}</td>
-`;
-    document.getElementById(`${Selecteday}Tbl`).appendChild(newTr)
-    newTr.setAttribute("id", `${order[i].textContent.split(" ").join("")}Tr`)
-        })
         
   }})
 

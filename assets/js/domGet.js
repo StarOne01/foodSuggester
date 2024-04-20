@@ -6,7 +6,7 @@ const AlldayEx = document.getElementById("AlldayEx")
 const DayExChks = document.querySelectorAll("input[name='dayEx']")
 const toastBootstrap =
       bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-let VarBtn = document.querySelectorAll(".VarBtn")
+
 const toastBody = document.getElementById("toastBody")
 const BMRH = document.getElementById("resultBMR");
 const userNature = document.getElementById("youAre");
