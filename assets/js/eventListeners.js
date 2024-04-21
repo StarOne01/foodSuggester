@@ -158,7 +158,7 @@ setOrderBtn.addEventListener("click", (e) => {
   }
   setDays = Exdays;
           Exdays.forEach(Selecteday => {
-              ExDb[Selecteday] = {};
+
   
          document.getElementById(`${Selecteday}Tbl`).innerHTML=`           <tr class="table-dark">
               <th>
@@ -171,12 +171,34 @@ setOrderBtn.addEventListener("click", (e) => {
             </tr>`;
         });
         exEnteries.innerHTML="";
+        
+      let   orderId = []
+        
+        for (let i = 0; i < order.length; i++) {
+          orderId.push(`${order[i].textContent.split(" ").join("")}`)
+        }
+             Exdays.forEach(da => {
+               console.log("Keys")
+             console.log(Object.keys(ExDb[da]))
+       for(const x in ExDb[da]){
+         console.log("x " + x)
+         if(ExDb[da][x].length>0){
+           if(orderId.indexOf(x) === -1) {
+             
+           ExDb[da][x] =[]
+           }
+         }
+       }})
+             
+               
+     
   for (let i = 0; i < order.length; i++) {
     
             Exdays.forEach(Selecteday => {
         const newTr = document.createElement('tr');
-              console.log(`${order[i].textContent.split(" ").join("")}`)
+         if(!      ExDb[Selecteday].hasOwnProperty(`${order[i].textContent.split(" ").join("")}`)) {
       ExDb[Selecteday][`${order[i].textContent.split(" ").join("")}`] = []
+         }
         newTr.innerHTML = `<td id="${order[i].textContent.split(" ").join("")}Td">${order[i].textContent}</td>
 `;
     document.getElementById(`${Selecteday}Tbl`).appendChild(newTr)
@@ -241,12 +263,31 @@ setOrderBtn.addEventListener("click", (e) => {
     
     
 })
-        
+
 
         
 
-        
-  }})
+     Exdays.forEach(da => {   
+       
+       document.querySelector(`#${da}Tbl #${order[i].textContent.split(" ").join("")}TblR`).innerHTML = ""
+       console.log(ExDb)
+  ExDb[da][`${order[i].textContent.split(" ").join("")}`].forEach(fo => {
+    
+    const newTr = document.createElement('tr')
+    newTr.innerHTML=`<td>${fo}</td>`;
+    
+    
+    document.querySelector(`#${da}Tbl #${order[i].textContent.split(" ").join("")}TblR`).appendChild(newTr)
+    
+    
+    
+  })
+     })
+  }
+    
+
+  
+})
 
 
 

@@ -59,11 +59,15 @@ const timeNum = {
   dinnerT: 5,
   sleepTr: 6,
 };
+let diff = new Set()
 let setDays = []
 let ExDb = {}
 
 let BMR = 0;
 
+ DayExChks.forEach((i) => {
+     ExDb[i.id] = {};
+ })
 let daysForThis = new Set();
 
 let allChecked = 0;
