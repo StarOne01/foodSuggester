@@ -142,12 +142,6 @@ const tableContent = tableData.map((row) => {
       },
       {
         margin:0,
-        table: { 
-          body: tableContent
-        }
-      },
-      {
-        margin:0,
         table: {
           headerRows: 1,
           widths: [
