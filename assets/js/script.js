@@ -19,6 +19,8 @@ const CheckAll = () => {
   console.log(daysForThis)
 };
 
+
+
 function convertTime(timeString) {
   let hours = parseInt(timeString.substring(0, 2));
   let minutes = timeString.substring(3);
@@ -48,10 +50,9 @@ const showSuggestions = (i) => {
       dataList.appendChild(optionElement);
     });
   }
-};
+}
 
 let numIn = 0;
-
 const addSelected = (e, i) => {
   e.preventDefault();
   if (daysForThis.size === 0) {

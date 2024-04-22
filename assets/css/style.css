@@ -1,6 +1,47 @@
 #female_questions {
   display: none;
 }
+.varient {
+  width:30px;
+  margin: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 82vw;
+  height: 200px;
+}
+
+.selected {
+  color:black !important;
+  background-color: white !important;
+  text-decoration: none !important;
+}
+
+#my-list {
+  padding: 10px;
+  border-radius: 7px;
+  
+}
+#my-list li {
+  list-style: none;
+  display: flex;
+  text-decoration: line-through;
+  cursor: move;
+  text-decoration-thickness: 2px;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 13px;
+  margin-bottom: 11px;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+}
 
 
 
@@ -28,21 +69,23 @@ input {
 
 body {
   margin: 10px !important;
+  color: white;
+  background-color: black;
 }
 
 table {
   border-collapse: collapse;
   border: 1px solid black;
+
 }
 th,
 td {
   text-align: left;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 8px;
+
 }
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+
 
 #SevereThinness,
 #ModerateThinness,
@@ -90,15 +133,39 @@ p {
 }
 #foo {
   display: block;
-  background: white;
+  
 }
 
 #Overweight {
   background: green;
 }
 
-#resultDiv p {
-  padding: 5px;
+#foo {
+  position: relative;
+  right: 10px;
+}
+
+#resultDiv ul {
+  width:200px;
+  position: relative;
+  left:50px;
+}
+#resultDiv #resultBMI {
+  position: relative;
+  left: 60px;
+  width: 200px;
+}
+
+#youAre {
+  position: relative;
+  width:50px;
+  left :100px;
+}
+
+#resultDiv li {
+  padding:0 ;
+  margin: 0;
+  height: 20px;
 }
 
 table {
@@ -110,13 +177,13 @@ table p::before {
 }
 #resultDiv {
   float: right;
-  text-align: center;
 }
 
 #bodyDiv {
-  padding: 20px;
-  background: black !important;
-  color: white !important;
+  border-radius: 20px;
+  padding: 5vw;
+  background: black;
+  color: white ;
   margin-inline: auto !important;
 }
 
@@ -125,6 +192,21 @@ table p::before {
   display: block;
   max-width: 500px;
 }
+h2 {
+  text-decoration: underline;
+  text-decoration-color: cyan;
+  text-decoration-thickness: 1px;
+}
+
+#dietTime p   {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 
 input[type="search"] {
   width: 40vw;

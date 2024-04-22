@@ -3,12 +3,16 @@ let height = 0;
 let age = 0;
 let BMI = 0;
 let ca = 1;
+let isRest = false
 let carbs = 0;
 let redVal = 0;
+let WorkOfTheDay = []
 let protein = 0;
 let condition = "";
 let fat = 0;
 let caloriesN = 0;
+
+let Exdays = new Set()
 
 let fatCount = [0, 0, 0, 0, 0, 0, 0];
 let carbsCount = [0, 0, 0, 0, 0, 0, 0];
@@ -55,9 +59,17 @@ const timeNum = {
   dinnerT: 5,
   sleepTr: 6,
 };
+let diff = new Set()
+let setDays = []
+let ExDb = {}
 
 let BMR = 0;
 
+ DayExChks.forEach((i) => {
+     ExDb[i.id] = {};
+ })
 let daysForThis = new Set();
 
 let allChecked = 0;
+let delt = [];
+let allCheckedEx = 0;
