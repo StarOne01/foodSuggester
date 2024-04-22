@@ -2,7 +2,7 @@
   display: none;
 }
 .varient {
-  width:30px;
+  width: 30px;
   margin: 5px;
 }
 
@@ -13,12 +13,12 @@
 }
 
 textarea {
-  width: 82vw;
+  width: 52vw;
   height: 200px;
 }
 
 .selected {
-  color:black !important;
+  color: black !important;
   background-color: white !important;
   text-decoration: none !important;
 }
@@ -26,7 +26,6 @@ textarea {
 #my-list {
   padding: 10px;
   border-radius: 7px;
-  
 }
 #my-list li {
   list-style: none;
@@ -42,8 +41,6 @@ textarea {
   border: 1px solid #ccc;
   justify-content: space-between;
 }
-
-
 
 #detailedForm {
   display: none;
@@ -76,16 +73,13 @@ body {
 table {
   border-collapse: collapse;
   border: 1px solid black;
-
 }
 th,
 td {
   text-align: left;
   border: 1px solid white;
   padding: 8px;
-
 }
-
 
 #SevereThinness,
 #ModerateThinness,
@@ -133,7 +127,6 @@ p {
 }
 #foo {
   display: block;
-  
 }
 
 #Overweight {
@@ -146,9 +139,9 @@ p {
 }
 
 #resultDiv ul {
-  width:200px;
+  width: 200px;
   position: relative;
-  left:50px;
+  left: 50px;
 }
 #resultDiv #resultBMI {
   position: relative;
@@ -158,12 +151,12 @@ p {
 
 #youAre {
   position: relative;
-  width:50px;
-  left :100px;
+  width: 50px;
+  left: 100px;
 }
 
 #resultDiv li {
-  padding:0 ;
+  padding: 0;
   margin: 0;
   height: 20px;
 }
@@ -183,7 +176,7 @@ table p::before {
   border-radius: 20px;
   padding: 5vw;
   background: black;
-  color: white ;
+  color: white;
   margin-inline: auto !important;
 }
 
@@ -198,7 +191,7 @@ h2 {
   text-decoration-thickness: 1px;
 }
 
-#dietTime p   {
+#dietTime p {
   margin: 0 !important;
   padding: 0 !important;
   width: 300px;
@@ -206,7 +199,6 @@ h2 {
   justify-content: space-between;
   align-items: flex-end;
 }
-
 
 input[type="search"] {
   width: 40vw;

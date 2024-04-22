@@ -1,9 +1,12 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
     <title>Client Information Form</title>
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -123,37 +126,39 @@
           <h3 id="resultBMI"></h3>
           <canvas id="foo"></canvas>
           <h3 id="youAre"></h3>
-          <ul><li>
-          <div id="SevereThinness"></div>
-          <p>Severe Thinness</p></li>
-          <li>
-          <div id="ModerateThinness"></div>
-          <p>ModerateThinness</p>
-          </li>
-          <li>
-          <div id="MildThinness"></div>
-          <p>MildThinness</p>
-          </li>
-          <li>
-          <div id="normal"></div>
-          <p>normal</p>
-          </li>
-          <li>
-          <div id="Overweight"></div>
-          <p>Overweight</p>
-          </li>
-          <li>
-          <div id="ObeseClass1"></div>
-          <p>ObeseClass1</p>
-          </li>
-          <li>
-          <div id="ObeseClass2"></div>
-          <p>Obese Class 2</p>
-          </li>
-          <li>
-          <div id="ObeseClass3"></div>
-          <p>Obese Class 3</p>
-          </li>
+          <ul>
+            <li>
+              <div id="SevereThinness"></div>
+              <p>Severe Thinness</p>
+            </li>
+            <li>
+              <div id="ModerateThinness"></div>
+              <p>ModerateThinness</p>
+            </li>
+            <li>
+              <div id="MildThinness"></div>
+              <p>MildThinness</p>
+            </li>
+            <li>
+              <div id="normal"></div>
+              <p>normal</p>
+            </li>
+            <li>
+              <div id="Overweight"></div>
+              <p>Overweight</p>
+            </li>
+            <li>
+              <div id="ObeseClass1"></div>
+              <p>ObeseClass1</p>
+            </li>
+            <li>
+              <div id="ObeseClass2"></div>
+              <p>Obese Class 2</p>
+            </li>
+            <li>
+              <div id="ObeseClass3"></div>
+              <p>Obese Class 3</p>
+            </li>
           </ul>
           <br />
         </div>
@@ -632,25 +637,25 @@
           </fieldset>
         </div>
         <div id="dietTime">
-        <h2 >Diet (Food Intake)</h2>
-        <br />
-        <p>WakeUp Time: <input type="time" /></p>
-        <br />
-        <p>Meal 1 Time: <input type="time" /></p>
-        <br />
-        <p>Snack 1 Time: <input type="time" /></p>
-        <br />
-        <p>Meal 2 Time:<input type="time" /></p>
-        <br />
-        <p>Snack 2 Time: <input type="time" /></p>
-        <br />
-        <p>Dinner Time: <input type="time" /></p>
-        <br />
-        <p>Sleep Time: <input type="time" /></p>
-        <br />
-        <button class="btn btn-outline-light" id="timeBtn" type="button">
-          Set Time
-        </button>
+          <h2>Diet (Food Intake)</h2>
+          <br />
+          <p>WakeUp Time: <input type="time" /></p>
+          <br />
+          <p>Meal 1 Time: <input type="time" /></p>
+          <br />
+          <p>Snack 1 Time: <input type="time" /></p>
+          <br />
+          <p>Meal 2 Time:<input type="time" /></p>
+          <br />
+          <p>Snack 2 Time: <input type="time" /></p>
+          <br />
+          <p>Dinner Time: <input type="time" /></p>
+          <br />
+          <p>Sleep Time: <input type="time" /></p>
+          <br />
+          <button class="btn btn-outline-light" id="timeBtn" type="button">
+            Set Time
+          </button>
         </div>
         <br /><br />
         <label for="wake_up_food">Wake-up:</label><br />
@@ -940,8 +945,8 @@
           </table>
         </div>
         <br /><br />
-                <h2>WorkOut order</h2>
-                 <br />
+        <h2>WorkOut order</h2>
+        <br />
         <input type="checkbox" name="dayEx" id="Day1" value="Sunday" />
         <label for="Day1">Day 1</label><br />
         <input type="checkbox" name="dayEx" id="Day2" value="Monday" />
@@ -970,63 +975,54 @@
           <li>Rest</li>
         </ul>
         <button class="btn btn-outline-light" id="setOrder">Set Order</button>
-        <br /><br />       <datalist id="itemListEx"></datalist>
+        <br /><br />
+        <datalist id="itemListEx"></datalist>
         <div id="exEnteries">
-        <p id="calrie"></p>
-        <br />
-        <br />
+          <p id="calrie"></p>
+          <br />
+          <br />
         </div>
         <br />
         <div class="table-responsive">
           <table id="Day1Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark" id="MondayTrEx">
-              <th>
-Day 1
-              </th>
-                            <th>Exercise</th>
-              <th>Rep</th>
-              <th>Set</th>
-              <th>Rest (in sec)</th>
-              </tr>
-          </table>
-        </div>
-        <br /><br />
-        <div class="table-responsive">
-          <table id="Day2Tbl" class="table table-bordered ExTbl" >
-            <tr class="table-dark">
-              <th>
-Day 2
-              </th>
+              <th>Day 1</th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest (in sec)</th>
             </tr>
-
+          </table>
+        </div>
+        <br /><br />
+        <div class="table-responsive">
+          <table id="Day2Tbl" class="table table-bordered ExTbl">
+            <tr class="table-dark">
+              <th>Day 2</th>
+              <th>Exercise</th>
+              <th>Rep</th>
+              <th>Set</th>
+              <th>Rest (in sec)</th>
+            </tr>
           </table>
         </div>
         <br /><br />
         <div class="table-responsive">
           <table id="Day3Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
-              <th>
-Day 3
-              </th>
+              <th>Day 3</th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest (in sec)</th>
             </tr>
-
           </table>
         </div>
         <br /><br />
         <div class="table-responsive">
           <table id="Day4Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
-              <th>
-Day 4
-              </th>
+              <th>Day 4</th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
@@ -1038,59 +1034,50 @@ Day 4
         <div class="table-responsive">
           <table id="Day5Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
-              <th>
-Day 5
-              </th>
-                            <th>Exercise</th>
+              <th>Day 5</th>
+              <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest (in sec)</th>
             </tr>
-
           </table>
         </div>
         <br /><br />
         <div class="table-responsive">
           <table id="Day6Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
-              <th>
-Day 6
-              </th>
+              <th>Day 6</th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest (in sec)</th>
             </tr>
-
           </table>
         </div>
         <br /><br />
         <div class="table-responsive">
           <table id="Day7Tbl" class="table table-bordered ExTbl">
             <tr class="table-dark">
-              <th>
-Day 7
-              </th>
+              <th>Day 7</th>
               <th>Exercise</th>
               <th>Rep</th>
               <th>Set</th>
               <th>Rest (in sec)</th>
             </tr>
-
           </table>
         </div>
         <h2>Remarks</h2>
         <textarea></textarea>
         <br /><br />
       </form>
-      
+
       <button type="submit" class="btn btn-outline-light" id="getPDFBtn">
         Get Diet PDF
       </button>
-            <button type="submit" class="btn btn-outline-light" id="getExBtn">
+      <button type="submit" class="btn btn-outline-light" id="getExBtn">
         Get Workout PDF
       </button>
-            <button type="submit" class="btn btn-outline-light" id="getBothBtn">
+      <button type="submit" class="btn btn-outline-light" id="getBothBtn">
         Get PDF Of Both Plans
       </button>
     </div>
@@ -1123,6 +1110,6 @@ Day 7
     <script src="./assets/js/printPdf.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/ExScript.js" defer></script>
-   <script src="./assets/js/eventListeners.js" defer></script>
+    <script src="./assets/js/eventListeners.js" defer></script>
   </body>
 </html>

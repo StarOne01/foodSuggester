@@ -2,24 +2,23 @@ const weightIn = document.getElementById("current_weight");
 const heightIn = document.getElementById("current_height");
 const ageIn = document.getElementById("current_age");
 const toastLiveExample = document.getElementById("noDate");
-const AlldayEx = document.getElementById("AlldayEx")
-const DayExChks = document.querySelectorAll("input[name='dayEx']")
-const toastBootstrap =
-      bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+const AlldayEx = document.getElementById("AlldayEx");
+const DayExChks = document.querySelectorAll("input[name='dayEx']");
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 
-const toastBody = document.getElementById("toastBody")
+const toastBody = document.getElementById("toastBody");
 const BMRH = document.getElementById("resultBMR");
 const userNature = document.getElementById("youAre");
 const wakeUp = document.getElementById("wakeUpI");
 const fatNeeded = document.getElementById("fatNeeded");
-const exEnteries = document.getElementById("exEnteries")
+const exEnteries = document.getElementById("exEnteries");
 const carbNeeded = document.getElementById("carbNeeded");
 const BMRTable = document.getElementById("BMRTable");
 const proteinNeeded = document.getElementById("proteinNeeded");
-const ExTblTr = document.querySelectorAll(".ExTbl tr")
-const ExTbl = document.querySelectorAll(".ExTbl")
-let orderLi = document.querySelectorAll("#my-list li")
-const setOrderBtn = document.getElementById("setOrder")
+const ExTblTr = document.querySelectorAll(".ExTbl tr");
+const ExTbl = document.querySelectorAll(".ExTbl");
+let orderLi = document.querySelectorAll("#my-list li");
+const setOrderBtn = document.getElementById("setOrder");
 
 const calorieNeeded = document.getElementById("calorieNeeded");
 const goals = document.getElementById("goal");
@@ -39,7 +38,7 @@ const userInput = document.querySelectorAll("[list='itemList']");
 const userInputEx = document.querySelectorAll("[list='itemListEx']");
 
 const detailedInfo = document.querySelectorAll("input[name='detailedInfo']");
-const detailedForm = document.getElementById("detailedForm")
+const detailedForm = document.getElementById("detailedForm");
 let dataList = document.getElementById("itemList");
 let dataListEx = document.getElementById("itemListEx");
 const addButton = document.getElementById("addButton");
