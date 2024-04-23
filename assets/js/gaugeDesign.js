@@ -82,13 +82,12 @@ let opts = {
   highDpiSupport: true,
 };
 
-
 var target = document.getElementById("foo");
 
 var gauge = new Gauge(target).setOptions(opts);
 gauge.setMinValue(0);
 gauge.maxValue = 45;
-gauge.animationSpeed = 32; 
+gauge.animationSpeed = 32;
 gauge.set(0);
 
 weightIn.addEventListener("keyup", (e) => {
@@ -101,52 +100,51 @@ const BMIfunc = (e) => {
   } else {
     BMR = ca * (10 * weight + 6.25 * height - 5 * age - 161);
   }
-  BMI = (Number(
-    Number(weight) /
-    (((Number(height) / 100) * Number(height)) / 100)
-  )).toFixed(2);
-    caloriesN = (Number(redVal + Number(BMR))).toFixed(2);
-    console.log(caloriesN)
-console.log("Here")
-    BMIn.textContent = `Your BMI: ${BMI}`;
-    fat = ((0.3 * caloriesN) / 9).toFixed(2);
-    carbs = ((0.5 * caloriesN) / 4).toFixed(2);
-    protein = ((0.2 * caloriesN) / 4).toFixed(2);
-    calorieNeeded.innerHTML = `<h5>${BMR}g</h5>`;
-    acutalCal.innerHTML = `<h5>${caloriesN}g</h5>`;
-    fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
-    carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
+  BMI = Number(
+    Number(weight) / (((Number(height) / 100) * Number(height)) / 100)
+  ).toFixed(2);
+  caloriesN = Number(redVal + Number(BMR)).toFixed(2);
+  console.log(caloriesN);
+  console.log("Here");
+  BMIn.textContent = `Your BMI: ${BMI}`;
+  fat = ((0.3 * caloriesN) / 9).toFixed(2);
+  carbs = ((0.5 * caloriesN) / 4).toFixed(2);
+  protein = ((0.2 * caloriesN) / 4).toFixed(2);
+  calorieNeeded.innerHTML = `<h5>${BMR}g</h5>`;
+  acutalCal.innerHTML = `<h5>${caloriesN}g</h5>`;
+  fatNeeded.innerHTML = `<h5>${fat}g</h5>`;
+  carbNeeded.innerHTML = `<h5>${carbs}g</h5>`;
 
-    proteinNeeded.innerHTML = `<h5>${protein}g</h5>`;
-    BMR = caloriesN;
-    BMRH.textContent = `Your BMR: ${BMR}`;
-    gauge.set(BMI);
-    if (BMI <= 16) {
-      userNature.textContent = "Severe Thinness";
-      condition = "Severe Thinness";
-    } else if (BMI < 18.5 && BMI > 16) {
-      userNature.textContent = "Moderate Thinness";
-      condition = "Moderate Thinness";
-    } else if (BMI < 25 && BMI >= 18.5) {
-      userNature.textContent = "Mild Thinness";
-      condition = "Mild Thinness";
-    } else if (BMI < 30 && BMI >= 25) {
-      userNature.textContent = "Normal";
-      condition = "Normal";
-    } else if (BMI >= 30 && BMI < 35) {
-      userNature.textContent = "Slightly Overweight";
-      condition = "Overweight - Slightly";
-    } else if (BMI >= 35 && BMI < 40) {
-      userNature.textContent = "Overweight";
-      condition = "Overweight";
-    } else if (BMI >= 40 && BMI > 45) {
-      userNature.textContent = "Obese";
-      condition = "Obese";
-    }
+  proteinNeeded.innerHTML = `<h5>${protein}g</h5>`;
+  BMR = caloriesN;
+  BMRH.textContent = `Your BMR: ${BMR}`;
+  gauge.set(BMI);
+  if (BMI <= 16) {
+    userNature.textContent = "Severe Thinness";
+    condition = "Severe Thinness";
+  } else if (BMI < 18.5 && BMI > 16) {
+    userNature.textContent = "Moderate Thinness";
+    condition = "Moderate Thinness";
+  } else if (BMI < 25 && BMI >= 18.5) {
+    userNature.textContent = "Mild Thinness";
+    condition = "Mild Thinness";
+  } else if (BMI < 30 && BMI >= 25) {
+    userNature.textContent = "Normal";
+    condition = "Normal";
+  } else if (BMI >= 30 && BMI < 35) {
+    userNature.textContent = "Slightly Overweight";
+    condition = "Overweight - Slightly";
+  } else if (BMI >= 35 && BMI < 40) {
+    userNature.textContent = "Overweight";
+    condition = "Overweight";
+  } else if (BMI >= 40 && BMI > 45) {
+    userNature.textContent = "Obese";
+    condition = "Obese";
   }
-heightIn.addEventListener("keyup", (e) => { 
+};
+heightIn.addEventListener("keyup", (e) => {
   height = Number(e.target.value);
-  BMIfunc(e)
+  BMIfunc(e);
 });
 
 ageIn.addEventListener("keyup", (e) => {
