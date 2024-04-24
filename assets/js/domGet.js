@@ -58,3 +58,9 @@ let gender = document.querySelectorAll('input[name="gender"]');
 let deltBtn = 0;
 const acutalCal = document.getElementById("aCalorieNeeded");
 let getPDFBtn = document.getElementById("getPDFBtn");
+
+const DataTable = document.getElementById("DataTable")
+const WakeupData = document.getElementById("WakeupData")
+const Meal1Data = document.getElementById("Meal1Data")
+const Snack1Data =document.getElementById("Snack1Data")
+const Meal2Data = document.getElementById("")
