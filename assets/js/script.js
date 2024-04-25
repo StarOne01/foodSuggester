@@ -90,7 +90,15 @@ function addItem(option, time) {
   daysForThis.forEach((i) => {
     const inde = items.indexOf(option);
     foodData[daysNum[i]][timeNum[time]].push(option);
-    console.log(calorieCount[daysNum[i]] + calorieCounts[inde]);
+    calorieTableDb[daysNum[i]][timeNum[time]] = (Number(    calorieTableDb[daysNum[i]][timeNum[time]]) + Number(calorieCounts[inde])).toFixed(2);
+    
+     proteinTableDb[daysNum[i]][timeNum[time]] = (Number(    proteinTableDb[daysNum[i]][timeNum[time]]) + Number(proteinCounts[option])).toFixed(2);
+     
+     carbsTableDb[daysNum[i]][timeNum[time]] = (Number(    carbsTableDb[daysNum[i]][timeNum[time]]) + Number(carbsCount[inde])).toFixed(2);
+     
+     fatTableDb[daysNum[i]][timeNum[time]] = (Number(    fatTableDb[daysNum[i]][timeNum[time]]) + Number(calorieCounts[inde])).toFixed(2);
+    
+    
     calorieCount[daysNum[i]] = (
       Number(calorieCount[daysNum[i]]) + Number(calorieCounts[inde])
     ).toFixed(2);
