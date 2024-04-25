@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 #female_questions {
   display: none;
 }
@@ -69,6 +71,7 @@ body {
   margin: 10px !important;
   color: white;
   background-color: black;
+  font-family: "Outfit", sans-serif;
 }
 
 table {
