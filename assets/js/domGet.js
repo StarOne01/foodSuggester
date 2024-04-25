@@ -49,7 +49,9 @@ const body = document.body;
 
 const trItems = document.querySelectorAll("#foodTable tr");
 
-const trTh = document.querySelectorAll("tr th");
+const trItemsData = document.querySelectorAll("#DataTable tr");
+
+const trTh = document.querySelectorAll("#foodTable tr th");
 
 const selectAll = document.getElementById("Allday");
 const BMIn = document.getElementById("resultBMI");

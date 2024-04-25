@@ -84,6 +84,16 @@ const tdtrObj = {
   calorieRow: document.querySelectorAll("#calorieRow td"),
 };
 
+const tdtrObjData = {
+  WakeupData: document.querySelectorAll("#WakeupData td"),
+  Meal1Data: document.querySelectorAll("#Meal1Data td"),
+  Snack1Data: document.querySelectorAll("#Snack1Data td"),
+  Meal2Data: document.querySelectorAll("#Meal2Data td"),
+  Snack2Data: document.querySelectorAll("#Snack2Data td"),
+  Meal3Data: document.querySelectorAll("#Meal3Data td"),
+  SleepData: document.querySelectorAll("#SleepData td"),
+};
+
 const daysNum = {
   Sunday: 0,
   Monday: 1,

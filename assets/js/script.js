@@ -123,7 +123,6 @@ function deleteItem(option, time, e) {
       }
     }
     let inde = items.indexOf(option);
-    foodData[daysNum[i]][timeNum[time]].push(option);
     calorieTableDb[daysNum[i]][timeNum[time]] = (Number(calorieTableDb[daysNum[i]][timeNum[time]]) - Number(calorieCounts[inde])).toFixed(2);
     proteinTableDb[daysNum[i]][timeNum[time]] = (Number(proteinTableDb[daysNum[i]][timeNum[time]]) - Number(proteinCounts[option])).toFixed(2);
     carbsTableDb[daysNum[i]][timeNum[time]] = (Number(carbsTableDb[daysNum[i]][timeNum[time]]) - Number(carbsCount[inde])).toFixed(2);
@@ -150,9 +149,11 @@ updateTable();
 function updateTable() {
   for (let i = 0; i < 7; i++) {
     for (let j = 0; j < 7; j++) {
-
-      console.log(DataTable.querySelectorAll("tr")[j].childNodes[i+2])
-
+      if(j < 6 && i < 6) {
+      console.log(trItemsData[i+1].id)
+      tdtrObjData[trItemsData[i+1].id][j].innerHTML = `Calories ${calorieTableDb[j][i]}`;
+      console.log(tdtrObjData[trItemsData[j+1].id][i])
+      }
       tdtrObj[trItems[j + 1].id][i].innerHTML = "";
       for (let k = 0; k < foodData[i][j].length; k++) {
         let newp = document.createElement("p");
