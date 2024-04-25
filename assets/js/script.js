@@ -90,10 +90,10 @@ function addItem(option, time) {
   daysForThis.forEach((i) => {
     const inde = items.indexOf(option);
     foodData[daysNum[i]][timeNum[time]].push(option);
-    calorieTableDb[daysNum[i]][timeNum[time]] = (Number(calorieTableDb[daysNum[i]][timeNum[time]]) + Number(calorieCounts[inde])).toFixed(2);
+calorieTableDb[daysNum[i]][timeNum[time]] = (Number(calorieTableDb[daysNum[i]][timeNum[time]]) + Number(calorieCounts[inde])).toFixed(2);
     proteinTableDb[daysNum[i]][timeNum[time]] = (Number(proteinTableDb[daysNum[i]][timeNum[time]]) + Number(proteinCounts[option])).toFixed(2);
-    carbsTableDb[daysNum[i]][timeNum[time]] = (Number(carbsTableDb[daysNum[i]][timeNum[time]]) + Number(carbsCount[inde])).toFixed(2);
-    fatTableDb[daysNum[i]][timeNum[time]] = (Number(fatTableDb[daysNum[i]][timeNum[time]]) + Number(calorieCounts[inde])).toFixed(2);
+    carbsTableDb[daysNum[i]][timeNum[time]] = (Number(carbsTableDb[daysNum[i]][timeNum[time]]) + Number(carbohydrateCounts[option])).toFixed(2);
+    fatTableDb[daysNum[i]][timeNum[time]] = (Number(fatTableDb[daysNum[i]][timeNum[time]]) + Number(fatCounts[option])).toFixed(2);
 
 
     calorieCount[daysNum[i]] = (
@@ -125,8 +125,8 @@ function deleteItem(option, time, e) {
     let inde = items.indexOf(option);
     calorieTableDb[daysNum[i]][timeNum[time]] = (Number(calorieTableDb[daysNum[i]][timeNum[time]]) - Number(calorieCounts[inde])).toFixed(2);
     proteinTableDb[daysNum[i]][timeNum[time]] = (Number(proteinTableDb[daysNum[i]][timeNum[time]]) - Number(proteinCounts[option])).toFixed(2);
-    carbsTableDb[daysNum[i]][timeNum[time]] = (Number(carbsTableDb[daysNum[i]][timeNum[time]]) - Number(carbsCount[inde])).toFixed(2);
-    fatTableDb[daysNum[i]][timeNum[time]] = (Number(fatTableDb[daysNum[i]][timeNum[time]]) - Number(calorieCounts[inde])).toFixed(2);
+    carbsTableDb[daysNum[i]][timeNum[time]] = (Number(carbsTableDb[daysNum[i]][timeNum[time]]) - Number(carbohydrateCounts[option])).toFixed(2);
+    fatTableDb[daysNum[i]][timeNum[time]] = (Number(fatTableDb[daysNum[i]][timeNum[time]]) - Number(fatCounts[option])).toFixed(2);
 
     calorieCount[daysNum[i]] = (
       Number(calorieCount[daysNum[i]]) - Number(calorieCounts[inde])
@@ -149,9 +149,8 @@ updateTable();
 function updateTable() {
   for (let i = 0; i < 7; i++) {
     for (let j = 0; j < 7; j++) {
-      if(j < 6 && i < 6) {
-      console.log(trItemsData[i+1].id)
-      tdtrObjData[trItemsData[i+1].id][j].innerHTML = `Calories ${calorieTableDb[j][i]}`;
+      if(j < 6) {
+      tdtrObjData[trItemsData[i+1].id][j].innerHTML = `Calories: ${calorieTableDb[j][i]}<br>Protein: ${proteinTableDb[j][i]}<br>Carbs: ${carbsTableDb[j][i]}<br>Fat: ${fatTableDb[j][i]}` ;
       console.log(tdtrObjData[trItemsData[j+1].id][i])
       }
       tdtrObj[trItems[j + 1].id][i].innerHTML = "";
