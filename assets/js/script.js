@@ -153,73 +153,88 @@ function updateTable() {
         tdtrObjData[trItemsData[i + 1].id][j].innerHTML = `<span class='0'>Calories: ${((Number(calorieTableDb[j][i])/Number(caloriesN)) * 100).toFixed(2)}%</span> <br><span class='1'>Protein: ${((Number(proteinTableDb[j][i])/Number(protein)) * 100).toFixed(2)}%</span> <br><span class='2'>Carbs: ${((Number(carbsTableDb[j][i])/Number(carbs)) * 100).toFixed(2)}%</span> <br><span class='3'>Fat: ${((Number(fatTableDb[j][i])/Number(fat)) * 100).toFixed(2)}% </span> `;
         if (trItemsData[i + 1].id === "WakeupData" || trItemsData[i + 1].id === "SleepData") {
         if(calorieTableDb[j][i] > (caloriesN * 0.02) && calorieTableDb[j][i] < (caloriesN * 0.03)) {
-         tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.background = "#ffeac1";
+         tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#2AFA3B";
         }
         if(proteinTableDb[j][i] > (protein * 0.02) && proteinTableDb[j][i] < (protein * 0.03)) {
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.color = "#2AFA3B";
         }
         if(carbsTableDb[j][i] > (carbs * 0.02) && carbsTableDb[j][i] < (carbs * 0.03)) {
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#2AFA3B";
         }
         if(fatTableDb[j][i] > (fat * 0.02) && fatTableDb[j][i] < (fat * 0.03)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#2AFA3B";
         }
 
         if(calorieTableDb[j][i] > (caloriesN * 0.03)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#FA2A2A";
         }
         if(proteinTableDb[j][i] > (protein * 0.03)) {
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.color = "#FA2A2A";
         }
         if(carbsTableDb[j][i] > (carbs * 0.03)) {
+         tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#FA2A2A";
         }
         if(fatTableDb[j][i] > (fat * 0.03)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+            tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#FA2A2A";
         }
       }
 
       if (trItemsData[i + 1].id === "Meal1Data" || trItemsData[i + 1].id === "Meal2Data" || trItemsData[i + 1].id === "Meal3Data") {
+        tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.backgroundColor = "#ffeac1";
         if(calorieTableDb[j][i] > (caloriesN * 0.2) && calorieTableDb[j][i] < (caloriesN * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#2AFA3B";
         }
         if(proteinTableDb[j][i] > (protein * 0.2) && proteinTableDb[j][i] < (protein * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.color = "#2AFA3B";
         }
         if(carbsTableDb[j][i] > (carbs * 0.2) && carbsTableDb[j][i] < (carbs * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+          tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#2AFA3B";
         }
         if(fatTableDb[j][i] > (fat * 0.2) && fatTableDb[j][i] < (fat * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#2AFA3B";
         }
 
         if(calorieTableDb[j][i] > (caloriesN * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#FA2A2A";
         }
         if(proteinTableDb[j][i] > (protein * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.color = "#FA2A2A";
         }
         if(carbsTableDb[j][i] > (carbs * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#FA2A2A";
         }
         if(fatTableDb[j][i] > (fat * 0.3)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#FA2A2A";
         }
       }
@@ -228,19 +243,23 @@ function updateTable() {
       if (trItemsData[i + 1].id === "Snack1Data" || trItemsData[i + 1].id === "Snack2Data") {
         if(calorieTableDb[j][i] > (caloriesN * 0.05) && calorieTableDb[j][i] < (caloriesN * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#2AFA3B";
         }
         if(proteinTableDb[j][i] > (protein * 0.05) && proteinTableDb[j][i] < (protein * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("1")[0].style.color = "#2AFA3B";
         }
         if(carbsTableDb[j][i] > (carbs * 0.05) && carbsTableDb[j][i] < (carbs * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#2AFA3B";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
         }
         if(fatTableDb[j][i] > (fat * 0.05) && fatTableDb[j][i] < (fat * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#2AFA3B";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
         }
 
         if(calorieTableDb[j][i] > (caloriesN * 0.12)) {
@@ -253,10 +272,12 @@ function updateTable() {
         }
         if(carbsTableDb[j][i] > (carbs * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("2")[0].style.color = "#FA2A2A";
         }
         if(fatTableDb[j][i] > (fat * 0.12)) {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
+                   tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.backgroundColor = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#FA2A2A";
         }
       }
