@@ -288,9 +288,9 @@ function updateTable() {
         tdtrObj[trItems[j + 1].id][i].appendChild(newp);
       }
     }
-    fatRow[i].textContent = `${fatCount[i]}     (${fat})`;
-    proteinRow[i].textContent = `${proteinCount[i]}     (${protein})`;
-    carbRow[i].textContent = `${carbsCount[i]}     (${carbs})`;
-    calorieRow[i].textContent = `${calorieCount[i]}     (${caloriesN})`;
+    fatRow[i].textContent = `A: ${fatCount[i]}     C: (${fat})`;
+    proteinRow[i].textContent = `A: ${proteinCount[i]}     C:(${protein})`;
+    carbRow[i].textContent = `A: ${carbsCount[i]}     C: (${carbs})`;
+    calorieRow[i].textContent = `A: ${calorieCount[i]}     C:(${caloriesN})`;
   }
 }

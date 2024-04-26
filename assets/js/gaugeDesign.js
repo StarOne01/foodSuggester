@@ -122,22 +122,20 @@ const BMIfunc = (e) => {
   if (BMI <= 16) {
     userNature.textContent = "Severe Thinness";
     condition = "Severe Thinness";
-  } else if (BMI < 18.5 && BMI > 16) {
+  } else if (BMI < 17 && BMI > 16) {
     userNature.textContent = "Moderate Thinness";
     condition = "Moderate Thinness";
-  } else if (BMI < 25 && BMI >= 18.5) {
+  }else if(BMI > 18.5 && BMI >= 17) {
     userNature.textContent = "Mild Thinness";
     condition = "Mild Thinness";
-  } else if (BMI < 30 && BMI >= 25) {
+  }
+  else if (BMI < 25 && BMI >= 18.5) {
     userNature.textContent = "Normal";
     condition = "Normal";
-  } else if (BMI >= 30 && BMI < 35) {
-    userNature.textContent = "Slightly Overweight";
-    condition = "Overweight - Slightly";
-  } else if (BMI >= 35 && BMI < 40) {
+  } else if (BMI < 30 && BMI >= 25) {
     userNature.textContent = "Overweight";
     condition = "Overweight";
-  } else if (BMI >= 40 && BMI > 45) {
+  } else if (BMI >= 30) {
     userNature.textContent = "Obese";
     condition = "Obese";
   }
