@@ -125,7 +125,7 @@ const BMIfunc = (e) => {
   } else if (BMI < 17 && BMI > 16) {
     userNature.textContent = "Moderate Thinness";
     condition = "Moderate Thinness";
-  }else if(BMI > 18.5 && BMI >= 17) {
+  }else if(BMI < 18.5 && BMI >= 17) {
     userNature.textContent = "Mild Thinness";
     condition = "Mild Thinness";
   }
