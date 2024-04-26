@@ -149,10 +149,11 @@ updateTable();
 function updateTable() {
   for (let i = 0; i < 7; i++) {
     for (let j = 0; j < 7; j++) {
-      if (j < 6) {
+
         tdtrObjData[trItemsData[i + 1].id][j].innerHTML = `<span class='0'>Calories: ${((Number(calorieTableDb[j][i])/Number(caloriesN)) * 100).toFixed(2)}%</span> <br><span class='1'>Protein: ${((Number(proteinTableDb[j][i])/Number(protein)) * 100).toFixed(2)}%</span> <br><span class='2'>Carbs: ${((Number(carbsTableDb[j][i])/Number(carbs)) * 100).toFixed(2)}%</span> <br><span class='3'>Fat: ${((Number(fatTableDb[j][i])/Number(fat)) * 100).toFixed(2)}% </span> `;
         if (trItemsData[i + 1].id === "WakeupData" || trItemsData[i + 1].id === "SleepData") {
         if(calorieTableDb[j][i] > (caloriesN * 0.02) && calorieTableDb[j][i] < (caloriesN * 0.03)) {
+         tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.background = "#ffeac1";
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("0")[0].style.color = "#2AFA3B";
         }
@@ -258,8 +259,6 @@ function updateTable() {
           tdtrObjData[trItemsData[i + 1].id][j].style.color = "black";
           tdtrObjData[trItemsData[i + 1].id][j].getElementsByClassName("3")[0].style.color = "#FA2A2A";
         }
-      }
-
       }
       tdtrObj[trItems[j + 1].id][i].innerHTML = "";
       for (let k = 0; k < foodData[i][j].length; k++) {
