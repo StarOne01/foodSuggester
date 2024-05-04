@@ -49,7 +49,6 @@ const showSuggestions = (i) => {
   }
 };
 
-let numIn = 0;
 const addSelected = (e, i) => {
   e.preventDefault();
   if (daysForThis.size === 0) {

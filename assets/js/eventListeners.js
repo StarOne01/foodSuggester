@@ -107,8 +107,13 @@ Timebtn.addEventListener("click", (e) => {
   }
 });
 
+
+let goal = '';
+
 goals.addEventListener("change", (e) => {
-  let goal = e.target.value;
+
+ goal = e.target.value;
+  console.log(goal);
   if (goal === "weight_loss" || goal === "fat_loss") {
     redVal = -500;
   } else if (goal === "weight_gain") {
