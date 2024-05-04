@@ -200,7 +200,7 @@ getPDFBtn.addEventListener("click", (e) => {
           [
             {
 
-              margin: [0, -30, 0, 0],
+              margin: [0, -10, 0, 0],
               image: imageData,
               width: 200,
               height: 100,
