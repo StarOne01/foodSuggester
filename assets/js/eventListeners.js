@@ -1,3 +1,10 @@
+
+/**
+ * This file contains event listeners for various elements in the application.
+ * It handles click events, change events, and keyup events for different elements.
+ * The event listeners perform various actions such as adding selected items, updating display, and handling user input.
+ * @file FILEPATH: /home/StarBoy/Code/Projects/Official/foodSuggester/assets/js/eventListeners.js
+ */
 wakeUp.addEventListener("click", (e) => addSelected(e, 0));
 breakfast.addEventListener("click", (e) => addSelected(e, 1));
 morningSnack.addEventListener("click", (e) => addSelected(e, 2));
@@ -5,6 +12,8 @@ lunch.addEventListener("click", (e) => addSelected(e, 3));
 eveningSnack.addEventListener("click", (e) => addSelected(e, 4));
 dinner.addEventListener("click", (e) => addSelected(e, 5));
 beforeSleep.addEventListener("click", (e) => addSelected(e, 6));
+
+
 
 orderLi.forEach((i) => {
   i.addEventListener("click", (e) => {

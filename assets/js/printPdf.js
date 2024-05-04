@@ -1,3 +1,8 @@
+
+/**
+ * Represents an event listener for the "getPDFBtn" button click.
+ * @param {Event} e - The click event object.
+ */
 getPDFBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const nameval = document.getElementById("client_name").value;
@@ -212,6 +217,10 @@ getPDFBtn.addEventListener("click", (e) => {
     ],
   };
 
+  /**
+   * Represents a table of recommended food chart based on user response.
+   * @type {Array<Object>}
+   */
   let foodTable = [
 
       {

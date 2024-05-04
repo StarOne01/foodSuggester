@@ -1,3 +1,12 @@
+
+
+/**
+ * This file contains variables and data structures used in the foodSuggester application.
+ * 
+ * @file FILEPATH: /home/StarBoy/Code/Projects/Official/foodSuggester/assets/js/data.js
+ * @summary Contains variables and data structures for the foodSuggester application.
+ * @since 0.0.1
+ */
 let weight = 0;
 let height = 0;
 let age = 0;
@@ -116,6 +125,7 @@ const timeNum = {
 let diff = new Set();
 let setDays = [];
 let ExDb = {};
+let ExDataDB = {};
 
 let BMR = 0;
 
