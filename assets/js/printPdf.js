@@ -393,16 +393,37 @@ getPDFBtn.addEventListener("click", (e) => {
         }
       }
     ];
+
+let remarks = [
+  {
+    margin: [0, 20, 0, 0],
+    text: "Remarks:",
+
+    style: 'header',
+  },
+    {
+    margin: [0, 10, 0, 0],
+    text: `${remarksTextArea.value}`, 
+  },
+ ,
+];
+
+
 let style = {
     defaultStyle: {
       fontSize: 8,
       bold: true,
     },
+    header: {
+			fontSize: 18,
+			bold: true,
+		},
   };
 
 
 
   DataDef.content.push(foodTable);
+  DataDef.content.push(remarks);
   DataDef.styles = style;
 
   pdfMake.createPdf(DataDef).download(`${nameval}-Diet.pdf`);

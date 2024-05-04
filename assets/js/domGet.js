@@ -65,3 +65,5 @@ let gender = document.querySelectorAll('input[name="gender"]');
 let deltBtn = 0;
 const acutalCal = document.getElementById("aCalorieNeeded");
 let getPDFBtn = document.getElementById("getPDFBtn");
+
+let remarksTextArea = document.getElementById("remarksTextArea");
