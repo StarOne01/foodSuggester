@@ -3,81 +3,14 @@
  * Represents an event listener for the "getPDFBtn" button click.
  * @param {Event} e - The click event object.
  */
-getPDFBtn.addEventListener("click", (e) => {
+
+function printPdf(e, i) {
+
+
   e.preventDefault();
   const nameval = document.getElementById("client_name").value;
   const clientid = document.getElementById("membership_id").value;
   console.log(goal)
-  const dayOne = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const dayTwo = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const dayThree = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const dayFour = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const dayFive = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const daySix = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const daySeven = [
-    ["Day 1", "Exercise", "Rep", "Sets", "Rest"],
-  ];
-  const tableLayout = [
-    { text: "Column 1", width: "*" },
-    { text: "Column 2" },
-    { text: "Column 3", alignment: "right" },
-  ];
-
-  const table2Content = dayTwo.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table3Content = dayThree.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table4Content = dayFour.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table5Content = dayFive.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table6Content = daySix.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table7Content = daySeven.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-  const table1Content = dayOne.map((row) => {
-    return tableLayout.map((column, index) => {
-      return { text: row[index] };
-    });
-  });
-
-
   const canvasy = document.getElementById("foo");
   const imageData = canvasy.toDataURL();
   //docDefinition
@@ -394,20 +327,25 @@ getPDFBtn.addEventListener("click", (e) => {
     }
   ];
 
+  //widths: [85, 103, 93, 93, 93],
   let exerciseTable = [
     {
       margin: [0, 20, 0, 0],
       text: "Exercise Plan",
       style: 'header',
     },
-    {
+  ];
+
+
+  let DaysEx = {
+
+    Day1: {
       margin: [0, 10, 0, 0],
       table: {
-        headerRows: 1,
-        widths: [55, 55, 55, 55, 55],
+        widths: [85, 103, 93, 93, 93],
         body: [
           [
-            { text: "Day", bold: true },
+            { text: "Day 1", bold: true },
             { text: "Exercise", bold: true },
             { text: "Rep", bold: true },
             { text: "Sets", bold: true },
@@ -416,7 +354,133 @@ getPDFBtn.addEventListener("click", (e) => {
         ],
       },
     },
-  ];
+
+    Day2: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 2", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+
+    Day3: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 3", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+
+
+    Day4: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 4", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+
+
+    Day5: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 5", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+
+
+    Day6: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 6", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+
+
+    Day7: {
+      margin: [0, 10, 0, 0],
+      table: {
+        widths: [85, 103, 93, 93, 93],
+        body: [
+          [
+            { text: "Day 7", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+  }
+
+
+
+
+
+  for (const daysL in ExDb) {
+    let jo = 0;
+    for (const x in ExDb[daysL]) {
+      DaysEx[daysL].table.body.push([{ text: x, bold: true }, { layout: 'lightHorizontalLines', table: { body: [] } }, { layout: 'lightHorizontalLines', table: { body: [] } }, { layout: 'lightHorizontalLines', table: { body: [] } }, { layout: 'lightHorizontalLines', table: { body: [] } }]);
+      let lim = Number(document.querySelectorAll(`#${daysL}Tbl .${x}SubTd .In0`)[0].getAttribute('data-lim'));
+      for (const y in ExDb.Day1[x]) {
+        DaysEx[daysL].table.body[1 + jo][1].table.body.push([ExDb.Day1[x][y]])
+      }
+      for (let i = 0; i < lim; i++) {
+        DaysEx[daysL].table.body[1 + jo][2].table.body.push([document.querySelectorAll(`#${daysL}Tbl .${x}SubTd .In${i}`)[0].value])
+        DaysEx[daysL].table.body[1 + jo][3].table.body.push([document.querySelectorAll(`#${daysL}Tbl .${x}SubTd .In${i}`)[1].value])
+        DaysEx[daysL].table.body[1 + jo][4].table.body.push([document.querySelectorAll(`#${daysL}Tbl .${x}SubTd .In${i}`)[2].value])
+
+      }
+      jo++;
+    }
+
+    exerciseTable.push(DaysEx[daysL]);
+  }
+
+
 
 
   let remarks = [
@@ -447,10 +511,15 @@ getPDFBtn.addEventListener("click", (e) => {
 
 
 
+
+
+  if(i === 0 || i===2) {
   DataDef.content.push(foodTable);
+  }
+  if(i === 1 || i===2) {
   DataDef.content.push(exerciseTable);
+  }
   DataDef.content.push(remarks);
   DataDef.styles = style;
-
   pdfMake.createPdf(DataDef).download(`${nameval}-Diet.pdf`);
-});
+};

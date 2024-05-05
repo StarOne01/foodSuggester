@@ -52,6 +52,9 @@ const selectedItemsList = document.getElementsByClassName("selectedItems");
 var timeInput = document.querySelectorAll("input[type='time']");
 const body = document.body;
 
+const getBothBtn = document.getElementById("getBothBtn");
+const getExBtn =document.getElementById("getExBtn");
+
 const trItems = document.querySelectorAll("#foodTable tr");
 
 const trItemsData = document.querySelectorAll("#DataTable tr");

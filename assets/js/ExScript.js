@@ -47,7 +47,7 @@ const showSuggestionsEx = (i) => {
   }
 };
 
-const addInput = (e) => {
+var addInput = (e) => {
 
   for(const Selecteday of Exdays) {
     if (ExDb[Selecteday][`${e.target.id.substring(0, e.target.id.length - 3)}`].length >
@@ -103,9 +103,9 @@ const addInput = (e) => {
           });
     for (let lea = 0; lea < 3; lea++) {
       let htm1 = "";
-      htm1 = `<table width='100%'>`;
+      htm1 = `<table  width='100%'>`;
       for (let j = 0; j < e.target.value; j++) {
-        htm1 += `<input class='In${j}' style='margin:10px;' type='text'/>`;
+        htm1 += `<input class='In${j}' data-lim='${e.target.value}' style='margin:10px;' type='text'/>`;
       }
 
       htm1 += "</table>";
@@ -116,6 +116,7 @@ const addInput = (e) => {
           `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}Tr`
         )
         .appendChild(newTd1);
+        newTd1.classList.add(`${e.target.id.substring(0, e.target.id.length - 3)}SubTd`);
     }
 
   });

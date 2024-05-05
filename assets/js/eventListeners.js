@@ -211,14 +211,13 @@ setOrderBtn.addEventListener("click", (e) => {
     const newDiv = document.createElement("div");
     newDiv.innerHTML = `<label for="${order[i].textContent
       .split(" ")
-      .join("")}" onchange='addInput(e)'>${order[i].textContent}</label><br />
+      .join("")}" '>${order[i].textContent}</label><br />
   <label>Varience:</label>
   <input id="${order[i].textContent
     .split(" ")
     .join("")}Var" type="number" class="varient"> <br>
         <input
           type="search"
-          onchange='addInput(this)'
           list="itemListEx"
           id='${order[i].textContent.split(" ").join("")}'
           placeholder="Search items..."
@@ -242,7 +241,7 @@ setOrderBtn.addEventListener("click", (e) => {
       .addEventListener("click", addSelectedEx);
     const userInputEx = document.querySelectorAll("[list='itemListEx']");
     console.log(userInputEx);
-    document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).addEventListener("change", addInput);
+    document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).addEventListener("change", (e)=> addInput(e));
     userInputEx.forEach((j) => {
       j.addEventListener("keyup", (k) => {
         showSuggestionsEx(k.target);
@@ -304,3 +303,14 @@ DayExChks.forEach((i) => {
 });
 
 AlldayEx.addEventListener("click", CheckAllEx);
+getPDFBtn.addEventListener("click", (e) => {
+  printPdf(e,0);
+});
+
+getExBtn.addEventListener("click", (e) => {
+  printPdf(e,1);
+});
+
+getBothBtn.addEventListener("click", (e) => {
+  printPdf(e,2);
+});
