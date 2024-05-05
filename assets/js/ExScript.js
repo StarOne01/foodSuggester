@@ -47,6 +47,80 @@ const showSuggestionsEx = (i) => {
   }
 };
 
+const addInput = (e) => {
+
+  for(const Selecteday of Exdays) {
+    if (ExDb[Selecteday][`${e.target.id.substring(0, e.target.id.length - 3)}`].length >
+  Number(
+    e.target.value
+  )
+) {
+  toastBody.textContent = "The existing number of exercises is greater than the variance set, Please delete some exercises";
+  toastBootstrap.show();
+  return;
+}
+    document.querySelector(
+      `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}Tr`
+    ).innerHTML = "";
+    
+  };
+
+  Exdays.forEach((Selecteday) => {
+
+      const newTd = document.createElement("td");
+      const newTdTime = document.createElement("td"); 
+      newTdTime.innerHTML = `${e.target.id.substring(0, e.target.id.length - 3)}`
+      let htm = "";
+      htm = `<table id="${e.target.id.substring(0, e.target.id.length - 3)}TblR" width='100%'>`;
+      console.log(`id="${e.target.id.substring(0, e.target.id.length - 3)}TblR"`);
+      /*
+     for(let g = 0;  ;g++) {
+            
+     htm += "<tr><td>Cell</td></tr>"
+     
+     }*/
+
+      htm += "</table>";
+      newTd.innerHTML = htm;
+      document
+      .querySelector(
+        `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}Tr`
+      )
+      .appendChild(newTdTime);
+      document
+        .querySelector(
+          `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}Tr`
+        )
+        .appendChild(newTd);
+        ExDb[Selecteday][`${e.target.id.substring(0, e.target.id.length - 3)}`].forEach((fo) => {
+          const newTr = document.createElement("tr");
+          newTr.innerHTML = `<td>${fo}</td>`;
+  
+          document
+            .querySelector(
+              `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}TblR`
+            ).appendChild(newTr);
+          });
+    for (let lea = 0; lea < 3; lea++) {
+      let htm1 = "";
+      htm1 = `<table width='100%'>`;
+      for (let j = 0; j < e.target.value; j++) {
+        htm1 += `<input class='In${j}' style='margin:10px;' type='text'/>`;
+      }
+
+      htm1 += "</table>";
+      const newTd1 = document.createElement("td");
+      newTd1.innerHTML = htm1;
+      document
+        .querySelector(
+          `#${Selecteday}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}Tr`
+        )
+        .appendChild(newTd1);
+    }
+
+  });
+};
+
 const addSelectedEx = (e) => {
   e.preventDefault();
   if (`${e.target.id.substring(0, e.target.id.length - 3)}` === "HIIT") {
@@ -59,9 +133,6 @@ const addSelectedEx = (e) => {
     `${e.target.id.substring(0, e.target.id.length - 3)}`
   ).value = "";
   for (const da of setDays) {
-    console.log(
-      ExDb[da][`${e.target.id.substring(0, e.target.id.length - 3)}`].length
-    );
     if (
       document.getElementById(
         `${e.target.id.substring(0, e.target.id.length - 3)}Var`

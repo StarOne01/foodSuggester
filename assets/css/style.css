@@ -4,7 +4,7 @@
   display: none;
 }
 .varient {
-  width: 30px;
+  width: 50px;
   margin: 5px;
 }
 
@@ -78,11 +78,19 @@ table {
   border-collapse: collapse;
   border: 1px solid black;
 }
+
+td input {
+  display: block;
+  width: 90px;
+}
+
 th,
 td {
   text-align: left;
   border: 1px solid white;
   padding: 8px;
+  color: white;
+  background-color: black;
 }
 
 #SevereThinness,

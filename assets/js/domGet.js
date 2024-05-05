@@ -41,7 +41,7 @@ const calorieRow = document.querySelectorAll("#calorieRow td");
 const days = document.querySelectorAll("input[name='day']");
 const userInput = document.querySelectorAll("[list='itemList']");
 const userInputEx = document.querySelectorAll("[list='itemListEx']");
-
+let order = document.getElementsByClassName("selected");
 const detailedInfo = document.querySelectorAll("input[name='detailedInfo']");
 const detailedForm = document.getElementById("detailedForm");
 let dataList = document.getElementById("itemList");

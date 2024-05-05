@@ -223,206 +223,232 @@ getPDFBtn.addEventListener("click", (e) => {
    */
   let foodTable = [
 
-      {
-        margin: [20, 20, 0, 0],
-        text: "Based on your Response, we have designed your recommended food chart for you...",
-      },
-      {
-        margin: [0, 20, 0, 0],
-        text: "",
-      },
-      {
-        margin: 0,
-        table: {
-          headerRows: 1,
-          widths: [55, 55, 55, 55, 55, 55, 55, 55],
-
-          body: [
-            [
-              "",
-              "Sunday",
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-            ],
-            [
-              {
-                text: `${trTh[8].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[1].id][0].textContent}`,
-              `${tdtrObj[trItems[1].id][1].textContent}`,
-              `${tdtrObj[trItems[1].id][2].textContent}`,
-              `${tdtrObj[trItems[1].id][3].textContent}`,
-              `${tdtrObj[trItems[1].id][4].textContent}`,
-              `${tdtrObj[trItems[1].id][5].textContent}`,
-              `${tdtrObj[trItems[1].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[9].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[2].id][0].textContent}`,
-              `${tdtrObj[trItems[2].id][1].textContent}`,
-              `${tdtrObj[trItems[2].id][2].textContent}`,
-              `${tdtrObj[trItems[2].id][3].textContent}`,
-              `${tdtrObj[trItems[2].id][4].textContent}`,
-              `${tdtrObj[trItems[2].id][5].textContent}`,
-              `${tdtrObj[trItems[2].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[10].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[3].id][0].textContent}`,
-              `${tdtrObj[trItems[3].id][1].textContent}`,
-              `${tdtrObj[trItems[3].id][2].textContent}`,
-              `${tdtrObj[trItems[3].id][3].textContent}`,
-              `${tdtrObj[trItems[3].id][4].textContent}`,
-              `${tdtrObj[trItems[3].id][5].textContent}`,
-              `${tdtrObj[trItems[3].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[11].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[4].id][0].textContent}`,
-              `${tdtrObj[trItems[4].id][1].textContent}`,
-              `${tdtrObj[trItems[4].id][2].textContent}`,
-              `${tdtrObj[trItems[4].id][3].textContent}`,
-              `${tdtrObj[trItems[4].id][4].textContent}`,
-              `${tdtrObj[trItems[4].id][5].textContent}`,
-              `${tdtrObj[trItems[4].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[12].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[5].id][0].textContent}`,
-              `${tdtrObj[trItems[5].id][1].textContent}`,
-              `${tdtrObj[trItems[5].id][2].textContent}`,
-              `${tdtrObj[trItems[5].id][3].textContent}`,
-              `${tdtrObj[trItems[5].id][4].textContent}`,
-              `${tdtrObj[trItems[5].id][5].textContent}`,
-              `${tdtrObj[trItems[5].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[13].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[6].id][0].textContent}`,
-              `${tdtrObj[trItems[6].id][1].textContent}`,
-              `${tdtrObj[trItems[6].id][2].textContent}`,
-              `${tdtrObj[trItems[6].id][3].textContent}`,
-              `${tdtrObj[trItems[6].id][4].textContent}`,
-              `${tdtrObj[trItems[6].id][5].textContent}`,
-              `${tdtrObj[trItems[6].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `${trTh[14].textContent}`,
-                bold: true,
-              },
-              `${tdtrObj[trItems[7].id][0].textContent}`,
-              `${tdtrObj[trItems[7].id][1].textContent}`,
-              `${tdtrObj[trItems[7].id][2].textContent}`,
-              `${tdtrObj[trItems[7].id][3].textContent}`,
-              `${tdtrObj[trItems[7].id][4].textContent}`,
-              `${tdtrObj[trItems[7].id][5].textContent}`,
-              `${tdtrObj[trItems[7].id][6].textContent}`,
-            ],
-            [
-              {
-                text: `Total Calorie`,
-                bold: true,
-              },
-              `${calorieCount[0]}g`,
-              `${calorieCount[1]}g`,
-              `${calorieCount[2]}g`,
-              `${calorieCount[3]}g`, `${calorieCount[4]}g`, `${calorieCount[5]}g`, `${calorieCount[6]}g`,
-            ],
-            [
-              {
-                text: `Total Protein`,
-                bold: true,
-              },
-              `${proteinCount[0]}g`,
-              `${proteinCount[1]}g`,
-              `${proteinCount[2]}g`,
-              `${proteinCount[3]}g`,
-              `${proteinCount[4]}g`,
-              `${proteinCount[5]}g`,
-              `${proteinCount[6]}g`,
-            ],
-            [
-              {
-                text: `Total fat`,
-                bold: true,
-              },
-              `${fatCount[0]}g`,
-              `${fatCount[1]}g`,
-              `${fatCount[2]}g`,
-              `${fatCount[3]}g`,
-              `${fatCount[4]}g`,
-              `${fatCount[5]}g`,
-              `${fatCount[6]}g`,
-            ],
-            [
-              {
-                text: `Total Carbohydrates`,
-                bold: true,
-              },
-              `${carbsCount[0]}g`,
-              `${carbsCount[1]}g`,
-              `${carbsCount[2]}g`,
-              `${carbsCount[3]}g`,
-              `${carbsCount[4]}g`,
-              `${carbsCount[5]}g`,
-              `${carbsCount[6]}g`,
-            ],
-          ],
-        
-        }
-      }
-    ];
-
-let remarks = [
-  {
-    margin: [0, 20, 0, 0],
-    text: "Remarks:",
-
-    style: 'header',
-  },
     {
-    margin: [0, 10, 0, 0],
-    text: `${remarksTextArea.value}`, 
-  },
- ,
-];
+      margin: [20, 20, 0, 0],
+      text: "Based on your Response, we have designed your recommended food chart for you...",
+    },
+    {
+      margin: [0, 20, 0, 0],
+      text: "",
+    },
+    {
+      margin: 0,
+      table: {
+        headerRows: 1,
+        widths: [55, 55, 55, 55, 55, 55, 55, 55],
+
+        body: [
+          [
+            "",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          [
+            {
+              text: `${trTh[8].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[1].id][0].textContent}`,
+            `${tdtrObj[trItems[1].id][1].textContent}`,
+            `${tdtrObj[trItems[1].id][2].textContent}`,
+            `${tdtrObj[trItems[1].id][3].textContent}`,
+            `${tdtrObj[trItems[1].id][4].textContent}`,
+            `${tdtrObj[trItems[1].id][5].textContent}`,
+            `${tdtrObj[trItems[1].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[9].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[2].id][0].textContent}`,
+            `${tdtrObj[trItems[2].id][1].textContent}`,
+            `${tdtrObj[trItems[2].id][2].textContent}`,
+            `${tdtrObj[trItems[2].id][3].textContent}`,
+            `${tdtrObj[trItems[2].id][4].textContent}`,
+            `${tdtrObj[trItems[2].id][5].textContent}`,
+            `${tdtrObj[trItems[2].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[10].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[3].id][0].textContent}`,
+            `${tdtrObj[trItems[3].id][1].textContent}`,
+            `${tdtrObj[trItems[3].id][2].textContent}`,
+            `${tdtrObj[trItems[3].id][3].textContent}`,
+            `${tdtrObj[trItems[3].id][4].textContent}`,
+            `${tdtrObj[trItems[3].id][5].textContent}`,
+            `${tdtrObj[trItems[3].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[11].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[4].id][0].textContent}`,
+            `${tdtrObj[trItems[4].id][1].textContent}`,
+            `${tdtrObj[trItems[4].id][2].textContent}`,
+            `${tdtrObj[trItems[4].id][3].textContent}`,
+            `${tdtrObj[trItems[4].id][4].textContent}`,
+            `${tdtrObj[trItems[4].id][5].textContent}`,
+            `${tdtrObj[trItems[4].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[12].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[5].id][0].textContent}`,
+            `${tdtrObj[trItems[5].id][1].textContent}`,
+            `${tdtrObj[trItems[5].id][2].textContent}`,
+            `${tdtrObj[trItems[5].id][3].textContent}`,
+            `${tdtrObj[trItems[5].id][4].textContent}`,
+            `${tdtrObj[trItems[5].id][5].textContent}`,
+            `${tdtrObj[trItems[5].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[13].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[6].id][0].textContent}`,
+            `${tdtrObj[trItems[6].id][1].textContent}`,
+            `${tdtrObj[trItems[6].id][2].textContent}`,
+            `${tdtrObj[trItems[6].id][3].textContent}`,
+            `${tdtrObj[trItems[6].id][4].textContent}`,
+            `${tdtrObj[trItems[6].id][5].textContent}`,
+            `${tdtrObj[trItems[6].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `${trTh[14].textContent}`,
+              bold: true,
+            },
+            `${tdtrObj[trItems[7].id][0].textContent}`,
+            `${tdtrObj[trItems[7].id][1].textContent}`,
+            `${tdtrObj[trItems[7].id][2].textContent}`,
+            `${tdtrObj[trItems[7].id][3].textContent}`,
+            `${tdtrObj[trItems[7].id][4].textContent}`,
+            `${tdtrObj[trItems[7].id][5].textContent}`,
+            `${tdtrObj[trItems[7].id][6].textContent}`,
+          ],
+          [
+            {
+              text: `Total Calorie`,
+              bold: true,
+            },
+            `${calorieCount[0]}g`,
+            `${calorieCount[1]}g`,
+            `${calorieCount[2]}g`,
+            `${calorieCount[3]}g`, `${calorieCount[4]}g`, `${calorieCount[5]}g`, `${calorieCount[6]}g`,
+          ],
+          [
+            {
+              text: `Total Protein`,
+              bold: true,
+            },
+            `${proteinCount[0]}g`,
+            `${proteinCount[1]}g`,
+            `${proteinCount[2]}g`,
+            `${proteinCount[3]}g`,
+            `${proteinCount[4]}g`,
+            `${proteinCount[5]}g`,
+            `${proteinCount[6]}g`,
+          ],
+          [
+            {
+              text: `Total fat`,
+              bold: true,
+            },
+            `${fatCount[0]}g`,
+            `${fatCount[1]}g`,
+            `${fatCount[2]}g`,
+            `${fatCount[3]}g`,
+            `${fatCount[4]}g`,
+            `${fatCount[5]}g`,
+            `${fatCount[6]}g`,
+          ],
+          [
+            {
+              text: `Total Carbohydrates`,
+              bold: true,
+            },
+            `${carbsCount[0]}g`,
+            `${carbsCount[1]}g`,
+            `${carbsCount[2]}g`,
+            `${carbsCount[3]}g`,
+            `${carbsCount[4]}g`,
+            `${carbsCount[5]}g`,
+            `${carbsCount[6]}g`,
+          ],
+        ],
+
+      }
+    }
+  ];
+
+  let exerciseTable = [
+    {
+      margin: [0, 20, 0, 0],
+      text: "Exercise Plan",
+      style: 'header',
+    },
+    {
+      margin: [0, 10, 0, 0],
+      table: {
+        headerRows: 1,
+        widths: [55, 55, 55, 55, 55],
+        body: [
+          [
+            { text: "Day", bold: true },
+            { text: "Exercise", bold: true },
+            { text: "Rep", bold: true },
+            { text: "Sets", bold: true },
+            { text: "Rest", bold: true },
+          ],
+        ],
+      },
+    },
+  ];
 
 
-let style = {
+  let remarks = [
+    {
+      margin: [0, 20, 0, 0],
+      text: "Remarks:",
+
+      style: 'header',
+    },
+    {
+      margin: [0, 10, 0, 0],
+      text: `${remarksTextArea.value}`,
+    },
+    ,
+  ];
+
+
+  let style = {
     defaultStyle: {
       fontSize: 8,
       bold: true,
     },
     header: {
-			fontSize: 18,
-			bold: true,
-		},
+      fontSize: 18,
+      bold: true,
+    },
   };
 
 
 
   DataDef.content.push(foodTable);
+  DataDef.content.push(exerciseTable);
   DataDef.content.push(remarks);
   DataDef.styles = style;
 

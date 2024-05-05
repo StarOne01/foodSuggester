@@ -38,7 +38,7 @@ orderLi.forEach((i) => {
       orderLi.forEach((j) => {
         j.classList.remove("selected");
       });
-      e.target.classList.push("selected");
+      e.target.classList.add("selected");
       WorkOfTheDay = [];
       WorkOfTheDay.push(e.target.textContent);
     }
@@ -211,13 +211,14 @@ setOrderBtn.addEventListener("click", (e) => {
     const newDiv = document.createElement("div");
     newDiv.innerHTML = `<label for="${order[i].textContent
       .split(" ")
-      .join("")}">${order[i].textContent}</label><br />
+      .join("")}" onchange='addInput(e)'>${order[i].textContent}</label><br />
   <label>Varience:</label>
   <input id="${order[i].textContent
     .split(" ")
     .join("")}Var" type="number" class="varient"> <br>
         <input
           type="search"
+          onchange='addInput(this)'
           list="itemListEx"
           id='${order[i].textContent.split(" ").join("")}'
           placeholder="Search items..."
@@ -241,6 +242,7 @@ setOrderBtn.addEventListener("click", (e) => {
       .addEventListener("click", addSelectedEx);
     const userInputEx = document.querySelectorAll("[list='itemListEx']");
     console.log(userInputEx);
+    document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).addEventListener("change", addInput);
     userInputEx.forEach((j) => {
       j.addEventListener("keyup", (k) => {
         showSuggestionsEx(k.target);
@@ -256,13 +258,6 @@ setOrderBtn.addEventListener("click", (e) => {
         .split(" ")
         .join("")}TblR" width='100%'>`;
       console.log(`id="${order[i].textContent.split(" ").join("")}TblR"`);
-      /*
-     for(let g = 0;  ;g++) {
-            
-     htm += "<tr><td>Cell</td></tr>"
-     
-     }*/
-
       htm += "</table>";
       newTd.innerHTML = htm;
       document
@@ -270,19 +265,7 @@ setOrderBtn.addEventListener("click", (e) => {
           `#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`
         )
         .appendChild(newTd);
-      for (let lea = 0; lea < 3; lea++) {
-        const newTd1 = document.createElement("td");
-        let htm1 = "";
-        htm1 = `<table width='100%'>`;
-        htm1 += "</table>";
-        newTd1.innerHTML = htm1;
-        document
-          .querySelector(
-            `#${Selecteday}Tbl #${order[i].textContent.split(" ").join("")}Tr`
-          )
-          .appendChild(newTd1);
-        newTd1.setAttribute("contenteditable", "true");
-      }
+
     });
 
     Exdays.forEach((da) => {
