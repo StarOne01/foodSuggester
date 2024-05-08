@@ -523,11 +523,11 @@ let nameO = `${nameval}-${PhNo}/` ;
   DataDef.content.push(exerciseTable);
   name0 += "-Workout"
   }
-  nameO+= '-Plan.pdf'
+  
   DataDef.content.push(remarks);
   DataDef.styles = style;
-  //pdfMake.createPdf(DataDef).open();
-  
+  pdfMake.createPdf(DataDef).download(nameO);
+  nameO+= '-Plan.pdf'
 return [DataDef,nameO, PhNo];
 //    console.log(blobO)
   //  return [blobO, nameO];
