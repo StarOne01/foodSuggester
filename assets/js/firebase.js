@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
  // Initialize the blob and name variables
-getPDFBtn.addEventListener("click", (e) => {
+getPDFBtn.addEventListener("click", async(e) => {
   let [DataDef, name,PhNo] = printPdf(e,0);
   const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
@@ -27,41 +27,46 @@ pdfMake.createPdf(DataDef)
         uploadBytes(storageRef, blob)
     .then((snapshot) => {
         console.log('Uploaded PDF blob to Firebase Storage!');
-            getDownloadURL(snapshot.ref).then((downloadURL) => {
+            getDownloadURL(snapshot.ref).then(async(downloadURL) => {
       console.log('File available at', downloadURL);
-    const link = document.createElement('a');
+
+
+      function encodeUrl(url) {
+        // Encode special characters using encodeURIComponent
+        const encodedUrl = encodeURIComponent(url);
+        // Replace specific characters with their escaped versions for consistency
+        return encodedUrl.replace(/\//g, '%2F')
+                         .replace(/\?/g, '%3F')
+                         .replace(/&/g, '%26')
+                         .replace(/=/g, '%3D');
+      }
+    
+      var raw  = downloadURL;
+      var myHeaders = new Headers();
+      myHeaders.append("apikey", "WpHKxWOTnwecVD8kCqTNND1pSxEpJVPC");
+      
+      var requestOptions = {
+        method: 'POST',
+        redirect: 'follow',
+        headers: myHeaders,
+        body: raw
+      };
+      
+      fetch("https://api.apilayer.com/short_url/hash", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+          const link = document.createElement('a');
+          link.target = "_blank";
+          let short = result.split('"')[7];
+          console.log(short)
+          link.href = "https://wa.me/91"+PhNo+"?text="+ ((((short).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
+          link.click();
+        })
+        .catch(error => console.log('error', error));
             });
     });
       }
     //link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
-    function shortenUrl(originalUrl, apiKey) {
-    const apiUrl = 'https://api.tinyurl.com/dev/api-create.php';
-    const params = new URLSearchParams({
-        url: originalUrl,
-        apikey: apiKey
-    });
-
-    return fetch(`${apiUrl}?${params}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(shortenedUrl => shortenedUrl)
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-}
-
-// Example usage:
-const originalUrl = downloadURL;
-const apiKey = 'MXz8dFUgH5wTK5svxybUGPW3czqKAgXG6SCGtAuNVdnYQ5NvIzn4ESwWUqwx';
-
-shortenUrl(originalUrl, apiKey)
-    .then(shortenedUrl => {
-        console.log('Shortened URL:', shortenedUrl);
-    });
 
 /*uploadBytes(storageRef, data[0])
     .then((snapshot) => {
@@ -71,6 +76,7 @@ shortenUrl(originalUrl, apiKey)
     .catch((error) => {
         console.error('Error uploading PDF blob:', error);
     });*/
+});
 });
 
 getExBtn.addEventListener("click", (e) => {
