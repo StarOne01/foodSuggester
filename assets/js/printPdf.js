@@ -12,6 +12,7 @@ function printPdf(e, i) {
   e.preventDefault();
   const nameval = document.getElementById("client_name").value;
   const clientid = document.getElementById("membership_id").value;
+  const PhNo = Number(document.getElementById("phone_number").value)
   console.log(goal)
   const canvasy = document.getElementById("foo");
   const imageData = canvasy.toDataURL();
@@ -513,27 +514,21 @@ function printPdf(e, i) {
 
 
 
-
+let nameO = `${nameval}-${PhNo}/` ;
   if(i === 0 || i===2) {
   DataDef.content.push(foodTable);
+  nameO += "-Diet"
   }
   if(i === 1 || i===2) {
   DataDef.content.push(exerciseTable);
+  name0 += "-Workout"
   }
+  nameO+= '-Plan.pdf'
   DataDef.content.push(remarks);
   DataDef.styles = style;
   //pdfMake.createPdf(DataDef).open();
-  let blobO, nameO = `${nameval}.pdf` ;
-pdfMake.createPdf(DataDef)
-    .getBlob((blob, blobO) => {
-      if (blob) {
-        // You now have the Blob containing the PDF data
-        console.log("PDF Blob:", blob);
-        blobO = blob;
-      } else {
-        console.error("Error generating PDF Blob");
-      }
-        
-    });
-    return [blobO, nameO];
+  
+return [DataDef,nameO, PhNo];
+//    console.log(blobO)
+  //  return [blobO, nameO];
 };
