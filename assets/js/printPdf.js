@@ -521,7 +521,7 @@ let nameO = `${nameval}-${PhNo}/` ;
   }
   if(i === 1 || i===2) {
   DataDef.content.push(exerciseTable);
-  name0 += "-Workout"
+  nameO += "-Workout"
   }
   
   DataDef.content.push(remarks);

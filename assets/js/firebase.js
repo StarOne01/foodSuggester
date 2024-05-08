@@ -15,8 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
-async function goPdf() {
-  let [DataDef, name,PhNo] = printPdf(e,0);
+function goPdf(e, mode) {
+  let [DataDef, name,PhNo] = printPdf(e,mode);
   const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
     .getBlob((blob) => {
@@ -78,9 +78,9 @@ pdfMake.createPdf(DataDef)
 });
 }
  // Initialize the blob and name variables
-getPDFBtn.addEventListener("click", goPdf);
+getPDFBtn.addEventListener("click",(e) => goPdf(e, 0));
 
-getExBtn.addEventListener("click", goPdf);
+getExBtn.addEventListener("click",(e) =>  goPdf(e,1));
 
-getBothBtn.addEventListener("click", goPdf);
+getBothBtn.addEventListener("click",(e) =>  goPdf(e,2));
 
