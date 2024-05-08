@@ -15,8 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
- // Initialize the blob and name variables
-getPDFBtn.addEventListener("click", async(e) => {
+async function goPdf() {
   let [DataDef, name,PhNo] = printPdf(e,0);
   const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
@@ -77,61 +76,11 @@ pdfMake.createPdf(DataDef)
         console.error('Error uploading PDF blob:', error);
     });*/
 });
-});
+}
+ // Initialize the blob and name variables
+getPDFBtn.addEventListener("click", goPdf);
 
-getExBtn.addEventListener("click", (e) => {
-  let [DataDef, name,PhNo] = printPdf(e,0);
-  const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
-pdfMake.createPdf(DataDef)
-    .getBlob((blob) => {
-      if (blob) {
-        // You now have the Blob containing the PDF data
-     //   console.log("PDF Blob:", blob);
-        uploadBytes(storageRef, blob)
-    .then((snapshot) => {
-        console.log('Uploaded PDF blob to Firebase Storage!');
-            getDownloadURL(snapshot.ref).then((downloadURL) => {
-      console.log('File available at', downloadURL);
-    const link = document.createElement('a');
-    link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
-    link.click();
-    });
-    })
-    .catch((error) => {
-        console.error('Error uploading PDF blob:', error);
-    });
-      } else {
-        console.error("Error generating PDF Blob");
-      }
-        
-    });
-});
+getExBtn.addEventListener("click", goPdf);
 
-getBothBtn.addEventListener("click", (e) => {
-  let [DataDef, name,PhNo] = printPdf(e,0);
-  const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
-pdfMake.createPdf(DataDef)
-    .getBlob((blob) => {
-      if (blob) {
-        // You now have the Blob containing the PDF data
-     //   console.log("PDF Blob:", blob);
-        uploadBytes(storageRef, blob)
-    .then((snapshot) => {
-        console.log('Uploaded PDF blob to Firebase Storage!');
-            getDownloadURL(snapshot.ref).then((downloadURL) => {
-      console.log('File available at', downloadURL);
-    const link = document.createElement('a');
-    link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
-    link.click();
-    });
-    })
-    .catch((error) => {
-        console.error('Error uploading PDF blob:', error);
-    });
-      } else {
-        console.error("Error generating PDF Blob");
-      }
-        
-    });
-});
+getBothBtn.addEventListener("click", goPdf);
 
