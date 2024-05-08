@@ -4,6 +4,8 @@
  * @param {Event} e - The click event object.
  */
 
+
+
 function printPdf(e, i) {
 
 
@@ -512,7 +514,6 @@ function printPdf(e, i) {
 
 
 
-
   if(i === 0 || i===2) {
   DataDef.content.push(foodTable);
   }
@@ -521,5 +522,18 @@ function printPdf(e, i) {
   }
   DataDef.content.push(remarks);
   DataDef.styles = style;
-  pdfMake.createPdf(DataDef).download(`${nameval}-Diet.pdf`);
+  //pdfMake.createPdf(DataDef).open();
+  let blobO, nameO = `${nameval}.pdf` ;
+pdfMake.createPdf(DataDef)
+    .getBlob((blob, blobO) => {
+      if (blob) {
+        // You now have the Blob containing the PDF data
+        console.log("PDF Blob:", blob);
+        blobO = blob;
+      } else {
+        console.error("Error generating PDF Blob");
+      }
+        
+    });
+    return [blobO, nameO];
 };

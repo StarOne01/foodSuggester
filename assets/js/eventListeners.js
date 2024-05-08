@@ -303,14 +303,4 @@ DayExChks.forEach((i) => {
 });
 
 AlldayEx.addEventListener("click", CheckAllEx);
-getPDFBtn.addEventListener("click", (e) => {
-  printPdf(e,0);
-});
 
-getExBtn.addEventListener("click", (e) => {
-  printPdf(e,1);
-});
-
-getBothBtn.addEventListener("click", (e) => {
-  printPdf(e,2);
-});
