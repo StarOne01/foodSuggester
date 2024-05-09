@@ -526,7 +526,7 @@ let nameO = `${nameval}-${PhNo}/` ;
   
   DataDef.content.push(remarks);
   DataDef.styles = style;
-  pdfMake.createPdf(DataDef).download(nameO);
+  //pdfMake.createPdf(DataDef).download(nameO);
   nameO+= '-Plan.pdf'
 return [DataDef,nameO, PhNo];
 //    console.log(blobO)
