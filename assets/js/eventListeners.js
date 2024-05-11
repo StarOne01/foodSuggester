@@ -286,6 +286,54 @@ setOrderBtn.addEventListener("click", (e) => {
   }
 });
 
+function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = (event) => resolve(event.target.result);
+    reader.onerror = reject;
+  });
+}
+
+let FileIds = ['UpOneId', 'UpTwoId', 'UpThreeId']
+async function handleImageUpload(event, i) {
+  let label = document.getElementById (FileIds[i]);
+  label.innerHTML = (i+1) + ') Please wait, Compressing... <br> '
+  const imageFile = event.target.files[0];
+  console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+  console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+
+  const options = {
+    maxSizeMB: 0.6,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true,
+  }
+  try {
+    const compressedFile = await imageCompression(imageFile, options);
+    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+    blobToBase64(compressedFile)
+  .then(base64String => {
+    console.log("Base64 encoded image:", base64String);
+    uploadImg[i] = base64String;
+    // Use the base64String for further processing (e.g., display, send to server)
+  })
+
+  label.innerHTML = (i+1) + ') Ready to Generate PDF<br>'
+    console.log(uploadImg[i])
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+
+fileInputs.forEach(ele  =>{
+  ele.addEventListener('change', (e) => {
+    handleImageUpload(e,UpImgNo);
+    UpImgNo++;
+  })
+  });
+
 DayExChks.forEach((i) => {
   i.addEventListener("click", (e) => {
     if (allCheckedEx) {

@@ -10,6 +10,7 @@ const toastLiveExample = document.getElementById("noDate");
 const AlldayEx = document.getElementById("AlldayEx");
 const DayExChks = document.querySelectorAll("input[name='dayEx']");
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+const fileInputs = document.querySelectorAll('input[type="file"]');
 
 const toastBody = document.getElementById("toastBody");
 const BMRH = document.getElementById("resultBMR");

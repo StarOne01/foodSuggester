@@ -150,6 +150,32 @@ function printPdf(e, i) {
           ],
         ],
       },
+      {
+        margin: [20, 30, 0, 0],
+        columns: [
+          [
+            {
+              margin: [0, -10, 0, 0],
+              image:uploadImg[0],
+              width: 150,
+            },
+          ],
+          [
+            {
+              margin: [0, -10, 0, 0],
+              image: uploadImg[1],
+              width: 150,
+            },
+          ],
+          [
+            {
+              margin: [0, -10, 0, 0],
+              image: uploadImg[2],
+              width: 150,
+            },
+          ],
+        ],
+      },
     ],
   };
 
@@ -526,7 +552,7 @@ let nameO = `${nameval}-${PhNo}/` ;
   
   DataDef.content.push(remarks);
   DataDef.styles = style;
-  //pdfMake.createPdf(DataDef).download(nameO);
+  pdfMake.createPdf(DataDef).download(nameO);
   nameO+= '-Plan.pdf'
 return [DataDef,nameO, PhNo];
 //    console.log(blobO)

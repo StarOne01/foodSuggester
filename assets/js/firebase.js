@@ -1,3 +1,4 @@
+/*
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getStorage, ref, uploadBytes,getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -67,20 +68,20 @@ pdfMake.createPdf(DataDef)
       }
     //link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
 
-/*uploadBytes(storageRef, data[0])
+uploadBytes(storageRef, data[0])
     .then((snapshot) => {
         console.log('Uploaded PDF blob to Firebase Storage!');
         console.log('Download URL:', snapshot.metadata.downloadURL);
     })
     .catch((error) => {
         console.error('Error uploading PDF blob:', error);
-    });*/
+    });
 });
-}
+}*/
  // Initialize the blob and name variables
-getPDFBtn.addEventListener("click",(e) => goPdf(e, 0));
+getPDFBtn.addEventListener("click",(e) => printPdf(e,0));
 
-getExBtn.addEventListener("click",(e) =>  goPdf(e,1));
+getExBtn.addEventListener("click",(e) =>  printPdf(e,1));
 
-getBothBtn.addEventListener("click",(e) =>  goPdf(e,2));
+getBothBtn.addEventListener("click",(e) =>  printPdf(e,2));
 

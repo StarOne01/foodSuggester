@@ -21,6 +21,10 @@ let condition = "";
 let fat = 0;
 let caloriesN = 0;
 
+let uploadImg = ['',' ', ' ']
+
+let UpImgNo = 0
+
 let Exdays = new Set();
 
 let fatCount = [0, 0, 0, 0, 0, 0, 0];

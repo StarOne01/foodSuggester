@@ -36,7 +36,15 @@
           id="membership_id"
           name="membership_id"
           required
-        /><br /><br />
+        /><br><br>
+        <label for="image-upload">Image upload:</label><br /><br>
+        <label for="UpOne" id="UpOneId">Not uploaded</label><br>
+        <input type="file" id="UpOne" accept="image/*" ><br><br>
+        <label for="UpTwo" id="UpTwoId">Not uploaded</label><br>
+        <input type="file" id="UpTwo" accept="image/*"><br><br>
+        <label for="UpThree" id="UpThreeId">Not uploaded</label><br>
+        <input type="file" id="UpThree" accept="image/*"><br><br>
+        <br /><br />
         <h2>Goals</h2>
         <label for="goal">What are you looking for?</label><br />
         <select id="goal" name="goal" required>
@@ -1188,6 +1196,7 @@
       src="assets/vendor/makePDF/vfs_fonts.js"
       defer
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
     <script src="./assets/js/domGet.js" defer></script>
     <script src="./assets/js/base64.js" defer></script>
     <script src="./assets/js/data.js" defer></script>
