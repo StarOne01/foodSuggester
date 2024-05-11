@@ -11,7 +11,7 @@ const AlldayEx = document.getElementById("AlldayEx");
 const DayExChks = document.querySelectorAll("input[name='dayEx']");
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 const fileInputs = document.querySelectorAll('input[type="file"]');
-
+const applyBtn = document.getElementById('applyBtn')
 const toastBody = document.getElementById("toastBody");
 const BMRH = document.getElementById("resultBMR");
 const userNature = document.getElementById("youAre");

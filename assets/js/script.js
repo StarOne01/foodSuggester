@@ -76,12 +76,11 @@ const CheckAll = () => {
             e.target.parentNode.parentNode.getAttribute("data-parent"),
             e
           );
-          updateTable();
+
         });
       });
       userInput[i].value = "";
       addItem(selectedOption, newListItem.parentNode.getAttribute("data-parent"));
-      updateTable();
     }
   };
   
@@ -142,10 +141,10 @@ const CheckAll = () => {
     });
     e.target.parentNode.remove();
   }
+
   
-  updateTable();
-  
-  function updateTable() {
+  function updateTable(e) {
+    e.preventDefault()
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
   
@@ -293,3 +292,4 @@ const CheckAll = () => {
       calorieRow[i].textContent = `A: ${calorieCount[i]}     C:(${caloriesN})`;
     }
   }
+  applyBtn.addEventListener("click", updateTable)
