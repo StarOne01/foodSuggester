@@ -21,7 +21,23 @@ let condition = "";
 let fat = 0;
 let caloriesN = 0;
 
-let listBefore = {Wakeup: []}
+let listBefore =  [
+  [], [], [], [], [], [], []
+];
+
+let nutriDataTime = [
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0,],
+]
+
+let nutriData = [
+  0,0,0,0
+]
 
 let uploadImg = []
 
