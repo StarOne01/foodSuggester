@@ -329,8 +329,8 @@ async function handleImageUpload(event, i) {
 
 fileInputs.forEach(ele  =>{
   ele.addEventListener('change', (e) => {
-    handleImageUpload(e,UpImgNo);
-    UpImgNo++;
+    const selectedFiles = event.target.files;
+  console.log(selectedFiles)
   })
   });
 

@@ -14,6 +14,7 @@
   <body>
     <div id="bodyDiv" class="container-sm">
       <h1>Client Information Form</h1>
+
       <form>
         <label for="client_name">Client Name:</label><br />
         <input
@@ -38,12 +39,8 @@
           required
         /><br><br>
         <label for="image-upload">Image upload:</label><br /><br>
-        <label for="UpOne" id="UpOneId">Not uploaded</label><br>
-        <input type="file" id="UpOne" accept="image/*" ><br><br>
-        <label for="UpTwo" id="UpTwoId">Not uploaded</label><br>
-        <input type="file" id="UpTwo" accept="image/*"><br><br>
-        <label for="UpThree" id="UpThreeId">Not uploaded</label><br>
-        <input type="file" id="UpThree" accept="image/*"><br><br>
+         <input type="file" multiple name="images[]">
+  <input type="submit" value="Upload Images">
         <br /><br />
         <h2>Goals</h2>
         <label for="goal">What are you looking for?</label><br />
@@ -121,6 +118,7 @@
           name="current_weight"
           required
         /><br /><br />
+        
 
         <label for="current_height">Current Height (in CM):</label><br />
         <input
