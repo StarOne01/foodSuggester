@@ -121,7 +121,7 @@ let goal = '';
 
 goals.addEventListener("change", (e) => {
 
- goal = e.target.value;
+  goal = e.target.value;
   console.log(goal);
   if (goal === "weight_loss" || goal === "fat_loss") {
     redVal = -500;
@@ -214,8 +214,8 @@ setOrderBtn.addEventListener("click", (e) => {
       .join("")}" '>${order[i].textContent}</label><br />
   <label>Varience:</label>
   <input id="${order[i].textContent
-    .split(" ")
-    .join("")}Var" type="number" class="varient"> <br>
+        .split(" ")
+        .join("")}Var" type="number" class="varient"> <br>
         <input
           type="search"
           list="itemListEx"
@@ -224,16 +224,16 @@ setOrderBtn.addEventListener("click", (e) => {
         />
 
         <button class="btn btn-outline-secondary btn-sm" id="${order[
-          i
-        ].textContent
-          .split(" ")
-          .join("")}Add">
+        i
+      ].textContent
+        .split(" ")
+        .join("")}Add">
           Add Exercise
         </button>
         <br />
         <ul id="${order[i].textContent
-          .split(" ")
-          .join("")}Ul" class="selectedItemsEx"></ul><br>`;
+        .split(" ")
+        .join("")}Ul" class="selectedItemsEx"></ul><br>`;
     exEnteries.appendChild(newDiv);
     VarBtn = document.querySelectorAll(".VarBtn");
     document
@@ -241,7 +241,7 @@ setOrderBtn.addEventListener("click", (e) => {
       .addEventListener("click", addSelectedEx);
     const userInputEx = document.querySelectorAll("[list='itemListEx']");
     console.log(userInputEx);
-    document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).addEventListener("change", (e)=> addInput(e));
+    document.getElementById(`${order[i].textContent.split(" ").join("")}Var`).addEventListener("change", (e) => addInput(e));
     userInputEx.forEach((j) => {
       j.addEventListener("keyup", (k) => {
         showSuggestionsEx(k.target);
@@ -295,44 +295,48 @@ function blobToBase64(blob) {
   });
 }
 
-let FileIds = ['UpOneId', 'UpTwoId', 'UpThreeId']
-async function handleImageUpload(event, i) {
-  let label = document.getElementById (FileIds[i]);
-  label.innerHTML = (i+1) + ') Please wait, Compressing... <br> '
-  const imageFile = event.target.files[0];
-  console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
-  console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
-
+async function handleImageUpload(e) {
+  const imageFile = e.target.files;
+  const label = document.getElementById('uploadLabel')
+  NoOfImgs = imageFile.length
+  label.innerHTML = `Starting to compress ${NoOfImgs} Images`
   const options = {
     maxSizeMB: 0.6,
     maxWidthOrHeight: 1920,
     useWebWorker: true,
   }
-  try {
-    const compressedFile = await imageCompression(imageFile, options);
-    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-    blobToBase64(compressedFile)
-  .then(base64String => {
-    console.log("Base64 encoded image:", base64String);
-    uploadImg[i] = base64String;
-    // Use the base64String for further processing (e.g., display, send to server)
-  })
+  let i = 0
+  
+  for (const img of imageFile) {
+    try {
+      const compressedFile = await imageCompression(img, options);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+      blobToBase64(compressedFile)
+        .then(base64String => {
+          console.log("Base64 encoded image:", base64String);
+          uploadImg.push(base64String);
+          i++;
+          label.innerHTML = `Compressing ${i}/${imageFile.length}... `
+          if (i === imageFile.length) {
+            label.innerHTML = `Compressed ${imageFile.length} images ready to Generate Pdf `
+          }
+          // Use the base64String for further processing (e.g., display, send to server)
+        })
 
-  label.innerHTML = (i+1) + ') Ready to Generate PDF<br>'
-    console.log(uploadImg[i])
-  } catch (error) {
-    console.log(error);
+      label.innerHTML = (i + 1) + ') Ready to Generate PDF<br>'
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }
 
-fileInputs.forEach(ele  =>{
+fileInputs.forEach(ele => {
   ele.addEventListener('change', (e) => {
-    const selectedFiles = event.target.files;
-  console.log(selectedFiles)
+    handleImageUpload(e)
   })
-  });
+});
 
 DayExChks.forEach((i) => {
   i.addEventListener("click", (e) => {

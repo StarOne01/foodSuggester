@@ -23,11 +23,13 @@ let caloriesN = 0;
 
 let listBefore = {Wakeup: []}
 
-let uploadImg = ['',' ', ' ']
+let uploadImg = []
 
 let UpImgNo = 0
 
 let Exdays = new Set();
+
+let NoOfImgs = 0;
 
 let fatCount = [0, 0, 0, 0, 0, 0, 0];
 let carbsCount = [0, 0, 0, 0, 0, 0, 0];

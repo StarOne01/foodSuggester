@@ -150,34 +150,26 @@ function printPdf(e, i) {
           ],
         ],
       },
-      {
-        margin: [20, 30, 0, 0],
-        columns: [
-          [
-            {
-              margin: [0, -10, 0, 0],
-              image:uploadImg[0],
-              width: 150,
-            },
-          ],
-          [
-            {
-              margin: [0, -10, 0, 0],
-              image: uploadImg[1],
-              width: 150,
-            },
-          ],
-          [
-            {
-              margin: [0, -10, 0, 0],
-              image: uploadImg[2],
-              width: 150,
-            },
-          ],
-        ],
-      },
     ],
   };
+
+  let ImagesPDF = {
+    margin: [20, 30, 0, 0],
+    columns: []
+  }
+
+  for (const img of uploadImg) {
+    ImagesPDF.columns.push([
+      {
+        margin: [0, 20, 0, 0],
+        image: img,
+        height: 150,
+        width: 150
+      },
+    ])
+  };
+
+  DataDef.content.push(ImagesPDF)
 
   /**
    * Represents a table of recommended food chart based on user response.

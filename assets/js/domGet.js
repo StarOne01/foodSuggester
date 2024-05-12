@@ -3,6 +3,8 @@
 /**
  * Represents the DOM elements used in the foodSuggester application.
  */
+
+const uploadLabel = document.getElementById('uploadLabel')
 const weightIn = document.getElementById("current_weight");
 const heightIn = document.getElementById("current_height");
 const ageIn = document.getElementById("current_age");
