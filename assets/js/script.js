@@ -102,10 +102,11 @@ function addItem(option, time) {
     ).toFixed(2);
   });*/
   listBefore[timeNum[time]].push(option)
-  nutriDataTime[timeNum[time]][0]  = Number(nutriDataTime[timeNum[time]][0]).toFixed(2) + Number(calorieCounts[inde]).toFixed(2)
-  nutriDataTime[timeNum[time]][1] = Number(nutriDataTime[timeNum[time]][1]).toFixed(2) + Number(fatCounts[option]).toFixed(2)
-  nutriDataTime[timeNum[time]][2] = Number(nutriDataTime[timeNum[time]][2] ).toFixed(2) +  Number(proteinCounts[option]).toFixed(2)
-  nutriDataTime[timeNum[time]][3] = Number(nutriDataTime[timeNum[time]][3] ).toFixed(2) + Number(carbohydrateCounts[option]).toFixed(2)
+  nutriDataTime[timeNum[time]][0]  = (Number(nutriDataTime[timeNum[time]][0]) + Number(calorieCounts[inde])).toFixed(2)
+  console.log(nutriDataTime[timeNum[time]][0])
+  nutriDataTime[timeNum[time]][1] = (Number(nutriDataTime[timeNum[time]][1]) + Number(fatCounts[option])).toFixed(2)
+  nutriDataTime[timeNum[time]][2] = (Number(nutriDataTime[timeNum[time]][2] ) +  Number(proteinCounts[option])).toFixed(2)
+  nutriDataTime[timeNum[time]][3] = (Number(nutriDataTime[timeNum[time]][3] ) + Number(carbohydrateCounts[option])).toFixed(2)
 }
 
 
@@ -137,10 +138,10 @@ function deleteItem(option,time,e) {
     listBefore[timeNum[time]].splice(index, 1);
   }
   e.target.parentNode.remove();
-  nutriDataTime[timeNum[time]][0] = Number(nutriDataTime[timeNum[time]][0]).toFixed(2) - Number(calorieCounts[index]).toFixed(2)
-  nutriDataTime[timeNum[time]][1] = Number(nutriDataTime[timeNum[time]][1]).toFixed(2) - Number(fatCounts[option]).toFixed(2)
-  nutriDataTime[timeNum[time]][2] = Number(nutriDataTime[timeNum[time]][2]).toFixed(2) -  Number(proteinCounts[option]).toFixed(2)
-  nutriDataTime[timeNum[time]][3] = Number(nutriDataTime[timeNum[time]][3]).toFixed(2) - Number(carbohydrateCounts[option]).toFixed(2)
+  nutriDataTime[timeNum[time]][0] = (Number(nutriDataTime[timeNum[time]][0]) - Number(calorieCounts[index])).toFixed(2)
+  nutriDataTime[timeNum[time]][1] = (Number(nutriDataTime[timeNum[time]][1]) - Number(fatCounts[option])).toFixed(2)
+  nutriDataTime[timeNum[time]][2] = (Number(nutriDataTime[timeNum[time]][2]) -  Number(proteinCounts[option])).toFixed(2)
+  nutriDataTime[timeNum[time]][3] = (Number(nutriDataTime[timeNum[time]][3]) - Number(carbohydrateCounts[option])).toFixed(2)
 }
 
 
@@ -158,19 +159,19 @@ function updateTable(e) {
         foodData[daysNum[days]][i].push(forTime);
       }
 
-      calorieTableDb[daysNum[days]][i] = Number(calorieTableDb[daysNum[days]][i]).toFixed(2)+ Number(nutriDataTime[i][0]).toFixed(2);
-      fatTableDb[daysNum[days]][i] = Number(fatTableDb[daysNum[days]][i]).toFixed(2) + Number(nutriDataTime[i][1]).toFixed(2);
-      proteinTableDb[daysNum[days]][i] = Number(proteinTableDb[daysNum[days]][i]).toFixed(2) + Number(nutriDataTime[i][2]).toFixed(2);
-      carbsTableDb[daysNum[days]][i] = Number(carbsTableDb[daysNum[days]][i] ).toFixed(2) + Number(nutriDataTime[i][3]).toFixed(2);
+      calorieTableDb[daysNum[days]][i] = (Number(calorieTableDb[daysNum[days]][i]) + Number(nutriDataTime[i][0])).toFixed(2);
+      fatTableDb[daysNum[days]][i] = (Number(fatTableDb[daysNum[days]][i]) + Number(nutriDataTime[i][1])).toFixed(2);
+      proteinTableDb[daysNum[days]][i] = (Number(proteinTableDb[daysNum[days]][i]) + Number(nutriDataTime[i][2])).toFixed(2);
+      carbsTableDb[daysNum[days]][i] = (Number(carbsTableDb[daysNum[days]][i] ) + Number(nutriDataTime[i][3])).toFixed(2);
 
     }
 
     for (let i = 0; i < 7; i++) {
-
-      calorieCount[daysNum[days]] = Number(calorieCount[daysNum[days]] ).toFixed(2)+ Number(calorieTableDb[daysNum[days]][i]).toFixed(2)
-      fatCount[daysNum[days]] = Number(fatCount[daysNum[days]] ).toFixed(2) + Number(fatTableDb[daysNum[days]][i]).toFixed(2)
-      proteinCount[daysNum[days]] = Number(      proteinCount[daysNum[days]] ).toFixed(2)+Number(proteinTableDb[daysNum[days]][i]).toFixed(2)
-      carbsCount[daysNum[days]] = Number(carbsCount[daysNum[days]] ).toFixed(2)+ Number(carbsTableDb[daysNum[days]][i]).toFixed(2)
+      console.log(calorieCount[daysNum[days]])
+      calorieCount[daysNum[days]] = (Number(calorieCount[daysNum[days]] ) + Number(calorieTableDb[daysNum[days]][i])).toFixed(2)
+      fatCount[daysNum[days]] = (Number(fatCount[daysNum[days]] ) + Number(fatTableDb[daysNum[days]][i])).toFixed(2)
+      proteinCount[daysNum[days]] = (Number(      proteinCount[daysNum[days]] ) + Number(proteinTableDb[daysNum[days]][i])).toFixed(2)
+      carbsCount[daysNum[days]] = (Number(carbsCount[daysNum[days]] )+ Number(carbsTableDb[daysNum[days]][i])).toFixed(2)
     }
   })
   for (let i = 0; i < 7; i++) {

@@ -31,7 +31,7 @@ pdfMake.createPdf(DataDef)
       console.log('File available at', downloadURL);
 
 
- /*     function encodeUrl(url) {
+     function encodeUrl(url) {
         // Encode special characters using encodeURIComponent
         const encodedUrl = encodeURIComponent(url);
         // Replace specific characters with their escaped versions for consistency
@@ -39,9 +39,9 @@ pdfMake.createPdf(DataDef)
                          .replace(/\?/g, '%3F')
                          .replace(/&/g, '%26')
                          .replace(/=/g, '%3D');
-      }*/
+      }
     
-      var raw  = downloadURL;/*
+      var raw  = downloadURL;
       var myHeaders = new Headers();
       myHeaders.append("apikey", "WpHKxWOTnwecVD8kCqTNND1pSxEpJVPC");
       
@@ -63,17 +63,15 @@ pdfMake.createPdf(DataDef)
           link.click();
         })
         .catch(error => console.log('error', error));
-            });*/
+            });
     });
-      });}
-    //link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');*/
+     };
+    link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
 
 });
 }
  // Initialize the blob and name variables
 getPDFBtn.addEventListener("click",(e) => goPdf(e,0));
-
 getExBtn.addEventListener("click",(e) =>  goPdf(e,1));
-
 getBothBtn.addEventListener("click",(e) =>  goPdf(e,2));
 
