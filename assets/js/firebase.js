@@ -29,30 +29,29 @@ pdfMake.createPdf(DataDef)
         console.log('Uploaded PDF blob to Firebase Storage!');
             getDownloadURL(snapshot.ref).then(async(downloadURL) => {
       console.log('File available at', downloadURL);
-
-
-      // var raw  = downloadURL;
-      // var myHeaders = new Headers();
-      // myHeaders.append("apikey", "WpHKxWOTnwecVD8kCqTNND1pSxEpJVPC");
+    
+      var raw  = downloadURL;
+      var myHeaders = new Headers();
+      myHeaders.append("apikey", "WpHKxWOTnwecVD8kCqTNND1pSxEpJVPC");
       
-      // var requestOptions = {
-      //   method: 'POST',
-      //   redirect: 'follow',
-      //   headers: myHeaders,
-      //   body: raw
-      // };
+      var requestOptions = {
+        method: 'POST',
+        redirect: 'follow',
+        headers: myHeaders,
+        body: raw
+      };
       
-      // fetch("https://api.apilayer.com/short_url/hash", requestOptions)
-      //   .then(response => response.text())
-      //   .then(result => {
-      //     const link = document.createElement('a');
-      //     link.target = "_blank";
-      //     let short = result.split('"')[7];
-      //     console.log(short)
-      //     link.href = "https://wa.me/91"+PhNo+"?text="+ ((((short).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
-      //     link.click();
-      //   })
-      //   .catch(error => console.log('error', error));
+      fetch("https://api.apilayer.com/short_url/hash", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+          const link = document.createElement('a');
+          link.target = "_blank";
+          let short = result.split('"')[7];
+          console.log(short)
+          link.href = "https://wa.me/91"+PhNo+"?text="+ ((((short).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
+          link.click();
+        })
+        .catch(error => console.log('error', error));
             });
     });
      };
