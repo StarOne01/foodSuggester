@@ -29,17 +29,6 @@ pdfMake.createPdf(DataDef)
         console.log('Uploaded PDF blob to Firebase Storage!');
             getDownloadURL(snapshot.ref).then(async(downloadURL) => {
       console.log('File available at', downloadURL);
-
-
-     function encodeUrl(url) {
-        // Encode special characters using encodeURIComponent
-        const encodedUrl = encodeURIComponent(url);
-        // Replace specific characters with their escaped versions for consistency
-        return encodedUrl.replace(/\//g, '%2F')
-                         .replace(/\?/g, '%3F')
-                         .replace(/&/g, '%26')
-                         .replace(/=/g, '%3D');
-      }
     
       var raw  = downloadURL;
       var myHeaders = new Headers();
@@ -66,8 +55,6 @@ pdfMake.createPdf(DataDef)
             });
     });
      };
-    link.href = "https://wa.me/91"+PhNo+"?text="+ ((((downloadURL).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
-
 });
 }
  // Initialize the blob and name variables

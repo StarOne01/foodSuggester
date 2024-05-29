@@ -530,9 +530,9 @@ function printPdf(e, i) {
     },
   };
 
-
-
-let nameO = `${nameval}-${PhNo}/` ;
+let d = new Date()
+let dateDb = [ d.getDate(),d.getMonth(),d.getFullYear(),d.getHours(),d.getHours(),d.getMinutes()]
+let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${dateDb[2]}_${dateDb[3]}-${dateDb[4]}` ;
   if(i === 0 || i===2) {
   DataDef.content.push(foodTable);
   nameO += "-Diet"
