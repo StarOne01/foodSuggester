@@ -18,7 +18,8 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 function goPdf(e, mode) {
   let [DataDef, name,PhNo] = printPdf(e,mode);
- /* const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
+ ///* 
+ const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
     .getBlob((blob) => {
       if (blob) {
@@ -55,11 +56,10 @@ pdfMake.createPdf(DataDef)
             });
     });
      };
-});*/
+});//*/
 }
  // Initialize the blob and name variables
 getPDFBtn.addEventListener("click",(e) => goPdf(e,0));
 getExBtn.addEventListener("click",(e) =>  goPdf(e,1));
 getBothBtn.addEventListener("click",(e) =>  goPdf(e,2));
 
-  

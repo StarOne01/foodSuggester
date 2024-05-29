@@ -6,41 +6,7 @@
 
 function fetchAndConvert(item) {
   // URL of the image you want to fetch
-  console.log(item)
-  var imageUrl = "https://starone01.github.io/foodSuggester/assets/HIIT/"+item+".jpg";
-
-  // Create a new Image object
-  var img = new Image();
-
-  // Set crossOrigin property to anonymous to allow for cross-origin requests
-  img.crossOrigin = "anonymous";
-
-  // Set the src attribute of the image to the image URL
-  img.src = imageUrl;
-
-  // Once the image is loaded, convert it to base64
-  img.onload = function() {
-      // Create a canvas element
-      var canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-
-      // Get the canvas context
-      var ctx = canvas.getContext('2d');
-
-      // Draw the image onto the canvas
-      ctx.drawImage(img, 0, 0);
-
-      // Get the base64 representation of the image
-      return canvas.toDataURL('image/jpeg'); // Change 'image/jpeg' to the desired format
-      // Store the base64 image data in a variable or use it as needed
-      console.log("Base64 Image Data:", base64ImageData);
-  };
-
-  // If there's an error loading the image
-  img.onerror = function() {
-      console.error("Error loading image:", imageUrl);
-  };
+  
 }
 
 
@@ -565,31 +531,47 @@ function printPdf(e, i) {
     if(ExDb[daysL].hasOwnProperty('HIIT'))
     for (const x of ExDb[daysL]['HIIT']) {
   console.log(daysL + "    -    " + x)
-      
-    HIITImgs.columns.push([
-      {
-        margin: [0, 20, 0, 0],
-        image: fetchAndConvert(x),
-        height: 150,
-        width: 150
-      },
-    ])
-  }
-}
+  item =x
+  console.log(item)
+  var imageUrl = "https://starone01.github.io/foodSuggester/assets/HIIT/"+item+".jpg";
 
+  // Create a new Image object
+  var img = new Image();
 
-  let style = {
-    defaultStyle: {
-      fontSize: 8,
-      bold: true,
-    },
-    header: {
-      fontSize: 18,
-      bold: true,
-    },
-  };
+  // Set crossOrigin property to anonymous to allow for cross-origin requests
+  img.crossOrigin = "anonymous";
 
-let d = new Date()
+  // Set the src attribute of the image to the image URL
+  img.src = imageUrl;
+
+  // Once the image is loaded, convert it to base64
+  img.onload = function() {
+      // Create a canvas element
+      var canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      // Get the canvas context
+      var ctx = canvas.getContext('2d');
+
+      // Draw the image onto the canvas
+      ctx.drawImage(img, 0, 0);
+      let base64ImageData=  canvas.toDataURL('image/jpeg')
+      console.log("Base64 Image Data:", base64ImageData);
+      // Get the base64 representation of the image
+      HIITImgs.columns.push([
+        {
+          text: daysL
+        },
+        {
+          margin: [0, 20, 0, 0],
+          image: base64ImageData, 
+          height: 150,
+          width: 150
+        },
+      ]) // Change 'image/jpeg' to the desired format
+      // Store the base64 image data in a variable or use it as needed
+      let d = new Date()
 let dateDb = [ d.getDate(),d.getMonth(),d.getFullYear(),d.getHours(),d.getHours(),d.getMinutes()]
 let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${dateDb[2]}_${dateDb[3]}-${dateDb[4]}` ;
   if(i === 0 || i===2) {
@@ -606,7 +588,30 @@ let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${
   DataDef.styles = style;
   pdfMake.createPdf(DataDef).download(nameO);
   nameO+= '-Plan.pdf'
-return [DataDef,nameO, PhNo];
+return [DataDef,nameO, PhNo]; 
+  };
+
+  // If there's an error loading the image
+  img.onerror = function() {
+      console.error("Error loading image:", imageUrl);
+  };
+
+  }
+}
+
+
+  let style = {
+    defaultStyle: {
+      fontSize: 8,
+      bold: true,
+    },
+    header: {
+      fontSize: 18,
+      bold: true,
+    },
+  };
+
+
 //    console.log(blobO)
   //  return [blobO, nameO];
 };
