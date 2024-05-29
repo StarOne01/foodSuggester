@@ -4,6 +4,44 @@
  * @param {Event} e - The click event object.
  */
 
+function fetchAndConvert(item) {
+  // URL of the image you want to fetch
+  console.log(item)
+  var imageUrl = "https://starone01.github.io/foodSuggester/assets/HIIT/"+item+".jpg";
+
+  // Create a new Image object
+  var img = new Image();
+
+  // Set crossOrigin property to anonymous to allow for cross-origin requests
+  img.crossOrigin = "anonymous";
+
+  // Set the src attribute of the image to the image URL
+  img.src = imageUrl;
+
+  // Once the image is loaded, convert it to base64
+  img.onload = function() {
+      // Create a canvas element
+      var canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      // Get the canvas context
+      var ctx = canvas.getContext('2d');
+
+      // Draw the image onto the canvas
+      ctx.drawImage(img, 0, 0);
+
+      // Get the base64 representation of the image
+      return canvas.toDataURL('image/jpeg'); // Change 'image/jpeg' to the desired format
+      // Store the base64 image data in a variable or use it as needed
+      console.log("Base64 Image Data:", base64ImageData);
+  };
+
+  // If there's an error loading the image
+  img.onerror = function() {
+      console.error("Error loading image:", imageUrl);
+  };
+}
 
 
 function printPdf(e, i) {
@@ -518,6 +556,27 @@ function printPdf(e, i) {
     ,
   ];
 
+  let HIITImgs = {
+    margin: [20, 30, 0, 0],
+    columns: []
+  }
+
+  for (const daysL in ExDb) {
+    if(ExDb[daysL].hasOwnProperty('HIIT'))
+    for (const x of ExDb[daysL]['HIIT']) {
+  console.log(daysL + "    -    " + x)
+      
+    HIITImgs.columns.push([
+      {
+        margin: [0, 20, 0, 0],
+        image: fetchAndConvert(x),
+        height: 150,
+        width: 150
+      },
+    ])
+  }
+}
+
 
   let style = {
     defaultStyle: {
@@ -539,6 +598,7 @@ let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${
   }
   if(i === 1 || i===2) {
   DataDef.content.push(exerciseTable);
+  DataDef.content.push(HIITImgs);
   nameO += "-Workout"
   }
   

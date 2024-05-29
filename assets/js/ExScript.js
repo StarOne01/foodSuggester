@@ -30,9 +30,6 @@ const filterOptionsEx = (userInputValueEx, targ) => {
 };
 
 const showSuggestionsEx = (i) => {
-  if (i.id === "HIIT") {
-    return;
-  }
   const userInputValue = i.value;
   const filteredOptions = filterOptionsEx(userInputValue, i.id);
   dataListEx.innerHTML = "";
@@ -124,9 +121,6 @@ var addInput = (e) => {
 
 const addSelectedEx = (e) => {
   e.preventDefault();
-  if (`${e.target.id.substring(0, e.target.id.length - 3)}` === "HIIT") {
-    return;
-  }
   const selectedOption = document.getElementById(
     `${e.target.id.substring(0, e.target.id.length - 3)}`
   ).value;
@@ -211,6 +205,7 @@ const addSelectedEx = (e) => {
       }
     );
   });
+  console.log(ExDb)
   let delet = document.querySelectorAll(".delet");
 
   delet.forEach((i) => {
