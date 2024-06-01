@@ -7,6 +7,8 @@
  * @summary Contains variables and data structures for the foodSuggester application.
  * @since 0.0.1
  */
+
+
 let weight = 0;
 let height = 0;
 let age = 0;
@@ -34,6 +36,9 @@ let nutriDataTime = [
   [0, 0, 0, 0],
   [0, 0, 0, 0,],
 ]
+
+let HIITItems = {
+};
 
 let nutriData = [
   0,0,0,0

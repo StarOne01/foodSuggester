@@ -15,6 +15,7 @@ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 const fileInputs = document.querySelectorAll('input[type="file"]');
 const applyBtn = document.getElementById('applyBtn')
 const toastBody = document.getElementById("toastBody");
+const pdfStatus = document.getElementById("pdfStatus");
 const BMRH = document.getElementById("resultBMR");
 const userNature = document.getElementById("youAre");
 const wakeUp = document.getElementById("wakeUpI");

@@ -16,9 +16,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
-function goPdf(e, mode) {
-  let [DataDef, name,PhNo] = printPdf(e,mode);
- ///* 
+async function goPdf(e, mode) {
+  pdfStatus.style.display = "block";
+  pdfStatus.textContent = "Generating PDF...";
+  let [DataDef, name,PhNo] = await printPdf(e,mode);
+ /* 
+ pdfStatus.textContent = "Uploading PDF...";
  const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
     .getBlob((blob) => {
@@ -30,6 +33,7 @@ pdfMake.createPdf(DataDef)
         console.log('Uploaded PDF blob to Firebase Storage!');
             getDownloadURL(snapshot.ref).then(async(downloadURL) => {
       console.log('File available at', downloadURL);
+      pdfStatus.textContent = "PDF Uploaded!";
     
       var raw  = downloadURL;
       var myHeaders = new Headers();
@@ -41,6 +45,8 @@ pdfMake.createPdf(DataDef)
         headers: myHeaders,
         body: raw
       };
+
+      pdfStatus.textContent = "Generating Short URL...";
       
       fetch("https://api.apilayer.com/short_url/hash", requestOptions)
         .then(response => response.text())
@@ -49,6 +55,7 @@ pdfMake.createPdf(DataDef)
           link.target = "_blank";
           let short = result.split('"')[7];
           console.log(short)
+          pdfStatus.textContent = "Short URL Generated!, redirecing to Whatsapp";
           link.href = "https://wa.me/91"+PhNo+"?text="+ ((((short).split(':').join('%3A')).split('/',).join('%2F')).split('?').join('%3F')).split('&').join('%26');
           link.click();
         })
@@ -56,7 +63,7 @@ pdfMake.createPdf(DataDef)
             });
     });
      };
-});//*/
+});*/
 }
  // Initialize the blob and name variables
 getPDFBtn.addEventListener("click",(e) => goPdf(e,0));

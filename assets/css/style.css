@@ -8,6 +8,9 @@
   margin: 5px;
 }
 
+#pdfStatus {
+  display: none;
+}
 
 * {
   margin: 0;

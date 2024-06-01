@@ -121,9 +121,19 @@ var addInput = (e) => {
 
 const addSelectedEx = (e) => {
   e.preventDefault();
+
+
+
   const selectedOption = document.getElementById(
     `${e.target.id.substring(0, e.target.id.length - 3)}`
   ).value;
+  if (`${e.target.id.substring(0, e.target.id.length - 3)}` === "HIIT") {
+    if(Number(selectedOption) > 304) {
+      toastBody.textContent = "HIIT can't be more than 304";
+      toastBootstrap.show();
+      return;
+    }
+  }
   document.getElementById(
     `${e.target.id.substring(0, e.target.id.length - 3)}`
   ).value = "";
@@ -172,11 +182,17 @@ const addSelectedEx = (e) => {
   document
     .getElementById(`${e.target.id.substring(0, e.target.id.length - 3)}Ul`)
     .appendChild(newListItem);
+
+    if (`${e.target.id.substring(0, e.target.id.length - 3)}` === "HIIT") {
+      HIITItems[selectedOption] = setDays;
+    }
+    
   setDays.forEach((da) => {
     ExDb[da][`${e.target.id.substring(0, e.target.id.length - 3)}`].push(
       selectedOption
     );
     console.log(ExDb);
+
     document.querySelector(
       `#${da}Tbl #${e.target.id.substring(0, e.target.id.length - 3)}TblR`
     ).innerHTML = "";
@@ -233,6 +249,11 @@ const addSelectedEx = (e) => {
         });
       });
       e.target.parentNode.remove();
+
+    if (`${e.target.id.substring(0, e.target.id.length - 3)}` === "HIIT") {
+      delete HIITItems[e.target.getAttribute("data-item")];
+    }
+    
     });
   });
 };

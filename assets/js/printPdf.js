@@ -4,13 +4,34 @@
  * @param {Event} e - The click event object.
  */
 
-function fetchAndConvert(item) {
-  // URL of the image you want to fetch
-  
+async function fetchImageAsBase64(url) {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+  });
+}
+
+async function fetchImagesSynchronously(urls) {
+  const base64Images = [];
+
+  for (const url of urls) {
+      try {
+          const base64Image = await fetchImageAsBase64(url[0]);
+          base64Images.push([base64Image,url[1]]);
+      } catch (error) {
+          console.error(`Failed to fetch image from ${url[0]}:`, error);
+      }
+  }
+
+  return base64Images;
 }
 
 
-function printPdf(e, i) {
+async function printPdf(e, i) {
 
 
   e.preventDefault();
@@ -507,6 +528,18 @@ function printPdf(e, i) {
 
 
 
+  let style = {
+    defaultStyle: {
+      fontSize: 8,
+      bold: true,
+    },
+    header: {
+      fontSize: 18,
+      bold: true,
+    },
+  };
+
+
 
   let remarks = [
     {
@@ -522,95 +555,91 @@ function printPdf(e, i) {
     ,
   ];
 
-  let HIITImgs = {
-    margin: [20, 30, 0, 0],
-    columns: []
-  }
+  if (Object.keys(HIITItems).length === 0) {
+    let d = new Date();
+    let dateDb = [ d.getDate(),d.getMonth(),d.getFullYear(),d.getHours(),d.getHours(),d.getMinutes()]
+    let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${dateDb[2]}_${dateDb[3]}-${dateDb[4]}` ;
+      if(i === 0 || i===2) {
+      DataDef.content.push(foodTable);
+      nameO += "-Diet"
+      }
+      if(i === 1 || i===2) {
+      DataDef.content.push(exerciseTable);
+      nameO += "-Workout"
+      }
+      
+      DataDef.content.push(remarks);
+      DataDef.styles = style;
+      pdfStatus.textContent = "Downloading PDF...";
+      pdfMake.createPdf(DataDef).download(nameO);
+      nameO+= '-Plan.pdf'
+    return [DataDef,nameO, PhNo]; 
+  } else {
 
-  for (const daysL in ExDb) {
-    if(ExDb[daysL].hasOwnProperty('HIIT'))
-    for (const x of ExDb[daysL]['HIIT']) {
-  console.log(daysL + "    -    " + x)
-  item =x
-  console.log(item)
-  var imageUrl = "https://starone01.github.io/foodSuggester/assets/HIIT/"+item+".jpg";
+let HIITImgs = []
 
-  // Create a new Image object
-  var img = new Image();
+  const imageUrls = Object.keys(HIITItems).map((item) =>[`https://starone01.github.io/foodSuggester/assets/HIIT/${item}.jpg`, item]);
+  (async () => {
+    pdfStatus.textContent = "Fetching HIIT Images...";
+    const base64Images = await fetchImagesSynchronously(imageUrls);
 
-  // Set crossOrigin property to anonymous to allow for cross-origin requests
-  img.crossOrigin = "anonymous";
 
-  // Set the src attribute of the image to the image URL
-  img.src = imageUrl;
-
-  // Once the image is loaded, convert it to base64
-  img.onload = function() {
-      // Create a canvas element
-      var canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-
-      // Get the canvas context
-      var ctx = canvas.getContext('2d');
-
-      // Draw the image onto the canvas
-      ctx.drawImage(img, 0, 0);
-      let base64ImageData=  canvas.toDataURL('image/jpeg')
-      console.log("Base64 Image Data:", base64ImageData);
+      console.log("Base64 Image Data:", base64Images);
       // Get the base64 representation of the image
-      HIITImgs.columns.push([
-        {
-          text: daysL
-        },
-        {
-          margin: [0, 20, 0, 0],
-          image: base64ImageData, 
-          height: 150,
-          width: 150
-        },
-      ]) // Change 'image/jpeg' to the desired format
-      // Store the base64 image data in a variable or use it as needed
-      let d = new Date()
-let dateDb = [ d.getDate(),d.getMonth(),d.getFullYear(),d.getHours(),d.getHours(),d.getMinutes()]
-let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${dateDb[2]}_${dateDb[3]}-${dateDb[4]}` ;
-  if(i === 0 || i===2) {
-  DataDef.content.push(foodTable);
-  nameO += "-Diet"
-  }
-  if(i === 1 || i===2) {
-  DataDef.content.push(exerciseTable);
-  DataDef.content.push(HIITImgs);
-  nameO += "-Workout"
-  }
-  
-  DataDef.content.push(remarks);
-  DataDef.styles = style;
-  pdfMake.createPdf(DataDef).download(nameO);
-  nameO+= '-Plan.pdf'
-return [DataDef,nameO, PhNo]; 
-  };
+base64Images.forEach(base64Image => {
+  let str = '' 
+ HIITItems[base64Image[1]].forEach((xt) =>{
+    str += xt + ', '
+  });
+  HIITImgs.push({
+    margin: [20, 30, 0, 0],
+    columns: [
+    {
+      text: `HIIT for Days: ${str}`,
+      bold: true,
+      fontSize: 16,
+      alignment: "center",
 
-  // If there's an error loading the image
-  img.onerror = function() {
-      console.error("Error loading image:", imageUrl);
-  };
+    },
+  ]})
+        HIITImgs.push({
+          margin: [20, 30, 0, 0],
+          columns: [
+          {
+            margin: [30, 0, 0, 0],
+            image: base64Image[0], 
+            width: 400,
+          },
+        ]})
+});
+})().then(() => {
+  pdfStatus.textContent = "Fetching HIIT Images...Done!";
+  let d = new Date();
+    let dateDb = [ d.getDate(),d.getMonth(),d.getFullYear(),d.getHours(),d.getHours(),d.getMinutes()]
+    let nameO = `${nameval}-${PhNo}//${nameval}-${PhNo}_${dateDb[0]}-${dateDb[1]}-${dateDb[2]}_${dateDb[3]}-${dateDb[4]}` ;
+      if(i === 0 || i===2) {
+      DataDef.content.push(foodTable);
+      nameO += "-Diet"
+      }
+      if(i === 1 || i===2) {
+      DataDef.content.push(exerciseTable);
+      for(const img of HIITImgs) {
+        DataDef.content.push(img)
+      }
+      nameO += "-Workout"
+      }
+      
+      DataDef.content.push(remarks);
+      DataDef.styles = style;
+      pdfStatus.textContent = "Downloading PDF...";
+      pdfMake.createPdf(DataDef).download(nameO);
+      nameO+= '-Plan.pdf'
+    return [DataDef,nameO, PhNo]; 
+});
 
-  }
+
+
 }
-
-
-  let style = {
-    defaultStyle: {
-      fontSize: 8,
-      bold: true,
-    },
-    header: {
-      fontSize: 18,
-      bold: true,
-    },
-  };
-
 
 //    console.log(blobO)
   //  return [blobO, nameO];
