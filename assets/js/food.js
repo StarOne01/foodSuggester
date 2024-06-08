@@ -163,6 +163,9 @@ const items = [
   "100g Mussels",
   "100g Millet",
   "100g Lamb",
+  "Wallnut 5 piece",
+  "Masala oats 50 gram",
+"Sundal boiled 50 gram"
 ];
 
 const proteinCounts = {
@@ -330,6 +333,9 @@ const proteinCounts = {
   "100g Mussels": 24,
   "100g Millet": 11,
   "100g Lamb": 25,
+  "Wallnut 5 piece": 7.6,
+  "Masala oats 50 gram": 10,
+"Sundal boiled 50 gram": 11
 };
 
 const fatCounts = {
@@ -497,6 +503,9 @@ const fatCounts = {
   "100g Mussels": 5,
   "100g Millet": 3,
   "100g Lamb": 21,
+    "Wallnut 5 piece": 32.6,
+  "Masala oats 50 gram": 5,
+"Sundal boiled 50 gram": 4
 };
 
 const carbohydrateCounts = {
@@ -664,6 +673,9 @@ const carbohydrateCounts = {
   "100g Mussels": 4,
   "100g Millet": 72,
   "100g Lamb": 0,
+    "Wallnut 5 piece": 6.85,
+  "Masala oats 50 gram": 30,
+"Sundal boiled 50 gram":9
 };
 
 const calorieCounts = [
@@ -676,5 +688,5 @@ const calorieCounts = [
   62, 138, 117, 114, 102, 119, 204, 95, 94, 69, 55, 34, 78, 150, 114, 103, 120,
   650, 250, 164, 360, 150, 567, 164, 333, 141, 141, 19, 354, 154, 340, 54, 191,
   86, 26, 578, 131, 57, 32, 57, 52, 47, 116, 120, 574, 546, 25, 86, 143, 208,
-  184, 242, 189, 120, 26, 68, 172, 378, 294,
+  184, 242, 189, 120, 26, 68, 172, 378, 294,327, 180,  145
 ];
