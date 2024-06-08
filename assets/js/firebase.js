@@ -20,7 +20,6 @@ async function goPdf(e, mode) {
   pdfStatus.style.display = "block";
   pdfStatus.textContent = "Generating PDF...";
   let [DataDef, name,PhNo] = await printPdf(e,mode);
- /* 
  pdfStatus.textContent = "Uploading PDF...";
  const storageRef = ref(storage, "ClientPdfs/"+ name); // Replace with your desired storage path
 pdfMake.createPdf(DataDef)
@@ -63,7 +62,7 @@ pdfMake.createPdf(DataDef)
             });
     });
      };
-});*/
+});
 }
  // Initialize the blob and name variables
 getPDFBtn.addEventListener("click",(e) => goPdf(e,0));
