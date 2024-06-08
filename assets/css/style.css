@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #female_questions {
   display: none;
 }
@@ -200,6 +207,16 @@ table p::before {
   display: block;
   max-width: 500px;
 }
+
+.btn-outline-secondary {
+  display: inline-block;
+}
+
+label {
+  display: inline;
+  margin: 10px 0;
+}
+
 h2 {
   text-decoration: underline;
   text-decoration-color: cyan;
@@ -215,10 +232,7 @@ h2 {
   align-items: flex-end;
 }
 
-input[type="search"] {
-  width: 40vw;
-  max-width: 300px;
-}
+
 
 select {
   max-width: 40vw !important;

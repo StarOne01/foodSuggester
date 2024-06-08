@@ -18,6 +18,29 @@ const CheckAll = () => {
   console.log(daysForThis);
 };
 
+let inps = document.querySelectorAll("input[type='file'], textarea,input[type='text'],input[type='password'],input[type='email'],input[type='number'],input[type='date'],input[type='time'],input[type='url'],input[type='tel'],input[type='color'],input[type='range'],input[type='hidden'],input[type='month'],input[type='week'],input[type='datetime-local']");
+let checks = document.querySelectorAll("input[type='checkbox'],input[type='radio']");
+let selects = document.querySelectorAll("select");
+let labels = document.querySelectorAll("label");
+let search = document.querySelectorAll("input[type='search']");
+search.forEach((i) => {
+  i.classList.add("form-control");
+  i.style.marginBottom = "10px";
+});
+labels.forEach((i) => {
+  i.classList.add("form-label");
+});
+selects.forEach((i) => {
+  i.classList.add("form-select");
+});
+checks.forEach((i) => {
+  i.classList.add("form-check-input");
+});
+inps.forEach((i) => {
+  i.classList.add("form-control");
+  
+});
+
 function convertTime(timeString) {
   let hours = parseInt(timeString.substring(0, 2));
   let minutes = timeString.substring(3);

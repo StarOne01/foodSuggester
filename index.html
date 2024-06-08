@@ -18,12 +18,12 @@
 
     <form>
       <label for="client_name">Client Name:</label><br />
-      <input type="text" id="client_name" name="client_name" required /><br /><br />
+      <input type="text" placeholder=" Name.." id="client_name" name="client_name" required /><br /><br />
       <label for="phone_number">Client Phone Number:</label><br />
-      <input type="tel" id="phone_number" name="phone_number" required /><br /><br />
+      <input type="tel" placeholder=" Phone.." id="phone_number" name="phone_number" required /><br /><br />
 
       <label for="membership_id">Client Membership ID:</label><br />
-      <input type="text" id="membership_id" name="membership_id" required /><br><br>
+      <input type="text" placeholder=" ID.." id="membership_id" name="membership_id" required /><br><br>
       <label for="image-upload">Image upload:</label><br /><br>
       <label id="uploadLabel">Not Uploaded</label> <br>
       <input type="file" multiple name="images[]">
@@ -32,7 +32,6 @@
       <h2>Goals</h2>
       <label for="goal">What are you looking for?</label><br />
       <select id="goal" name="goal" required>
-        <option value="">Select...</option>
         <option value="weight_loss">Weight Loss</option>
         <option value="weight_gain">Weight Gain</option>
         <option value="fat_loss">Fat Loss</option>
@@ -62,8 +61,8 @@
           <option value="maintain">Rest-pause Set</option></select
         ><br /><br />-->
       <h2>Client Measurements</h2>
-      <label for="current_age">Current Age:</label><br />
-      <input type="number" id="current_age" name="current_age" required /><br /><br />
+      <label for="current_age" >Current Age:</label><br />
+      <input type="number" placeholder=" Age.." id="current_age" name="current_age" required /><br /><br />
 
       <input type="radio" id="male" name="gender" value="male" required checked />
       <label for="male">Male</label>
@@ -72,7 +71,7 @@
       <br /><br />
       <label for="cactivity">Activity</label><br />
       <select id="cactivity" name="cactivity">
-        <option value="1">Basal Metabolic Rate (BMR)</option>
+        <option value="1">BMR</option>
         <option value="1.2">Sedentary: little or no exercise</option>
         <option value="1.375">Light: exercise 1-3 times/week</option>
         <option value="1.465">Moderate: exercise 4-5 times/week</option>
@@ -87,11 +86,11 @@
         </option>
       </select><br /><br />
       <label for="current_weight">Current Weight (in kg):</label><br />
-      <input type="number" id="current_weight" name="current_weight" required /><br /><br />
+      <input type="number" id="current_weight" placeholder=" Weight.."name="current_weight" required /><br /><br />
 
 
       <label for="current_height">Current Height (in CM):</label><br />
-      <input type="number" id="current_height" name="current_height" required /><br /><br />
+      <input type="number" id="current_height" placeholder=" Height.." name="current_height" required /><br /><br />
 
       <div id="resultDiv">
         <h3 id="resultBMI"></h3>
