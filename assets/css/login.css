@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.login {
+    overflow: hidden;
+    background-color: #000000;
+    width: 90vw;
+    max-width: 300px;
+    border: #fff solid 2px;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login>input {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    border: black 2px solid;
+    padding: 10px 20px;
+    margin: 15px -10px;
+}
+.authPart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
