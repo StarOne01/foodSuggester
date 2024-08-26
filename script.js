@@ -52,6 +52,7 @@ const checkAuthState=()=>{
            login.style.display='none';
            authPart.style.display='flex';
            console.log('user is signed in');
+	   window.location.href = 'app.html';
        }else{
         login.style.display='block';
         authPart.style.display='none';
